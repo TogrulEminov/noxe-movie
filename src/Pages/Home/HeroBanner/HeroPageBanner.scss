@@ -1,52 +1,29 @@
 @import '../../../css-config/Mixins.scss';
 #hero_banner {
-  height: 100vh;
-  background: url('../../../Assets/Images/bg_hero.webp') center/cover no-repeat;
-  display: flex;
-  align-items: flex-end;
-  position: relative;
-  padding: 40px 0 60px; 
-  &:after {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    background: #000;
-  }
-  .banner_content {
-    position: relative;
-    .row {
-      justify-content: center;
-      row-gap: 40px;
-      .hero_bonner_description {
-        text-align: center;
-        h1 {
-          font-size: 40px;
-          font-weight: bold;
-          font-style: italic;
-          color: #fff;
-          @include sm{
-            font-size: 60px;
-          }
-          @include md{
-            font-size: 80px;
-          }
-          @include lg {
-            font-size: 100px;
-          }
-         
-        }
-      }
-      .addition_awards{
-        text-align: center;
-        img{
-            max-width: 600px;
-            width: 100%;
-            object-fit: contain;
-            height: auto;
-        }
+  padding: 20px 0;
+  height: 100%;
 
-      }
+  .hero_banner_wrapper {
+    max-height: 450px;
+    height: 100%;
+    padding-bottom: 30px;
+    .swiper-wrapper {
+      height: 100%;
+    }
+    .swiper-pagination {
+      bottom: 0px;
+      width: 100%;
+      z-index: 111;
+      @include flex();
+      justify-content: center;
+    }
+    .swiper-pagination-bullet {
+      width: 20px;
+      height: 20px;
+      background-color: #fff;
+      color: hsl(0, 0%, 0%);
+      @include flex();
+      justify-content: center;
     }
   }
 }
