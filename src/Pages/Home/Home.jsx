@@ -1,11 +1,12 @@
+import Poster from '../../Compnents/Poster/Poster';
 import HeroPageBanner from './HeroBanner/HeroPageBanner';
 
 const Home = () => {
   return (
-    <div>
+    <main id="main">
       <HeroPageBanner />
-      <div style={{height:"1000px"}}></div>
-    </div>
+      <div style={{height:'1000px'}}></div>
+    </main>
   );
 };
 

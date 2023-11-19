@@ -4,4 +4,14 @@ body {
     font-weight: normal;
     font-family: 'Poppins', sans-serif;
     letter-spacing: normal;
+    background-color: #111;
+}
+
+#main{
+    padding-top: 70px;
+}
+@media screen and (min-width:992px){
+    #main{
+        padding-top: 90px;
+    } 
 }
