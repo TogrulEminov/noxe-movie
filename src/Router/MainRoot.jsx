@@ -6,7 +6,7 @@ const MainRoot = () => {
   return (
     <>
       <Header />
-      <Outlet />
+      <Outlet  />
       <Footer />
     </>
   );

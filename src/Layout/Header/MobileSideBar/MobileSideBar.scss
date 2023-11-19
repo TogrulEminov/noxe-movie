@@ -1,0 +1,91 @@
+@import '../../../css-config/Mixins.scss';
+.mobile_sideBar {
+  padding: 20px;
+  height: 100%;
+  width: 0;
+  overflow-y: scroll;
+  background-color: #ffff;
+  position: fixed;
+  z-index: 100;
+  inset: 0;
+  transform: translateX(-100%);
+  transition: 0.3s ease-in-out;
+  &.mobile_sidebar_active {
+  width: 100vw;
+    transform: translate(0);
+    box-shadow: 0 0 10px rgba(10,10,10,.7);
+  }
+  .mobile_wrapper {
+    .mobile_header {
+      @include flex();
+      padding: 20px 0;
+      justify-content: space-between;
+      border-bottom: 1px solid #ddd;
+      .close_mobile_btn {
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+      }
+    }
+    .mobile_navbar {
+      padding-top: 20px;
+      .mobile_navbar_list {
+        width: 100%;
+        li {
+          padding: 5px 0;
+          a {
+            font-size: 16px;
+            color: #111;
+            font-weight: bold;
+            transition: 0.3s ease-in-out;
+            &:hover {
+              opacity: 0.5;
+            }
+          }
+          &.mobile_navbar_item {
+            span {
+              width: 100%;
+              @include flex();
+              font-size: 16px;
+              color: #111;
+              font-weight: bold;
+              transition: 0.3s ease-in-out;
+              cursor: pointer;
+              justify-content: space-between;
+              &:hover {
+                opacity: 0.5;
+              }
+            }
+            .mobile_submenu_desktop {
+              padding-left: 10px;
+              opacity: 0;
+              visibility: hidden;
+              overflow: hidden;
+              max-height: 0;
+              transition: 0.3s ease-in-out;
+              &.active_submenu{
+                visibility: visible;
+                max-height: 500px;
+                opacity: 0.8;
+
+              }
+            }
+          }
+          &.mobile_shopping_item {
+            @include flex();
+            gap: 5px;
+            .mobile_shopping_icon {
+              width: 50px;
+              height: 50px;
+              @include flex();
+              justify-content: center;
+              border: 2px solid #ddd;
+              color: #111;
+              opacity: 0.7;
+            }
+          }
+        }
+      }
+    }
+  }
+}

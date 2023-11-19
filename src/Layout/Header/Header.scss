@@ -1,0 +1,170 @@
+@import '../../css-config/Mixins.scss';
+.header {
+  background-color: #fff;
+  padding: 10px 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  width: 100%;
+  border-bottom: 1px solid #ddd;
+  transition: transform 0.6s ease-in-out, background-color 0.6s ease-in-out;
+  @include lg {
+    background-color: transparent;
+    border-bottom: none;
+    padding: 20px 0;
+  }
+  &.sticky-header {
+    position: fixed;
+    animation: slideDown 0.6s ease-in-out forwards;
+    box-shadow: 0 1px 30px rgba(0, 0, 0, 0.05);
+    padding: 5px 0;
+    .header_wrapper{
+      border: none
+    }
+  }
+
+  .header_wrapper {
+    @include flex();
+    justify-content: space-between;
+    @include lg {
+      border-bottom: 1px solid #fcfcfc56;
+    }
+
+    .left_header_content {
+      @include flex();
+      gap: 10px;
+      .hamburger {
+        width: 40px;
+        height: 40px;
+        display: block;
+        border: none;
+        background: transparent;
+        color: #000;
+        @include lg {
+          color: #fff;
+          display: none;
+        }
+      }
+    }
+    .right_header_content {
+      .header_nav {
+        @include flex();
+        .header_navbar_list {
+          display: none;
+          @include lg {
+            @include flex();
+          }
+          li {
+            line-height: 50px;
+            padding: 13px 15px;
+            &.header_navbar_item {
+              position: relative;
+              &:hover {
+                .submenu_desktop {
+                  opacity: 1;
+                  visibility: visible;
+                  overflow: visible;
+                  max-height: 600px;
+                  transition: 0.2s ease-out;
+                }
+              }
+              span {
+                color: #fff;
+                font-size: 16px;
+                font-weight: bold;
+                display: block;
+                cursor: pointer;
+                transition: 0.3s ease-in-out;
+                svg {
+                  transition: 0.3s ease-in;
+                }
+                &:hover {
+                  opacity: 0.5;
+                  svg {
+                    transform: rotate(180deg);
+                    transition: 0.3s ease-out;
+                  }
+                }
+              }
+              .submenu_desktop {
+                position: absolute;
+                background-color: #000;
+                opacity: 0;
+                visibility: hidden;
+                overflow: hidden;
+                max-height: 0;
+                transition: 0.3s ease-in;
+                min-width: 200px;
+                box-shadow: 0 2px 1px rgba(0, 0, 0, 0.09),
+                  0 4px 2px rgba(0, 0, 0, 0.09), 0 8px 4px rgba(0, 0, 0, 0.09),
+                  0 16px 8px rgba(0, 0, 0, 0.09),
+                  0 32px 16px rgba(0, 0, 0, 0.09);
+                padding: 10px 0;
+                left: 0;
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+                li {
+                  line-height: 20px;
+                  width: 100%;
+                  padding: 5px 30px;
+                }
+              }
+            }
+            a {
+              color: #fff;
+              font-size: 16px;
+              font-weight: bold;
+              transition: 0.3s ease-in-out;
+              &.shopping {
+                position: relative;
+                p {
+                  position: absolute;
+                  width: 20px;
+                  height: 20px;
+                  @include flex();
+                  justify-content: center;
+                  font-size: 12px;
+                  background-color: #fff;
+                  top: -20px;
+                  right: -10px;
+                  color: #000;
+                  border-radius: 50%;
+                }
+              }
+              &:hover {
+                opacity: 0.5;
+              }
+            }
+          }
+        }
+        .header_addition_list {
+          @include flex();
+          li {
+            padding: 13px 15px;
+            button {
+              background-color: transparent;
+              border: none;
+              color: #000;
+              cursor: pointer;
+              @include lg {
+                color: #fff;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@keyframes slideDown {
+  from {
+    transform: matrix(1, 0, 0, 1, 0, -280);
+    background-color: #fff;
+  }
+  to {
+    transform: matrix(1, 0, 0, 1, 0, 0);
+    background-color: #111;
+  }
+}
