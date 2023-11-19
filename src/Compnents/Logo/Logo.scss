@@ -1,0 +1,13 @@
+@import '../../css-config/Mixins.scss';
+
+.logo_menu {
+  @include flex();
+  max-width: 80px;
+  height: auto;
+  width: 100%;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
