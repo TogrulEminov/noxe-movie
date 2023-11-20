@@ -1,11 +1,10 @@
-import Poster from '../../Compnents/Poster/Poster';
 import HeroPageBanner from './HeroBanner/HeroPageBanner';
-
+import FileringArea from './FileringArea/FileringArea';
 const Home = () => {
   return (
     <main id="main">
       <HeroPageBanner />
-      <div style={{height:'1000px'}}></div>
+      <FileringArea/>
     </main>
   );
 };

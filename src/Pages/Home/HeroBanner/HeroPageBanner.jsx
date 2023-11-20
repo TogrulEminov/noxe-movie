@@ -39,7 +39,7 @@ const HeroPageBanner = () => {
     <section id="hero_banner">
       <Container>
         <Swiper
-          pagination={pagination}
+          // pagination={pagination}
           slidesPerView={1}
           loop={false}
           autoplay={true}
