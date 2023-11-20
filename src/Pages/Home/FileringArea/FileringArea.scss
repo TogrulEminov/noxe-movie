@@ -1,0 +1,17 @@
+@import "../../../css-config/Mixins.scss";
+#filtering_section{
+    padding: 30px 0;
+    .filter_input{
+        padding: 20px 0;
+        #browsers{
+            width: 50px;
+        }
+    }
+    .row{
+        row-gap: 20px;
+        justify-content: center;
+        @include sm{
+            justify-content: flex-start;
+        }
+    }
+}
