@@ -81,7 +81,7 @@ const Header = () => {
                   </span>
                   <ul className="submenu_desktop">
                     <li>
-                      <NavLink>History</NavLink>
+                      <NavLink to='/about'>About</NavLink>
                     </li>
                     <li>
                       <NavLink>TimeLine</NavLink>
