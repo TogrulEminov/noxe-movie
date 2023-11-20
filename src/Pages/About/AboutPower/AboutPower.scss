@@ -1,0 +1,29 @@
+#power {
+  //   height: 100vh;
+  display: flex;
+  align-items: center;
+  .power {
+    // display: flex;
+    // flex-direction: column;
+    // align-items: center;
+    // row-gap: 90px;
+    display: flex;
+    flex-direction: column;
+    // align-items: center;
+    row-gap: 50px;
+    h5 {
+      font-size: 1.875rem;
+      line-height: 1.3;
+      font-weight: 600;
+    }
+    .counts {
+      display: flex;
+      justify-content: space-between;
+    }
+    .img-side {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
