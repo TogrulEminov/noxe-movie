@@ -11,13 +11,13 @@ const Poster = ({ src, title }) => {
         <div className="poster_genres">
           <ul>
             <li>
-              <Link>action</Link>
+              <Link to="">action</Link>
             </li>
             <li>
-              <Link>Family</Link>
+              <Link to="">Family</Link>
             </li>
             <li>
-              <Link>Triller</Link>
+              <Link to="">Triller</Link>
             </li>
           </ul>
         </div>
