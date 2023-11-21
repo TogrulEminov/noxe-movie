@@ -3,6 +3,8 @@ import "./AboutPower.scss";
 import Container from "react-bootstrap/Container";
 import img from "../../../Assets/Images/michler.webp";
 const AboutPower = () => {
+
+
   return (
     <section id="power">
       <Container>
