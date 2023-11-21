@@ -13,21 +13,21 @@ const AboutPower = () => {
             performances and profound storytelling.
           </h5>
           <div className="counts">
-            <div>
+            <div className="count">
               <span>569</span>
               <h6>Movies</h6>
             </div>
-            <div>
-              <span>569</span>
-              <h6>Movies</h6>
+            <div className="count">
+              <span>1200</span>
+              <h6>TV Shows</h6>
             </div>
-            <div>
-              <span>569</span>
-              <h6>Movies</h6>
+            <div className="count">
+              <span>4560</span>
+              <h6>Videos & Spots</h6>
             </div>
-            <div>
-              <span>569</span>
-              <h6>Movies</h6>
+            <div className="count">
+              <span>120</span>
+              <h6>Awards</h6>
             </div>
           </div>
           <p>
@@ -41,9 +41,9 @@ const AboutPower = () => {
             process. Join us as we celebrate Michelle Fischer’s talent,
             dedication, and unwavering commitment to the craft of acting.
           </p>
-       <div className="img-side">
-       <img src={img} alt="" />
-       </div>
+          <div className="img-side">
+            <img src={img} alt="" />
+          </div>
         </div>
       </Container>
     </section>
