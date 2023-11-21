@@ -3,7 +3,12 @@ import { Col } from 'react-bootstrap';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { Link } from 'react-router-dom';
 import "./FilmCard.scss"
+import useFetch from '../../hooks/useFetch';
+import { useSelector } from 'react-redux';
 const FilmCard = ({title,img}) => {
+  const { url } = useSelector((state) => state.api);
+  const { data, loading } = useFetch('/movie/popular');
+  console.log(data);
   return (
     <Col lg={3} xl={2} md={6} sm={6} xs={12}>
       <Link to="" className="film_single_card">

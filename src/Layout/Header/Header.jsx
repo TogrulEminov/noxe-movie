@@ -26,7 +26,14 @@ const Header = () => {
   };
   const location = useLocation();
   const [scrolled, setScrolled] = useState(false);
-
+  useEffect(()=>{
+    if(location.pathname==="/"){
+      document.body.classList.add('bg-dark')
+    }
+    else{
+      document.body.classList.remove('bg-dark')
+    }
+  })
   const handleScroll = useCallback(() => {
     const offSet = window.scrollY;
     if (offSet > 150) {
@@ -60,7 +67,7 @@ const Header = () => {
   }, [location.pathname, resetStateOnPathChange]);
 
   return (
-    <header className={`header ${scrolled ? 'sticky-header' : ''}`}>
+    <header className={`header ${scrolled ? 'sticky-header' : ''} ${location.pathname==='/' ?'main_header':'' }`}>
       <Container>
         <div className="header_wrapper">
           <div className="left_header_content">
@@ -123,14 +130,15 @@ const Header = () => {
                     Blog <KeyboardArrowDownIcon />
                   </span>
                 </li>
-                <li>
+                
+              </ul>
+              <ul className="header_addition_list">
+              <li>
                   <NavLink to="" className="shopping">
                     <ShoppingCartIcon />
                     <p>0</p>
                   </NavLink>
                 </li>
-              </ul>
-              <ul className="header_addition_list">
                 <li>
                   <button>
                     <PersonIcon />

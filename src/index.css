@@ -4,9 +4,11 @@ body {
     font-weight: normal;
     font-family: 'Poppins', sans-serif;
     letter-spacing: normal;
-    /* background-color: #111; */
+   
 }
-
+body.bg-dark{
+     background-color: #000 !important;
+}
 #main{
     padding-top: 70px;
 }
