@@ -1,10 +1,13 @@
+import AboutTop from "./AboutTop/AboutTop";
+import AboutPower from "./AboutPower/AboutPower";
 
 const About = () => {
   return (
-    <div>
-      
-    </div>
-  )
-}
+    <>
+      <AboutTop />
+      <AboutPower />
+    </>
+  );
+};
 
-export default About
+export default About;

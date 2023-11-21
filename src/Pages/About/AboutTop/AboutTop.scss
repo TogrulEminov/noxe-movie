@@ -1,0 +1,50 @@
+#about-top {
+  height: 100vh;
+  background-image: url(../../../Assets/Images/about_top_bg.webp);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  .row {
+    display: flex;
+    align-items: center;
+    // justify-content: center;
+    height: 100vh;
+    h6 {
+      font-family: "Montserrat", sans-serif;
+      color: #532a18;
+      font-size: 1rem;
+    }
+    h1 {
+      color: #532a18;
+      font-size: 180px;
+      line-height: 0.9;
+      font-weight: 600;
+      background: linear-gradient(to right, #834328, #2b1d15);
+      margin: 0 0 35px;
+      background: #834328;
+      background: linear-gradient(to right, #834328, #2b1d15);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      @media only screen and (max-width:972px){
+        font-size: 90px;
+      }
+      @media only screen and (max-width:372px){
+        font-size: 40px;
+      }
+      @media only screen and (max-width:315px){
+        font-size: 30px;
+      }
+    }
+    p {
+      font-family: "Montserrat", sans-serif;
+      color: #532a18;
+      word-spacing: 3px;
+      letter-spacing: 1px;
+      margin: 0 0 33px;
+      line-height: 1.8;
+      @media only screen and (max-width:315px){
+        font-size: 10px;
+      }
+    }
+  }
+}
