@@ -1,24 +1,28 @@
-import React from 'react';
 import { Container, Row } from 'react-bootstrap';
 import './FileringArea.scss';
 import FilmCard from '../../../Compnents/FilmCard/FilmCard';
-import SearchInput from '../../../Compnents/Selects/SearchInput';
+import useFetch from '../../../hooks/useFetch';
 const FileringArea = () => {
+  const { data, loading } = useFetch('&s=Red&type=movie');
+  console.log(data);
   return (
     <section id="filtering_section">
       <Container>
         <div className="filter_input">
-          <Row>
-          </Row>
+          <Row></Row>
         </div>
         <Row>
-          <FilmCard />
-          <FilmCard />
-          <FilmCard />
-          <FilmCard />
-          <FilmCard />
-          <FilmCard />
-          <FilmCard />
+          {loading ? (
+            <p>loading...</p>
+          ) : (
+            <>
+              {data?.Search?.map((e) => {
+                return (
+                  <FilmCard key={e.imdbID} title={e.Title} img={e.Poster} />
+                );
+              })}
+            </>
+          )}
         </Row>
       </Container>
     </section>
