@@ -91,7 +91,7 @@ const Header = () => {
                       <NavLink to='/about'>About</NavLink>
                     </li>
                     <li>
-                      <NavLink>TimeLine</NavLink>
+                      <NavLink to='/film'>Film Portfolio</NavLink>
                     </li>
                     <li>
                       <NavLink>Shop</NavLink>

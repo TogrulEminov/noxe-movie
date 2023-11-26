@@ -1,0 +1,67 @@
+#portfolio {
+  margin: 70px 0 0 0;
+
+      .portfolio_card {
+        position: relative;
+        overflow: hidden;
+        transition: 0.4s ease-in-out;
+        row-gap: 20px;
+        margin: 20px 0;
+        .watch_trailler {
+          position: absolute;
+          right: 20px;
+          bottom: 20px;
+          padding: 20px 0;
+          width: 150px;
+          text-align: center;
+          transform: translateY(100%);
+          transition: 0.3s ease-in-out;
+          a {
+            color: #fff;
+            &:hover {
+              color: #fff;
+              opacity: 0.5;
+            }
+          }
+        }
+        .text {
+          position: absolute;
+          top: 0;
+          color: white;
+          width: 100%;
+          overflow: hidden;
+          height: 100%;
+          .content {
+            padding: 50px;
+            h1 {
+              font-size: 1.875rem;
+              line-height: 1.3;
+              font-family: inherit;
+              font-weight: 600;
+              margin: 0 0 5px;
+              color: currentColor;
+            }
+            p {
+              padding: 0;
+              margin: 0;
+              display: flex;
+              flex-wrap: wrap;
+              font-size: 0.875rem;
+              opacity: 0.6;
+            }
+          }
+        }
+        &:hover {
+          .text {
+            background: #000000ad;
+            transition: 0.9s;
+          }
+          .watch_trailler {
+            transform: translateY(0);
+          }
+        }
+      }
+      img {
+        width: 100%;
+      }
+    }
