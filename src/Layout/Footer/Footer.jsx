@@ -4,9 +4,9 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { Link } from "react-router-dom";
 import { FaInstagram } from "react-icons/fa";
-import { FaSpotify } from "react-icons/fa6";
+import { FaSpotify } from "react-icons/fa";
 import { FaFacebookF } from "react-icons/fa";
-import { FaLinkedin } from "react-icons/fa6";
+import { FaLinkedin } from "react-icons/fa";
 const Footer = () => {
   return (
     <footer>
