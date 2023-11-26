@@ -27,7 +27,7 @@ const Header = () => {
   const location = useLocation();
   const [scrolled, setScrolled] = useState(false);
   useEffect(()=>{
-    if(location.pathname==="/"){
+    if(location.pathname==="/" && location.pathname==="/film"  ){
       document.body.classList.add('bg-dark')
     }
     else{
@@ -67,7 +67,7 @@ const Header = () => {
   }, [location.pathname, resetStateOnPathChange]);
 
   return (
-    <header className={`header ${scrolled ? 'sticky-header' : ''} ${location.pathname==='/' ?'main_header':'' }`}>
+    <header className={`header ${scrolled ? 'sticky-header' : ''} ${location.pathname==='/'?'main_header':'' }`}>
       <Container>
         <div className="header_wrapper">
           <div className="left_header_content">
