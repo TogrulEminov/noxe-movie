@@ -22,8 +22,9 @@ const Header = () => {
   const { width } = useWindowSize();
   const handleOpenSearch = () => {
     dispatch(openSearch());
-    console.log('doesnt ');
+    
   };
+
   const location = useLocation();
   const [scrolled, setScrolled] = useState(false);
   useEffect(()=>{
