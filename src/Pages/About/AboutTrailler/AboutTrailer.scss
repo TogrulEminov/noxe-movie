@@ -1,0 +1,44 @@
+#about-trailler {
+  height: 100vh;
+  .about-trailler {
+    --bs-gutter-x: 0rem;
+    row-gap: 0;
+  }
+  img {
+    width: 100%;
+  }
+  .col {
+    position: relative;
+    &:hover .text {
+      background: #000000ad;
+      transition: 0.9s;
+    }
+    .text {
+      position: absolute;
+      top: 0;
+      color: white;
+      width: 100%;
+      overflow: hidden;
+      height: 100%;
+      .content {
+        padding: 50px;
+        h1 {
+          font-size: 1.875rem;
+          line-height: 1.3;
+          font-family: inherit;
+          font-weight: 600;
+          margin: 0 0 5px;
+          color: currentColor;
+        }
+        p {
+          padding: 0;
+          margin: 0;
+          display: flex;
+          flex-wrap: wrap;
+          font-size: 0.875rem;
+          opacity: 0.6;
+        }
+      }
+    }
+  }
+}
