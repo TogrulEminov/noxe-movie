@@ -25,8 +25,21 @@ const FilmPortfolio = () => {
               <img src={img1} alt="" />
               <div className="text">
                 <div className="content">
+                  <ul>
+                    <li>
+                      <Link>Action</Link>
+                    </li>
+                    <li>
+                      <Link>Crime</Link>
+                    </li>
+                    <li>
+                      <Link>Romantic</Link>
+                    </li>
+                    <li>
+                      <Link>Thriller</Link>
+                    </li>
+                  </ul>
                   <h1>The Generations</h1>
-                  <p>Action,Crime,Drama,Thriller</p>
                 </div>
               </div>
               <div className="watch_trailler">

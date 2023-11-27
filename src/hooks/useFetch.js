@@ -1,25 +1,24 @@
-import { useEffect, useState } from 'react';
-import { fetchDataFromApi } from '../Api/api';
-const useFetch = (url) => {
+import { useEffect, useState } from "react";
+import { fetchDataFromApi } from "../Api/api";
+// &s=Red&type=movie'
+const useFetch = (queryparams) => {
+  //loading data gelmedikde gozleme
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-
   useEffect(() => {
     setLoading(true);
     setData(null);
     setError(null);
-
-    fetchDataFromApi(url)
+    fetchDataFromApi(queryparams)
       .then((res) => {
-        setLoading(false);
-        setData(res);
+        setData(res.data);
       })
       .catch(() => {
-        setLoading(false);
-        setError('Something went wrong!');
-      });
-  }, [url]);
+        setError("Something went wrong!");
+      })
+      .finally(() => setLoading(false));
+  }, [queryparams]);
 
   return { data, loading, error };
 };

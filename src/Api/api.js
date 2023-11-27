@@ -1,15 +1,15 @@
-import axios from 'axios';
+// import { Language } from "@mui/icons-material";
+import axios from "axios";
+// den sonra params ,? sonra queryparams
+const BASE_URL = " http://www.omdbapi.com/";
 
-const BASE_URL = ' http://www.omdbapi.com/?i=tt3896198&apikey=84677991';
-
-export const fetchDataFromApi = async (url,params) => {
-  try {
-    const { data } = await axios.get(BASE_URL + url,{
-      params
-    });
-    return data;
-  } catch (err) {
-    console.log(err);
-    return err;
-  }
+export const fetchDataFromApi = (queryparams) => {
+  return axios.get(BASE_URL, {
+    params: queryparams,
+  });
 };
+//http://www.omdbapi.com/?i=tt3896198&apikey=84677991&s=Red&type=movie
+
+// export const getUsersComments = () => {
+//   return axios.get("https://jsonplaceholder.typicode.com/comments");
+// };

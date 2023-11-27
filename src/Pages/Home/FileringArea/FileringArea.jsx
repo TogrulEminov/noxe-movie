@@ -1,10 +1,16 @@
-import { Container, Row } from 'react-bootstrap';
-import './FileringArea.scss';
-import FilmCard from '../../../Compnents/FilmCard/FilmCard';
-import useFetch from '../../../hooks/useFetch';
+import { Container, Row } from "react-bootstrap";
+import "./FileringArea.scss";
+import FilmCard from "../../../Compnents/FilmCard/FilmCard";
+import useFetch from "../../../hooks/useFetch";
+const queryparams = {
+  i: "tt3896198",
+  apikey: "84677991",
+  s: "Red",
+  type: "movie",
+};
 const FileringArea = () => {
-  const { data, loading } = useFetch('&s=Red&type=movie');
-  console.log(data);
+  const { data, loading } = useFetch(queryparams);
+
   return (
     <section id="filtering_section">
       <Container>

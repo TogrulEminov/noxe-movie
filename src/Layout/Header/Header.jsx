@@ -1,40 +1,37 @@
-import Container from 'react-bootstrap/Container';
-import './Header.scss';
-import Logo from '../../Compnents/Logo/Logo';
-import MenuIcon from '@mui/icons-material/Menu';
-import { NavLink, useLocation } from 'react-router-dom';
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import PersonIcon from '@mui/icons-material/Person';
-import SearchIcon from '@mui/icons-material/Search';
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import SearchHeader from './SearchHeader/SearchHeader';
-import { useDispatch } from 'react-redux';
+import Container from "react-bootstrap/Container";
+import "./Header.scss";
+import Logo from "../../Compnents/Logo/Logo";
+import MenuIcon from "@mui/icons-material/Menu";
+import { NavLink, useLocation } from "react-router-dom";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import PersonIcon from "@mui/icons-material/Person";
+import SearchIcon from "@mui/icons-material/Search";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import SearchHeader from "./SearchHeader/SearchHeader";
+import { useDispatch } from "react-redux";
 import {
   closeMenu,
   openMenu,
   openSearch,
-} from '../../Redux/Control/HeaderSlice';
-import MobileSideBar from './MobileSideBar/MobileSideBar';
-import { useCallback, useEffect, useState } from 'react';
-import { useWindowSize } from '@uidotdev/usehooks';
+} from "../../Redux/Control/HeaderSlice";
+import MobileSideBar from "./MobileSideBar/MobileSideBar";
+import { useCallback, useEffect, useState } from "react";
+import { useWindowSize } from "@uidotdev/usehooks";
 const Header = () => {
   const dispatch = useDispatch();
   const { width } = useWindowSize();
   const handleOpenSearch = () => {
     dispatch(openSearch());
-    
   };
-
   const location = useLocation();
   const [scrolled, setScrolled] = useState(false);
-  useEffect(()=>{
-    if(location.pathname==="/" && location.pathname==="/film"  ){
-      document.body.classList.add('bg-dark')
+  useEffect(() => {
+    if (location.pathname === "/" || location.pathname === "/film") {
+      document.body.classList.add("bg-dark");
+    } else {
+      document.body.classList.remove("bg-dark");
     }
-    else{
-      document.body.classList.remove('bg-dark')
-    }
-  })
+  });
   const handleScroll = useCallback(() => {
     const offSet = window.scrollY;
     if (offSet > 150) {
@@ -48,11 +45,11 @@ const Header = () => {
       dispatch(closeMenu());
     }
     return;
-  }, [dispatch,width]);
+  }, [dispatch, width]);
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, [handleScroll]);
 
@@ -68,7 +65,11 @@ const Header = () => {
   }, [location.pathname, resetStateOnPathChange]);
 
   return (
-    <header className={`header ${scrolled ? 'sticky-header' : ''} ${location.pathname==='/'?'main_header':'' }`}>
+    <header
+      className={`header ${scrolled ? "sticky-header" : ""} ${
+        location.pathname === "/" ? "main_header" : ""
+      }`}
+    >
       <Container>
         <div className="header_wrapper">
           <div className="left_header_content">
@@ -89,10 +90,10 @@ const Header = () => {
                   </span>
                   <ul className="submenu_desktop">
                     <li>
-                      <NavLink to='/about'>About</NavLink>
+                      <NavLink to="/about">About</NavLink>
                     </li>
                     <li>
-                      <NavLink to='/film'>Film Portfolio</NavLink>
+                      <NavLink to="/film">Film Portfolio</NavLink>
                     </li>
                     <li>
                       <NavLink>Shop</NavLink>
@@ -131,10 +132,9 @@ const Header = () => {
                     Blog <KeyboardArrowDownIcon />
                   </span>
                 </li>
-                
               </ul>
               <ul className="header_addition_list">
-              <li>
+                <li>
                   <NavLink to="" className="shopping">
                     <ShoppingCartIcon />
                     <p>0</p>
