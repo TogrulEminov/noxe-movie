@@ -6,29 +6,10 @@ import 'swiper/css';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import { Pagination } from 'swiper/modules';
+import useFetch from '../../../hooks/useFetch';
 const HeroPageBanner = () => {
-  const slider = [
-    {
-      id: 1,
-      url: 'https://demo.gloriathemes.com/noxe/demo/wp-content/uploads/2020/03/title-image-13-1255x790.jpg',
-      title: 'Red Brother',
-    },
-    {
-      id: 2,
-      url: 'https://demo.gloriathemes.com/noxe/demo/wp-content/uploads/2020/02/title-image-12-1255x790.jpg',
-      title: 'Screampark',
-    },
-    {
-      id: 3,
-      url: 'https://demo.gloriathemes.com/noxe/demo/wp-content/uploads/2020/02/title-image-7-1255x790.jpg',
-      title: 'The Gentleman',
-    },
-    {
-      id: 4,
-      url: 'https://demo.gloriathemes.com/noxe/demo/wp-content/uploads/2020/02/title-image-5-1255x790.jpg',
-      title: 'The Generations',
-    },
-  ];
+  const {data}=useFetch('/tv/popular')
+  
   const pagination = {
     clickable: true,
     renderBullet: function (index, className) {
@@ -60,10 +41,10 @@ const HeroPageBanner = () => {
           }}
           className="hero_banner_wrapper">
           <div className="swiper-wrapper">
-            {slider?.map((item) => {
+            {data?.results?.map((item) => {
               return (
                 <SwiperSlide key={item.id}>
-                  <Poster src={item?.url} title={item?.title} />
+                  <Poster src={`https://image.tmdb.org/t/p/original/${item?.poster_path}`} title={item?.name} />
                 </SwiperSlide>
               );
             })}

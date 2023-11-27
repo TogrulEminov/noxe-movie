@@ -4,7 +4,6 @@ import FilmCard from '../../../Compnents/FilmCard/FilmCard';
 import useFetch from '../../../hooks/useFetch';
 const FileringArea = () => {
   const { data, loading } = useFetch('/movie/popular');
-  console.log(data);
   return (
     <section id="filtering_section">
       <Container>
