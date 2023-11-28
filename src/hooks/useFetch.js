@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { fetchDataFromApi } from '../Api/api';
-const useFetch = (url) => {
+const useFetch = (queryparams) => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -10,16 +10,16 @@ const useFetch = (url) => {
     setData(null);
     setError(null);
 
-    fetchDataFromApi(url)
+    fetchDataFromApi(queryparams)
       .then((res) => {
         setLoading(false);
-        setData(res);
+        setData(res.data);
       })
       .catch(() => {
         setLoading(false);
         setError('Something went wrong!');
       });
-  }, [url]);
+  }, []);
 
   return { data, loading, error };
 };

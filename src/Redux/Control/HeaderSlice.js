@@ -30,7 +30,6 @@ const headerSlice = createSlice({
   },
 });
 
-console.log(headerSlice);
 export const {
   openMenu,
   closeMenu,

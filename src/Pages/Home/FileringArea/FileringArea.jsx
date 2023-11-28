@@ -3,7 +3,13 @@ import './FileringArea.scss';
 import FilmCard from '../../../Compnents/FilmCard/FilmCard';
 import useFetch from '../../../hooks/useFetch';
 const FileringArea = () => {
-  const { data, loading } = useFetch('/movie/popular');
+  const queryparams = {
+    i: "tt3896198",
+    apikey: "84677991",
+    s: "Red",
+    type: "movie",
+  };
+  const { data, loading } = useFetch(queryparams);
   return (
     <section id="filtering_section">
       <Container>
@@ -15,9 +21,9 @@ const FileringArea = () => {
             <p>loading...</p>
           ) : (
             <>
-              {data?.results?.map((e) => {
+              {data?.Search?.map((e) => {
                 return (
-                  <FilmCard key={e.id} title={e.original_title} img={`https://image.tmdb.org/t/p/original/${e.poster_path}`} />
+                  <FilmCard key={e.imdbID} title={e.Title} img={e.Poster}/>
                 );
               })}
             </>

@@ -8,7 +8,13 @@ import 'swiper/css/pagination';
 import { Pagination } from 'swiper/modules';
 import useFetch from '../../../hooks/useFetch';
 const HeroPageBanner = () => {
-  const {data}=useFetch('/tv/popular')
+  const queryparams = {
+    i: "tt3896198",
+    apikey: "84677991",
+    s: "Batman",
+    type: "movie",
+  };
+  const {data}=useFetch(queryparams)
   
   const pagination = {
     clickable: true,
@@ -41,10 +47,10 @@ const HeroPageBanner = () => {
           }}
           className="hero_banner_wrapper">
           <div className="swiper-wrapper">
-            {data?.results?.map((item) => {
+            {data?.Search?.map((item) => {
               return (
-                <SwiperSlide key={item.id}>
-                  <Poster src={`https://image.tmdb.org/t/p/original/${item?.poster_path}`} title={item?.name} />
+                <SwiperSlide key={item.imdbID}>
+                  <Poster  src={item?.Poster} title={item?.Title} />
                 </SwiperSlide>
               );
             })}
