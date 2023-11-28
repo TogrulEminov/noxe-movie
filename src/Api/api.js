@@ -1,21 +1,14 @@
-import axios from 'axios';
+import axios from "axios";
+// den sonra params ,? sonra queryparams
+const BASE_URL = " http://www.omdbapi.com/";
 
-const BASE_URL = 'https://api.themoviedb.org/3';
-const TMDB_TOKEN =
-  'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2YzBmMTk4MDJkOTI4Y2FhNDk1MmFhNGFmNDU5YzJiYyIsInN1YiI6IjY1NWI0ZjBlN2YwNTQwMThkNDIwZWI2NSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.VCBNQylOrqRHikR8qYwjsGlxeYG8PleBKzMZHK6Tdoc';
+export const fetchDataFromApi = (queryparams) => {
+  return axios.get(BASE_URL, {
+    params: queryparams,
+  });
+};
+//http://www.omdbapi.com/?i=tt3896198&apikey=84677991&s=Red&type=movie
 
-const headers = {
-  Authorization: 'bearer ' + TMDB_TOKEN,
-};
-export const fetchDataFromApi = async (url,params) => {
-  try {
-    const { data } = await axios.get(BASE_URL + url,{
-      headers,
-      params
-    });
-    return data;
-  } catch (err) {
-    console.log(err);
-    return err;
-  }
-};
+// export const getUsersComments = () => {
+//   return axios.get("https://jsonplaceholder.typicode.com/comments");
+// };
