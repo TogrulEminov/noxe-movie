@@ -5,7 +5,6 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import { Pagination } from 'swiper/modules';
 import useFetch from '../../../hooks/useFetch';
 const HeroPageBanner = () => {
   const queryparams = {
@@ -16,12 +15,7 @@ const HeroPageBanner = () => {
   };
   const {data}=useFetch(queryparams)
   
-  const pagination = {
-    clickable: true,
-    renderBullet: function (index, className) {
-      return '<span class="' + className + '">' + (index + 1) + '</span>';
-    },
-  };
+
   return (
     <section id="hero_banner">
       <Container>
@@ -30,7 +24,6 @@ const HeroPageBanner = () => {
           slidesPerView={1}
           loop={false}
           autoplay={true}
-          modules={[Pagination]}
           breakpoints={{
             0: {
               slidesPerView: 1,
