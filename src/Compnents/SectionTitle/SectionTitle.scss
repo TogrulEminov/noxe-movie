@@ -1,0 +1,39 @@
+@import '../../css-config/Mixins.scss';
+#section_title {
+  padding: 60px 0;
+  .section_content {
+    text-align: center;
+    h6 {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 20px;
+      font-weight: bold;
+      text-transform: uppercase;
+      @include md{
+        font-size: 16px;
+      }
+    }
+    h3{
+        font-weight: bold;
+        font-size: 26px;
+        color: #fff;
+        text-transform: capitalize;
+        @include md{
+            font-size: 43px;
+        }
+    }
+    p{
+        max-width:100%;
+        line-height: 1.5;
+        margin: 20px auto;
+        hyphens: auto;
+        font-size: 14px;
+        color: #666;
+        @include md{
+            font-size: 16px;
+            max-width: 800px;
+        }
+    }
+    
+  }
+}
