@@ -2,9 +2,7 @@ import { Container } from 'react-bootstrap';
 import './HeroPageBanner.scss';
 import Poster from '../../../Compnents/Poster/Poster';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css';
-import 'swiper/css/pagination';
+import 'swiper/swiper-bundle.css';
 import useFetch from '../../../hooks/useFetch';
 const HeroPageBanner = () => {
   const queryparams = {
@@ -20,7 +18,6 @@ const HeroPageBanner = () => {
     <section id="hero_banner">
       <Container>
         <Swiper
-          // pagination={pagination}
           slidesPerView={1}
           loop={false}
           autoplay={true}

@@ -3,10 +3,13 @@ import SectionTitle from '../../../Compnents/SectionTitle/SectionTitle';
 import './Latest.scss';
 import SliderCard from '../../../Compnents/SliderCard/SliderCard';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation } from 'swiper/modules';
+import SwiperCore, { Navigation } from 'swiper';
+import 'swiper/swiper-bundle.css';
+
 import { useRef } from 'react';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+SwiperCore.use([Navigation]);
 
 const Latest = () => {
   const prevButtonRef = useRef(null);
