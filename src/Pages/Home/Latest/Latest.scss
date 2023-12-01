@@ -2,14 +2,14 @@
 #our_latest{
     .slide_carousel{
         .swiper-controls{
-            border-top: 1px solid rgba(255, 255, 255, 0.12);
+            border-top: 1px solid rgba(0, 0, 0, 0.12);
             padding: 37px 0;
             margin-top: 60px;
             display: flex;
             justify-content: space-between;
             button{
                 border: none;
-                color: #fff;
+                color: #000;
                 background: transparent;
             }
         }
