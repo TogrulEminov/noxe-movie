@@ -4,6 +4,7 @@ import Latest from './Latest/Latest';
 import WeDo from './WeDo/WeDo';
 import Reviews from './Reviews/Reviews';
 import Referances from './Referances/Referances';
+import Team from './Team/Team';
 const Home = () => {
   return (
     <main id="main">
@@ -12,6 +13,7 @@ const Home = () => {
       <Latest/>
       <WeDo/>
       <Reviews/>
+      <Team/>
       <Referances/>
     </main>
   );
