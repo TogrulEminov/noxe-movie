@@ -28,7 +28,7 @@ const Header = () => {
   const location = useLocation();
   const [scrolled, setScrolled] = useState(false);
   useEffect(()=>{
-    if(location.pathname==="/" || location.pathname==="/film"  ){
+    if(location.pathname==="/film"  ){
       document.body.classList.add('bg-dark')
     }
     else{
@@ -75,7 +75,7 @@ const Header = () => {
             <button className="hamburger" onClick={() => dispatch(openMenu())}>
               <MenuIcon />
             </button>
-            <Logo />
+            <Logo  scrolled={scrolled}/>
           </div>
           <div className="right_header_content">
             <nav className="header_nav">

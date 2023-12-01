@@ -9,33 +9,35 @@ import { FaFacebookF } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 const Footer = () => {
   return (
-    <footer>
+    <footer id="footer">
       <Container>
         <Row className="row">
-          <Col  className="col" md={3} xs={12}>
-            <ul>
+        <Col  xl={3} lg={3} md={6} sm={6} xs={12}>
+            <div className="footer_content">
+             <div className="footer_articles">
+             <h3>Pages</h3>
+            <ul className="footer_list">
               <li>
-                <Link >Pages</Link>
+                <Link to='/'>Home</Link>
               </li>
               <li>
-                <Link>Home</Link>
+                <Link to=''>About Us</Link>
               </li>
               <li>
-                <Link>About Us</Link>
+                <Link  to=''>Studio</Link>
               </li>
               <li>
-                <Link>Studio</Link>
-              </li>
-              <li>
-                <Link>Contact Us</Link>
+                <Link  to=''>Contact Us</Link>
               </li>
             </ul>
+             </div>
+            </div>
           </Col>
-          <Col className="col" md={3} xs={12}>
-            <ul>
-              <li>
-                <Link>Our Studio</Link>
-              </li>
+          <Col  xl={3} lg={3}  sm={6} md={6}  xs={12}>
+            <div className="footer_content">
+              <div className="footer_articles">
+                <h3>Our Studio</h3>
+                <ul>
               <li>
                 <Link>Services</Link>
               </li>
@@ -49,12 +51,15 @@ const Footer = () => {
                 <Link>History</Link>
               </li>
             </ul>
+              </div>
+            </div>
+            
           </Col>
-          <Col className="col" md={3} xs={12}>
-            <ul>
-              <li>
-                <Link>Noxe Studio</Link>
-              </li>
+          <Col  xl={3} lg={3} md={6} sm={6}  xs={12}>
+            <div className="footer_content">
+              <div className="footer_articles">
+                <h3>Noxe Studio</h3>
+                <ul>
               <li>
                 <Link>The Noxe Film Studio</Link>
               </li>
@@ -65,9 +70,14 @@ const Footer = () => {
                 <Link>Colifornia,USA</Link>
               </li>
             </ul>
+              </div>
+            </div>
           </Col>
-          <Col className="col" md={3} xs={12}>
-            <ul className="icons">
+          <Col xl={3} lg={3} md={6} sm={6}  xs={12}>
+            <div className="footer_content">
+              <div className="footer_articles">
+                <h3>Social</h3>
+                <ul className="icons">
               <li>
                 <Link>
                   <FaInstagram className="icon" />
@@ -89,6 +99,8 @@ const Footer = () => {
                 </Link>
               </li>
             </ul>
+              </div>
+           </div>
           </Col>
         </Row>
       </Container>

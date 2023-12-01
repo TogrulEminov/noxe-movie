@@ -1,6 +1,7 @@
 @import '../../../css-config/Mixins.scss';
 #what_we_do {
   .service_boxes {
+    padding-bottom: 60px;
     .row {
         row-gap: 0;
         .col-12{
@@ -25,12 +26,12 @@
             h3{
                 font-size: 24px;
                 letter-spacing: -1px;
-                color: #fff;
+                color: #000;
                 margin-bottom: 10px;
             }
             p{
                 font-size: 16px;
-                color: #fff;
+                color: #000;
                 opacity: .7;
                 line-height: 1.2;
                 hyphens: auto;

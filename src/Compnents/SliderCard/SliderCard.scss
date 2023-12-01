@@ -17,7 +17,7 @@
       font-weight: bold;
       text-align: center;
       letter-spacing: -1px;
-      color: #fff;
+      color: #000;
       margin-bottom: 10px;
     }
     .slider_film_genres {
@@ -26,7 +26,7 @@
       li {
         &:after {
           content: ',';
-          color: #fff;
+          color: #000;
           margin: 0 3px;
         }
         &:last-child {
@@ -35,7 +35,7 @@
           }
         }
         a {
-          color: #fff;
+          color: #000;
           font-size: 14px;
           transition: 0.3s ease-in-out;
           &:hover {

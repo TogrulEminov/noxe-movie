@@ -21,11 +21,36 @@
     animation: slideDown 0.6s ease-in-out forwards;
     box-shadow: 0 1px 30px rgba(0, 0, 0, 0.05);
     padding: 5px 0;
+    .header_wrapper{
+    .right_header_content {
+      .header_nav {
+        .header_navbar_list {
+          li {
+            color: #fff;
+          }
+        }
+        .header_addition_list{
+          li{
+            color: #fff;
+            a{
+              &.shopping{
+                p{
+                  background-color: #fff;
+                  color: #000;
+                }
+               
+              }
+            }
+          }
+        }
+        }
+      }
+        }
   }
 &.main_header{
   background-color: #fff;
   @include lg{
-    background-color: #000;
+    background-color: transparent;
   }
 }
   .header_wrapper {
@@ -58,6 +83,7 @@
           li {
             line-height: 50px;
             padding: 13px 15px;
+            color: #000;
             &.header_navbar_item {
               position: relative;
               &:hover {
@@ -70,7 +96,7 @@
                 }
               }
               span {
-                color: #fff;
+                color: currentColor;
                 font-size: 16px;
                 font-weight: bold;
                 display: block;
@@ -106,6 +132,7 @@
                 align-items: center;
                 flex-wrap: wrap;
                 li {
+                  color: #fff;
                   line-height: 20px;
                   width: 100%;
                   padding: 5px 30px;
@@ -113,7 +140,7 @@
               }
             }
             a {
-              color: #fff;
+              color: currentColor;
               font-size: 16px;
               font-weight: bold;
               transition: 0.3s ease-in-out;
@@ -127,6 +154,7 @@
         .header_addition_list {
           @include flex();
           li {
+            color: #000;
             padding: 13px 15px;
             &:nth-child(1){
               display: none;
@@ -135,7 +163,7 @@
               }
             }
             a{
-              color: #fff;
+             color: currentColor;
               &.shopping {
                 position: relative;
                 p {
@@ -145,10 +173,10 @@
                   @include flex();
                   justify-content: center;
                   font-size: 12px;
-                  background-color: #fff;
+                  background-color: #000;
                   top: -20px;
                   right: -10px;
-                  color: #000;
+                  color: #fff;
                   border-radius: 50%;
                 }
               }
@@ -159,7 +187,7 @@
               color: #000;
               cursor: pointer;
               @include lg {
-                color: #fff;
+                color: currentColor;
               }
             }
           }
