@@ -38,19 +38,35 @@ const Reviews = () => {
           loop={true}
           autoplay={true}
           pagination={{
-            el: '.swiper-pagination',
+            el: '#containerForBulletsReviews',
+            type: 'bullets',
+            bulletClass: 'swiper-custom-bullet',
+            bulletActiveClass: 'swiper-custom-bullet-active',
             clickable: true,
           }}
           modules={[Pagination]}
+          onSwiper={(swiper) => {
+            setTimeout(() => {
+              swiper.pagination.destroy();
+              swiper.pagination.init();
+              swiper.pagination.update();
+            });
+          }}
           className="reviews_slider">
           {reviewsSlider?.map((item) => {
             return (
               <SwiperSlide key={item.id}>
-                <ReviewsCard  title={item?.title} desc={item?.desc} img={item?.img} />
+                <ReviewsCard
+                  title={item?.title}
+                  desc={item?.desc}
+                  img={item?.img}
+                />
               </SwiperSlide>
             );
           })}
-          <div className="swiper-pagination"></div>
+          <div className="swiper-controls">
+            <div id="containerForBulletsReviews"></div>
+          </div>
         </Swiper>
       </Container>
     </section>

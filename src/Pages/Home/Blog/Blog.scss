@@ -1,0 +1,79 @@
+@import '../../../css-config/Mixins.scss';
+#blog_area {
+  padding: 60px 0;
+  background: #000;
+  .row {
+    row-gap: 20px;
+    .blog_card {
+      .blog_card_image {
+        width: 100%;
+        height: 100%;
+        margin-bottom: 20px;
+        img {
+          max-height: 280px;
+          width: 100%;
+          height: 100%;
+        }
+      }
+      .blog_card_content {
+        .blog_genres {
+          margin-bottom: 10px;
+          display: block;
+          font-size: 16px;
+          color: #fff;
+          opacity: 0.5;
+        }
+        h3{
+            color: #fff;
+            font-size: 24px;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            @include xl{
+                font-size: 28px;
+            }
+        }
+        .creator_date{
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            li{
+                color: #fff;
+                @include flex();
+                gap: 5px;
+                &:first-child{
+                    &:before{
+                        content:unset;
+                    }
+                }
+                &:before{
+                    content: '-';
+                    color: #fff;
+                    margin: 0 4px;
+                }
+                span{
+                    color: currentColor;
+                    opacity: .6;
+                    font-size: 14px;
+                }
+                a{
+                    color: currentColor;
+                    font-size: 16px;
+                }
+                &:last-child{
+                    a{
+                        opacity: .5;
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+        p{
+            color: #fff;
+            line-height: 1.5;
+            font-size: 14px;
+
+        }
+      }
+    }
+  }
+}

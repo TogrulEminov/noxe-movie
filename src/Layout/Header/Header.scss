@@ -22,6 +22,11 @@
     box-shadow: 0 1px 30px rgba(0, 0, 0, 0.05);
     padding: 5px 0;
     .header_wrapper{
+      .left_header_content {
+        .hamburger {
+          color: #fff;
+        }
+      }
     .right_header_content {
       .header_nav {
         .header_navbar_list {
@@ -32,15 +37,19 @@
         .header_addition_list{
           li{
             color: #fff;
-            a{
-              &.shopping{
-                p{
-                  background-color: #fff;
-                  color: #000;
-                }
-               
-              }
+            button{
+              color: #fff;
             }
+              a{
+                &.shopping{
+                  p{
+                    background-color: #fff;
+                    color: #000;
+                  }
+                 
+                }
+              }
+           
           }
         }
         }

@@ -7,6 +7,25 @@
             margin-top: 60px;
             display: flex;
             justify-content: space-between;
+            #containerForBullets{
+                @include flex();
+                span{
+                   background: #00000074;
+                    display: block;
+                    margin: 4px;
+                    cursor: pointer;
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 50%;
+                    &.swiper-custom-bullet-active{
+                        background: #000;
+                    }
+                    @include lg{
+                        width: 12px;
+                        height: 12px;
+                    }
+                }
+            }
             button{
                 border: none;
                 color: #000;
