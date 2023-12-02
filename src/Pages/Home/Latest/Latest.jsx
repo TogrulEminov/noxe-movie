@@ -30,6 +30,13 @@ const Latest = () => {
             prevEl: prevButtonRef.current,
             nextEl: nextButtonRef.current,
           }}
+          pagination={{
+            el: "#containerForBullets",
+            type: "bullets",
+            bulletClass: "swiper-custom-bullet",
+            bulletActiveClass: "swiper-custom-bullet-active",
+            clickable: true,
+       }}
           loop={true}
           modules={[Navigation]}
           autoplay={true}
@@ -78,11 +85,12 @@ const Latest = () => {
           <SwiperSlide>
             <SliderCard />
           </SwiperSlide>
-          <div className="swiper-pagination"></div>
+
           <div className="swiper-controls">
             <button ref={prevButtonRef}>
               <ArrowBackIcon />
             </button>
+            <div id="containerForBullets"></div>
             <button ref={nextButtonRef}>
               <ArrowForwardIcon />
             </button>

@@ -5,6 +5,7 @@ import WeDo from './WeDo/WeDo';
 import Reviews from './Reviews/Reviews';
 import Referances from './Referances/Referances';
 import Team from './Team/Team';
+import Blog from './Blog/Blog';
 const Home = () => {
   return (
     <main id="main">
@@ -14,7 +15,8 @@ const Home = () => {
       <WeDo/>
       <Reviews/>
       <Team/>
-      <Referances/>
+      <Referances/> 
+      <Blog/>
     </main>
   );
 };

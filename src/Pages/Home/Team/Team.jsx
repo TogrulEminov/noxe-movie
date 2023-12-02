@@ -34,7 +34,7 @@ const Team = () => {
   return (
     <section id='team_section' >
         <SectionTitle headingTop='A CREATIVE CREW' headingCenter='Meet the Team' pharagraph="Get to know the talented and passionate individuals who make up the Noxe team. From directors to editors, our team is dedicated to bringing cinematic magic to life. Learn more about their backgrounds, experiences, and creative inspirations that drive our films to success."/>
-    <section class='team_cards'>
+    <section className='team_cards'>
         <Container>
             <Row>
                 {team?.map((item)=>{

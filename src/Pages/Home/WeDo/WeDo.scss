@@ -4,9 +4,11 @@
     padding-bottom: 60px;
     .row {
         row-gap: 0;
+       @include lg{
         .col-12{
-            padding: 0;
-        }
+          padding: 0;
+      }
+       }
       .service_item {
         height: 100%;
         text-align: center;

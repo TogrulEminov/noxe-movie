@@ -4,17 +4,29 @@
   padding: 60px 0;
   .reviews_slider {
     max-width:100%;
-    padding: 40px 0;
+    padding: 40px 0 60px;
     @include lg{
         max-width: 800px;
     }
-    .swiper-pagination {
+    .swiper-controls{
+      @include flex();
+      width: 100%;
+      justify-content: center;
+    #containerForBulletsReviews {
+      width: 100%;
+      @include flex();
+      position: absolute;
+      gap: 10px;
+      bottom: 0;
+      justify-content: center;
       span {
+        display: block;
         background: #000;
         width: 7px;
         height: 7px;
+        border-radius: 50%;
         opacity: 0.2;
-        &.swiper-pagination-bullet-active {
+        &.swiper-custom-bullet-active {
           width: 25px;
           opacity: 1;
           border-radius: 3px;
@@ -22,6 +34,7 @@
         }
       }
     }
+  }
     .reviews_card {
       width: 100%;
       .reviews_image {
