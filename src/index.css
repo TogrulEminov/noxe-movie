@@ -6,9 +6,9 @@ body {
     letter-spacing: normal;
    
 }
-body.bg-dark{
+/* body.bg-dark{
      background-color: #000 !important;
-}
+} */
 #main{
     padding-top: 70px;
 }
