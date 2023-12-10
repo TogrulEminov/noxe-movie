@@ -1,6 +1,6 @@
-import React from 'react'
+
 import "./Blog.scss"
-import { Col, Container, Row } from 'react-bootstrap'
+import {  Container, Row } from 'react-bootstrap'
 import BlogCard from '../../../Compnents/BlogCard/BlogCard'
 const Blog = () => {
   return (
@@ -8,7 +8,7 @@ const Blog = () => {
         <Container>
             <Row>
                 
-                    <BlogCard/>
+            <BlogCard/>
             </Row>
         </Container>
     </section>

@@ -5,22 +5,21 @@ import Col from "react-bootstrap/Col";
 import { Link } from "react-router-dom";
 import useFetch from "../../hooks/useFetch";
 const FilmPortfolio = () => {
-  const queryparams = {
-    i: "tt3896198",
-    apikey: "84677991",
-    s: "Red",
-    type: "movie",
-  };
-  const { data, loading } = useFetch(queryparams);
+    const IMAGE_PATH = "https://image.tmdb.org/t/p/w500/";
+
+  const data = useFetch();
+  console.log(data.data);
   return (
     <section id="portfolio">
       <Container>
         <Row>
-          {data?.Search?.map((item)=>{
+          {data.data?.map((item)=>{
+            console.log(item.backdrop_path
+                );
             return (
-              <Col key={item?.imdbID} className="col" xs={12} md={6}>
+              <Col key={item?.id} className="col" xs={12} md={6}>
               <div className="portfolio_card">
-                <img src={item?.Poster} alt={item?.Title} />
+                <img   src={`${IMAGE_PATH}${item.poster_path}`} alt={item?.title} />
                 <div className="text">
                   <div className="content">
                     <h1>{item?.Title}</h1>
