@@ -6,8 +6,8 @@
       row-gap: 20px;
 
       .teamCard {
-        @include xxl{
-            padding: 20px;
+        @include xxl {
+          padding: 20px;
         }
         .team_card_image {
           width: 100%;
@@ -16,7 +16,7 @@
           overflow: hidden;
           position: relative;
           transition: 0.3s ease-in-out;
-          @include lg{
+          @include lg {
             height: 415px;
           }
           cursor: pointer;
@@ -28,11 +28,11 @@
               overflow: visible;
               transform: translateY(0);
             }
-            .addition{
-                opacity: 1;
-                visibility:visible;
-                overflow: visible;
-                transform: translateY(0);
+            .addition {
+              opacity: 1;
+              visibility: visible;
+              overflow: visible;
+              transform: translateY(0);
             }
           }
           &:after {
@@ -59,7 +59,7 @@
             @include flex();
             opacity: 0;
             transform: translateY(100%);
-            transition: .4s ease-in-out;
+            transition: 0.4s ease-in-out;
             opacity: 0;
             visibility: hidden;
             overflow: hidden;
@@ -79,9 +79,9 @@
               justify-content: center;
               li {
                 color: #fff;
-                transition: .3s ease-in-out;
-                &:hover{
-                    color: #dddddd83;
+                transition: 0.3s ease-in-out;
+                &:hover {
+                  color: #dddddd83;
                 }
                 a {
                   color: currentColor;
@@ -98,14 +98,26 @@
         .team_card_content {
           text-align: center;
           h3 {
-            color: #000;
+            color: #fff;
             font-size: 24px;
             margin-bottom: 10px;
           }
           h6 {
-            color: #000;
+            color: #fff;
             font-size: 18px;
             opacity: 0.5;
+          }
+          p {
+            margin-top: 5px;
+            font-size: 16px;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            line-height: 1.5;
+            height: auto;
+            color: #ffff;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            -webkit-line-clamp: 2;
           }
         }
       }

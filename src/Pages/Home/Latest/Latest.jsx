@@ -9,12 +9,14 @@ import 'swiper/swiper-bundle.css';
 import { useRef } from 'react';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import useFetch from '../../../hooks/useFetch';
 SwiperCore.use([Navigation]);
 
 const Latest = () => {
   const prevButtonRef = useRef(null);
   const nextButtonRef = useRef(null);
-
+  const { data } = useFetch(`/movie/popular`);
+  const IMAGE_PATH = 'https://image.tmdb.org/t/p/w500/';
   return (
     <section id="our_latest">
       <SectionTitle
@@ -31,12 +33,12 @@ const Latest = () => {
             nextEl: nextButtonRef.current,
           }}
           pagination={{
-            el: "#containerForBullets",
-            type: "bullets",
-            bulletClass: "swiper-custom-bullet",
-            bulletActiveClass: "swiper-custom-bullet-active",
+            el: '#containerForBullets',
+            type: 'bullets',
+            bulletClass: 'swiper-custom-bullet',
+            bulletActiveClass: 'swiper-custom-bullet-active',
             clickable: true,
-       }}
+          }}
           loop={true}
           modules={[Navigation]}
           autoplay={true}
@@ -64,27 +66,16 @@ const Latest = () => {
             },
           }}
           className="slide_carousel">
-          <SwiperSlide>
-            <SliderCard />
-          </SwiperSlide>
-          <SwiperSlide>
-            <SliderCard />
-          </SwiperSlide>
-          <SwiperSlide>
-            <SliderCard />
-          </SwiperSlide>
-          <SwiperSlide>
-            <SliderCard />
-          </SwiperSlide>
-          <SwiperSlide>
-            <SliderCard />
-          </SwiperSlide>
-          <SwiperSlide>
-            <SliderCard />
-          </SwiperSlide>
-          <SwiperSlide>
-            <SliderCard />
-          </SwiperSlide>
+          {data?.map((slide) => {
+            return (
+              <SwiperSlide key={slide.id}>
+                <SliderCard
+                  title={slide?.original_title}
+                  src={`${IMAGE_PATH}${slide?.poster_path}`}
+                />
+              </SwiperSlide>
+            );
+          })}
 
           <div className="swiper-controls">
             <button ref={prevButtonRef}>

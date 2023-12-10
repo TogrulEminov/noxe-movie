@@ -40,6 +40,7 @@ const TeamCard = ({ img, title, work, desc }) => {
         <article className="team_card_content">
           <h3>{title}</h3>
           <h6>{work}</h6>
+          <p>{desc}</p>
         </article>
       </div>
     </Col>

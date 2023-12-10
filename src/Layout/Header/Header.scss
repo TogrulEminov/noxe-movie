@@ -44,7 +44,7 @@
                 &.shopping{
                   p{
                     background-color: #fff;
-                    color: #000;
+                    color: #fff;
                   }
                  
                 }
@@ -92,7 +92,7 @@
           li {
             line-height: 50px;
             padding: 13px 15px;
-            color: #000;
+            color: #fff;
             &.header_navbar_item {
               position: relative;
               &:hover {
@@ -163,7 +163,7 @@
         .header_addition_list {
           @include flex();
           li {
-            color: #000;
+            color: #fff;
             padding: 13px 15px;
             &:nth-child(1){
               display: none;
@@ -182,10 +182,10 @@
                   @include flex();
                   justify-content: center;
                   font-size: 12px;
-                  background-color: #000;
+                  background-color: #fff;
                   top: -20px;
                   right: -10px;
-                  color: #fff;
+                  color: #000;
                   border-radius: 50%;
                 }
               }

@@ -28,7 +28,7 @@ const Header = () => {
   const location = useLocation();
   const [scrolled, setScrolled] = useState(false);
   useEffect(()=>{
-    if(location.pathname==="/film"  ){
+    if(location.pathname==="/film"  || location.pathname==="/"  ){
       document.body.classList.add('bg-dark')
     }
     else{

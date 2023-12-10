@@ -2,7 +2,7 @@
 #our_latest{
     .slide_carousel{
         .swiper-controls{
-            border-top: 1px solid rgba(0, 0, 0, 0.12);
+            border-top: 1px solid rgba(255, 254, 254, 0.12);
             padding: 37px 0;
             margin-top: 60px;
             display: flex;
@@ -10,7 +10,7 @@
             #containerForBullets{
                 @include flex();
                 span{
-                   background: #00000074;
+                   background: #ffffff7c;
                     display: block;
                     margin: 4px;
                     cursor: pointer;
@@ -18,7 +18,7 @@
                     height: 10px;
                     border-radius: 50%;
                     &.swiper-custom-bullet-active{
-                        background: #000;
+                        background: #fff;
                     }
                     @include lg{
                         width: 12px;
@@ -28,7 +28,7 @@
             }
             button{
                 border: none;
-                color: #000;
+                color: #fff;
                 background: transparent;
             }
         }
