@@ -18,7 +18,7 @@ const Logo = ({ scrolled }) => {
                scrolled
               ?  LogoWhite
               :LogoBlack
-              && location.pathname === '/'
+              && !location.pathname === '/'
               ? LogoBlack
               : LogoWhite
           }

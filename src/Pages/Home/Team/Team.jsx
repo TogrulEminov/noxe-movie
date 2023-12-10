@@ -1,53 +1,44 @@
-import React from 'react'
-import "./Team.scss"
-import SectionTitle from '../../../Compnents/SectionTitle/SectionTitle'
-import { Container, Row } from 'react-bootstrap'
-import TeamCard from './TeamCard'
-import Elisa from "../../../Assets/Images/awards.webp"
-import Kevin from "../../../Assets/Images/team-3.webp"
-import James from "../../../Assets/Images/team-4.webp"
+import React from 'react';
+import './Team.scss';
+import SectionTitle from '../../../Compnents/SectionTitle/SectionTitle';
+import { Container, Row } from 'react-bootstrap';
+import TeamCard from './TeamCard';
+import Elisa from '../../../Assets/Images/awards.webp';
+import Kevin from '../../../Assets/Images/team-3.webp';
+import James from '../../../Assets/Images/team-4.webp';
+import useFetch from '../../../hooks/useFetch';
 const Team = () => {
-
-    const team=[
-        {
-            id:1,
-            title:'Elisa Velasques',
-            work:'Editor',
-            desc:"Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus elit. Phasellus rhoncus nulla ut metus.",
-            img:Elisa
-        },
-        {
-            id:2,
-            title:'Kevin James',
-            desc:"Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus elit. Phasellus rhoncus nulla ut metus.",
-            work:'Editor',
-            img:Kevin
-        },
-        {
-            id:3,
-            title:'James Calvin',
-            desc:"Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus elit. Phasellus rhoncus nulla ut metus.",
-            work:'Editor',
-            img:James
-        }
-    ]
+  const { data, loading } = useFetch(`/person/popular`);
+  console.log(data) ;
+  const IMAGE_PATH = 'https://image.tmdb.org/t/p/w500/';
   return (
-    <section id='team_section' >
-        <SectionTitle headingTop='A CREATIVE CREW' headingCenter='Meet the Team' pharagraph="Get to know the talented and passionate individuals who make up the Noxe team. From directors to editors, our team is dedicated to bringing cinematic magic to life. Learn more about their backgrounds, experiences, and creative inspirations that drive our films to success."/>
-    <section className='team_cards'>
+    <section id="team_section">
+      <SectionTitle
+        headingTop="A CREATIVE CREW"
+        headingCenter="Meet the Team"
+        pharagraph="Get to know the talented and passionate individuals who make up the Noxe team. From directors to editors, our team is dedicated to bringing cinematic magic to life. Learn more about their backgrounds, experiences, and creative inspirations that drive our films to success."
+      />
+      <section className="team_cards">
         <Container>
-            <Row>
-                {team?.map((item)=>{
-                    return (
-                        <TeamCard key={item?.id} img={item?.img} title={item?.title} work={item?.work} desc={item?.desc}/>
-
-                    )
-                })}
-            </Row>
+          <Row>
+            {data?.slice(0,3).map((item) => {
+                const known_for=item?.known_for.map((g)=>g.overview)
+                console.log(known_for);
+              return (
+                <TeamCard
+                  key={item?.id}
+                  img={`${IMAGE_PATH}${item?.profile_path}`}
+                  title={item?.name}
+                  work={item?.known_for_department}
+                  desc={known_for[0]}
+                />
+              );
+            })}
+          </Row>
         </Container>
+      </section>
     </section>
-     </section>
-  )
-}
+  );
+};
 
-export default Team
+export default Team;

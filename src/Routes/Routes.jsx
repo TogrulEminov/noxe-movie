@@ -1,24 +1,29 @@
-import About from "../Pages/About/About";
-import Home from "../Pages/Home/Home";
-import FilmPortfolio from "../Pages/Portfolio/FilmPortfolio";
-import MainRoot from "../Router/MainRoot";
+import About from '../Pages/About/About';
+import Detail from '../Pages/Detail/Detail';
+import Home from '../Pages/Home/Home';
+import FilmPortfolio from '../Pages/Portfolio/FilmPortfolio';
+import MainRoot from '../Router/MainRoot';
 
 export const ROUTES = [
   {
-    path: "/",
+    path: '/',
     element: <MainRoot />,
     children: [
       {
-        path: "",
+        path: '',
         element: <Home />,
       },
       {
-        path: "about",
+        path: 'about',
         element: <About />,
       },
       {
-        path: "film",
+        path: 'film',
         element: <FilmPortfolio />,
+      },
+      {
+        path: ':mediaType/:id',
+        element: <Detail />,
       },
     ],
   },
