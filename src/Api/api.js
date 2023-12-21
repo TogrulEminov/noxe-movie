@@ -1,44 +1,11 @@
-// import { useState, useEffect } from "react";
-// import axios from "axios";
-// const Api = () => {
-//   const API_URL = "https://api.themoviedb.org/3";
-//   const [movies, setMovies] = useState([]);
-//   const fetchData = async () => {
-//     const {data} = await axios.get(`${API_URL}/discover/movie`, {
-//       params: {
-//         api_key: "5de87e1bc5e9a0ac27e1f4758765722a",
-//       },
-//     });
-//     setMovies(data.results)
-//   };
-//   console.log(movies);
-//   useEffect(()=>{
-//     fetchData()
-//   },[])
-// };
+import axios from 'axios';
 
-// export default Api;
-
-// export const fetchDataFromApi=()=>{
-//   const API_URL = "https://api.themoviedb.org/3/discover/movie";
-//   return axios.get(API_URL,{
-//     params: {
-//       api_key: "5de87e1bc5e9a0ac27e1f4758765722a",
-
-//     }
-//   })
-// }
-
-//
-
-import axios from "axios";
-
-const BASE_URL = "https://api.themoviedb.org/3";
+const BASE_URL = 'https://api.themoviedb.org/3';
 const TMDB_TOKEN =
-  "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjNTc5Nzc4ZGZkMTY2Nzc1MzYxOTc1MzJjMTE2ZmM0OCIsInN1YiI6IjY0YzIzYzdiZWRlMWIwMDExZjdlMDliZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.LJW5j94HzAc8x3EwjpmS07FAQd8st-OxB-Isxy6CIoc";
+  'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjNmU5MzM1Yjg5Y2E3NWE3MGJjY2UxYzcyYmZkMDQ4ZCIsInN1YiI6IjYzYmVkN2FiODU4Njc4MDBmMDhjZjI3NiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.sQHes_rn51wewxY_7nZLxGssnd67J8ieiLOIo2Bg_FI';
 
 const headers = {
-  Authorization: "bearer " + TMDB_TOKEN,
+  Authorization: 'bearer ' + TMDB_TOKEN,
 };
 
 export const fetchDataFromApi = async (url, params) => {

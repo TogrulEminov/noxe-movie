@@ -31,7 +31,7 @@ const HeroPageBanner = () => {
           }}
           className="hero_banner_wrapper">
           <div className="swiper-wrapper">
-            {data?.map((item) => {
+            {data?.results?.map((item) => {
               console.log(item);
               const _genre_ids = item?.genre_ids[0];
               return (
