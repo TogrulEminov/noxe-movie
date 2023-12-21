@@ -22,7 +22,7 @@ export const ROUTES = [
         element: <FilmPortfolio />,
       },
       {
-        path: ':mediaType/:id',
+        path: '/:mediaType/:movie_id',
         element: <Detail />,
       },
     ],

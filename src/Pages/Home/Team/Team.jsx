@@ -21,7 +21,7 @@ const Team = () => {
       <section className="team_cards">
         <Container>
           <Row>
-            {data?.slice(0,3).map((item) => {
+            {data?.results?.slice(0,3).map((item) => {
                 const known_for=item?.known_for.map((g)=>g.overview)
                 console.log(known_for);
               return (

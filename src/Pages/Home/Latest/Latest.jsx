@@ -66,7 +66,7 @@ const Latest = () => {
             },
           }}
           className="slide_carousel">
-          {data?.map((slide) => {
+          {data?.results?.map((slide) => {
             return (
               <SwiperSlide key={slide.id}>
                 <SliderCard

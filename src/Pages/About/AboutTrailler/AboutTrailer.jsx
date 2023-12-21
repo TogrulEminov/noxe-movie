@@ -13,7 +13,7 @@ const AboutTrailer = () => {
     <>
       <section id="about-trailler">
         <Row className="about-trailler">
-          {data?.slice(0,3)
+          {data?.results?.slice(0,3)
           .map((item)=>{
             return (
               <Col className="col" xs={12} md={6} key={item?.imdbID}>
