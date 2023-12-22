@@ -110,10 +110,10 @@ const Header = () => {
                       <NavLink>Team</NavLink>
                     </li>
                     <li>
-                      <NavLink>Awards</NavLink>
+                      <NavLink to="/signup">Sign Up</NavLink>
                     </li>
                     <li>
-                      <NavLink>Contact</NavLink>
+                      <NavLink to="/login">Login</NavLink>
                     </li>
                   </ul>
                 </li>
