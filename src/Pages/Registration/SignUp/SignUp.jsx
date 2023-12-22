@@ -2,8 +2,10 @@ import { FaLock, FaUser } from "react-icons/fa";
 import { useFormik } from "formik";
 import "./SignUp.scss";
 import { basicSchema } from "../../../schemas";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const navigate=useNavigate()
   const onSubmit = async (values, actions) => {
     // console.log(values);
     console.log(actions);
@@ -11,6 +13,7 @@ const Login = () => {
       setTimeout(resolve, 1000);
     });
     actions.resetForm();
+    navigate('/login')
   };
   const { values, errors, handleChange, handleSubmit, isSubmitting } =
     useFormik({
