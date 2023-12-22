@@ -32,6 +32,11 @@ const Login = () => {
               Don't have any accaunt? <Link to="/signup">Register Now</Link>{" "}
             </p>
           </div>
+          <div className="register-link">
+            <p>
+              Go to home? <Link to="/">Go Back</Link>{" "}
+            </p>
+          </div>
         </div>
       </form>
     </section>

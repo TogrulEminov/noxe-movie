@@ -66,12 +66,15 @@ const Latest = () => {
             },
           }}
           className="slide_carousel">
-          {data?.results?.map((slide) => {
+          {data?.results?.slice(0, 10).map((slide) => {
+          
             return (
               <SwiperSlide key={slide.id}>
                 <SliderCard
+                  id={slide.id}
                   title={slide?.original_title}
                   src={`${IMAGE_PATH}${slide?.poster_path}`}
+                  genre_ids={slide?.genre_ids}
                 />
               </SwiperSlide>
             );

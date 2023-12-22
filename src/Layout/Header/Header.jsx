@@ -22,23 +22,23 @@ const Header = () => {
   const { width } = useWindowSize();
   const handleOpenSearch = () => {
     dispatch(openSearch());
-    
   };
+  const [userDrop, setUserDrop] = useState(false);
 
   const location = useLocation();
   const [scrolled, setScrolled] = useState(false);
-  useEffect(()=>{
-    if(location.pathname==="/film"  || location.pathname==="/"  ){
-      document.body.classList.add('bg-dark')
+  useEffect(() => {
+    if (location.pathname === '/film' || location.pathname === '/') {
+      document.body.classList.add('bg-dark');
+    } else {
+      document.body.classList.remove('bg-dark');
     }
-    else{
-      document.body.classList.remove('bg-dark')
-    }
-  })
+  });
   const handleScroll = useCallback(() => {
     const offSet = window.scrollY;
     if (offSet > 150) {
       setScrolled(true);
+      setUserDrop(false);
     } else {
       setScrolled(false);
     }
@@ -48,7 +48,7 @@ const Header = () => {
       dispatch(closeMenu());
     }
     return;
-  }, [dispatch,width]);
+  }, [dispatch, width]);
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
     return () => {
@@ -68,14 +68,17 @@ const Header = () => {
   }, [location.pathname, resetStateOnPathChange]);
 
   return (
-    <header className={`header ${scrolled ? 'sticky-header' : ''} ${location.pathname==='/'?'main_header':'' }`}>
+    <header
+      className={`header ${scrolled ? 'sticky-header' : ''} ${
+        location.pathname === '/' ? 'main_header' : ''
+      }`}>
       <Container>
         <div className="header_wrapper">
           <div className="left_header_content">
             <button className="hamburger" onClick={() => dispatch(openMenu())}>
               <MenuIcon />
             </button>
-            <Logo  scrolled={scrolled}/>
+            <Logo scrolled={scrolled} />
           </div>
           <div className="right_header_content">
             <nav className="header_nav">
@@ -89,10 +92,10 @@ const Header = () => {
                   </span>
                   <ul className="submenu_desktop">
                     <li>
-                      <NavLink to='/about'>About</NavLink>
+                      <NavLink to="/about">About</NavLink>
                     </li>
                     <li>
-                      <NavLink to='/film'>Film Portfolio</NavLink>
+                      <NavLink to="/film">Film Portfolio</NavLink>
                     </li>
                     <li>
                       <NavLink>Shop</NavLink>
@@ -131,19 +134,29 @@ const Header = () => {
                     Blog <KeyboardArrowDownIcon />
                   </span>
                 </li>
-                
               </ul>
               <ul className="header_addition_list">
-              <li>
-                  <NavLink to="" className="shopping">
+                <li>
+                  <button className="shopping">
                     <ShoppingCartIcon />
                     <p>0</p>
-                  </NavLink>
+                  </button>
                 </li>
-                <li>
-                  <button>
+                <li className="user_profile">
+                  <button
+                    className="user_icon"
+                    onClick={() => setUserDrop(!userDrop)}>
                     <PersonIcon />
                   </button>
+                  <div
+                    className={`user_profile ${userDrop ? 'active_user' : ''}`}>
+                    <ul>
+                      <li>Profile</li>
+                      <li>
+                        <button>Logout</button>
+                      </li>
+                    </ul>
+                  </div>
                 </li>
                 <li>
                   <button onClick={handleOpenSearch}>

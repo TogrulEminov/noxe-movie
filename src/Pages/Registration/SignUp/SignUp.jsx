@@ -1,11 +1,11 @@
-import { FaLock, FaUser } from "react-icons/fa";
-import { useFormik } from "formik";
-import "./SignUp.scss";
-import { basicSchema } from "../../../schemas";
-import { useNavigate } from "react-router-dom";
+import { FaLock, FaUser } from 'react-icons/fa';
+import { useFormik } from 'formik';
+import './SignUp.scss';
+import { basicSchema } from '../../../schemas';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Login = () => {
-  const navigate=useNavigate()
+  const navigate = useNavigate();
   const onSubmit = async (values, actions) => {
     // console.log(values);
     console.log(actions);
@@ -13,16 +13,16 @@ const Login = () => {
       setTimeout(resolve, 1000);
     });
     actions.resetForm();
-    navigate('/login')
+    navigate('/login');
   };
   const { values, errors, handleChange, handleSubmit, isSubmitting } =
     useFormik({
       initialValues: {
-        name: "",
-        email: "",
-        surname: "",
-        password: "",
-        confirmPassword: "",
+        name: '',
+        email: '',
+        surname: '',
+        password: '',
+        confirmPassword: '',
       },
       validationSchema: basicSchema,
       onSubmit,
@@ -41,7 +41,7 @@ const Login = () => {
               name="name"
               value={values.name}
               onChange={handleChange}
-              className={errors.name ? "input-error" : ""}
+              className={errors.name ? 'input-error' : ''}
             />
             <FaUser className="icon" />
             {errors.name && <p className="error">{errors.name}</p>}
@@ -54,7 +54,7 @@ const Login = () => {
               name="surname"
               value={values.surname}
               onChange={handleChange}
-              className={errors.surname ? "input-error" : ""}
+              className={errors.surname ? 'input-error' : ''}
             />
             {errors.surname && <p className="error">{errors.surname}</p>}
           </div>
@@ -66,7 +66,7 @@ const Login = () => {
               name="email"
               value={values.email}
               onChange={handleChange}
-              className={errors.email ? "input-error" : ""}
+              className={errors.email ? 'input-error' : ''}
             />
             {errors.email && <p className="error">{errors.email}</p>}
           </div>
@@ -78,7 +78,7 @@ const Login = () => {
               name="password"
               value={values.password}
               onChange={handleChange}
-              className={errors.password ? "input-error" : ""}
+              className={errors.password ? 'input-error' : ''}
             />
             <FaLock className="icon" />
             {errors.password && <p className="error">{errors.password}</p>}
@@ -91,7 +91,7 @@ const Login = () => {
               name="confirmPassword"
               required
               value={values.confirmPassword}
-              className={errors.confirmPassword ? "input-error" : ""}
+              className={errors.confirmPassword ? 'input-error' : ''}
             />
             <FaLock className="icon" />
             {errors.confirmPassword && (
@@ -102,6 +102,11 @@ const Login = () => {
           <button disabled={isSubmitting} type="submit" className="btn-login">
             Sign Up
           </button>
+          <div className="register-link">
+            <p>
+              Go to home? <Link to="/">Go Back</Link>{' '}
+            </p>
+          </div>
         </div>
       </form>
     </section>

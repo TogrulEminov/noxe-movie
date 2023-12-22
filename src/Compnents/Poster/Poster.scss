@@ -34,7 +34,7 @@
     z-index: 1;
     transition: all 0.7s 0.1s;
   }
-  span{
+  span {
     width: 100%;
     max-height: 100%;
     height: 100%;
@@ -66,26 +66,7 @@
       }
     }
     .poster_genres {
-      ul {
-        @include flex();
-        li {
-          &:last-child {
-            &:after {
-              content: unset;
-            }
-          }
-          color: #fff;
-          &:after {
-            content: ',';
-            padding: 0 4px;
-          }
-          a {
-            color: currentColor;
-            opacity: 0.6;
-            text-transform: lowercase;
-          }
-        }
-      }
+      margin-top: 20px;
     }
     .watch-trailler {
       padding: 55px;
