@@ -11,19 +11,27 @@
       img {
         width: 100%;
         height: 100%;
-      
       }
     }
   }
   .slider_film_content {
     padding: 20px 0;
     h4 {
-      font-size: 22px;
-      font-weight: bold;
-      text-align: center;
-      letter-spacing: -1px;
-      color: #fff;
-      margin-bottom: 10px;
+      a {
+        font-size: 22px;
+        font-weight: bold;
+        text-align: center;
+        letter-spacing: -1px;
+        color: #fff;
+        margin-bottom: 10px;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        height: 50px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        line-height: 1.2;
+      }
     }
     .slider_film_genres {
       @include flex();

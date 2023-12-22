@@ -1,40 +1,44 @@
-import "./FilmPortfolio.scss";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import { Link } from "react-router-dom";
-import useFetch from "../../hooks/useFetch";
+import './FilmPortfolio.scss';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import { Link } from 'react-router-dom';
+import useFetch from '../../hooks/useFetch';
 const FilmPortfolio = () => {
-    const IMAGE_PATH = "https://image.tmdb.org/t/p/w500/";
+  const IMAGE_PATH = 'https://image.tmdb.org/t/p/w500/';
 
-  const data = useFetch();
-  console.log(data.data);
+  const { data } = useFetch('/discover/movie');
   return (
-    <section id="portfolio">
-      <Container>
-        <Row>
-          {data.data?.map((item)=>{
-            console.log(item.backdrop_path
-                );
-            return (
-              <Col key={item?.id} className="col" xs={12} md={6}>
-              <div className="portfolio_card">
-                <img   src={`${IMAGE_PATH}${item.poster_path}`} alt={item?.title} />
-                <div className="text">
-                  <div className="content">
-                    <h1>{item?.Title}</h1>
+    <>
+      <section style={{ height: '200px' }}></section>
+      {/* <section id="portfolio">
+        <Container>
+          <Row>
+            {data.results?.map((item) => {
+              console.log(item.backdrop_path);
+              return (
+                <Col key={item?.id} className="col" xs={12} md={6}>
+                  <div className="portfolio_card">
+                    <img
+                      src={`${IMAGE_PATH}${item.poster_path}`}
+                      alt={item?.title}
+                    />
+                    <div className="text">
+                      <div className="content">
+                        <h1>{item?.Title}</h1>
+                      </div>
+                    </div>
+                    <div className="watch_trailler">
+                      <Link to="">Watch the Trailer</Link>
+                    </div>
                   </div>
-                </div>
-                <div className="watch_trailler">
-                  <Link to="">Watch the Trailer</Link>
-                </div>
-              </div>
-            </Col>
-            )
-          })}
-        </Row>
-      </Container>
-    </section>
+                </Col>
+              );
+            })}
+          </Row>
+        </Container>
+      </section> */}
+    </>
   );
 };
 

@@ -1,36 +1,36 @@
-@import "../../../css-config/Mixins.scss";
-#our_latest{
-    .slide_carousel{
-        .swiper-controls{
-            border-top: 1px solid rgba(255, 254, 254, 0.12);
-            padding: 37px 0;
-            margin-top: 60px;
-            display: flex;
-            justify-content: space-between;
-            #containerForBullets{
-                @include flex();
-                span{
-                   background: #ffffff7c;
-                    display: block;
-                    margin: 4px;
-                    cursor: pointer;
-                    width: 10px;
-                    height: 10px;
-                    border-radius: 50%;
-                    &.swiper-custom-bullet-active{
-                        background: #fff;
-                    }
-                    @include lg{
-                        width: 12px;
-                        height: 12px;
-                    }
-                }
-            }
-            button{
-                border: none;
-                color: #fff;
-                background: transparent;
-            }
+@import '../../../css-config/Mixins.scss';
+#our_latest {
+  .slide_carousel {
+    .swiper-controls {
+      border-top: 1px solid rgba(255, 254, 254, 0.12);
+      padding: 37px 0;
+      margin-top: 60px;
+      display: flex;
+      justify-content: space-between;
+      #containerForBullets {
+        @include flex();
+        span {
+          background: #ffffff7c;
+          display: block;
+          margin: 4px;
+          cursor: pointer;
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          &.swiper-custom-bullet-active {
+            background: #fff;
+          }
+          @include lg {
+            width: 12px;
+            height: 12px;
+          }
         }
+      }
+      button {
+        border: none;
+        color: #fff;
+        background: transparent;
+      }
     }
+  }
 }

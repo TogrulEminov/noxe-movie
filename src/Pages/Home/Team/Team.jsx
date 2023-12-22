@@ -9,7 +9,6 @@ import James from '../../../Assets/Images/team-4.webp';
 import useFetch from '../../../hooks/useFetch';
 const Team = () => {
   const { data, loading } = useFetch(`/person/popular`);
-  console.log(data) ;
   const IMAGE_PATH = 'https://image.tmdb.org/t/p/w500/';
   return (
     <section id="team_section">
@@ -23,7 +22,6 @@ const Team = () => {
           <Row>
             {data?.results?.slice(0,3).map((item) => {
                 const known_for=item?.known_for.map((g)=>g.overview)
-                console.log(known_for);
               return (
                 <TeamCard
                   key={item?.id}

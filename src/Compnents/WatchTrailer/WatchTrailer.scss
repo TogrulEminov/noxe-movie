@@ -1,0 +1,66 @@
+@import '../../css-config/Mixins.scss';
+.watch_trailler {
+  position: relative;
+  @include flex();
+ 
+  &:after {
+    content: '';
+    display: none;
+    width: 1px;
+    height: 38px;
+    opacity: 0.6;
+    background: #fff;
+    margin-right: 30px;
+    margin-left: 20px;
+    @include md{
+        display: block;
+    }
+  }
+  .watch_btn {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    svg {
+      width: 40px;
+      @include md {
+        width: 40px;
+      }
+    }
+    .text {
+      font-size: 20px;
+      transition: all 0.7s ease-in-out;
+      color: #fff;
+    }
+    .triangle {
+      stroke-dasharray: 240;
+      stroke-dashoffset: 480;
+      stroke: white;
+      transform: translateY(0);
+      transition: all 0.7s ease-in-out;
+    }
+    .circle {
+      stroke: white;
+      stroke-dasharray: 650;
+      stroke-dashoffset: 1300;
+      transition: all 0.5s ease-in-out;
+    }
+    &:hover {
+      .text {
+        color: #df192c;
+      }
+      .triangle {
+        stroke-dashoffset: 0;
+        opacity: 1;
+        stroke: #df192c;
+        animation: trailorPlay 0.7s ease-in-out;
+      }
+      .circle {
+        stroke-dashoffset: 0;
+        stroke: #df192c;
+      }
+    }
+  }
+}

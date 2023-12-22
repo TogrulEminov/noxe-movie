@@ -32,15 +32,13 @@ const HeroPageBanner = () => {
           className="hero_banner_wrapper">
           <div className="swiper-wrapper">
             {data?.results?.map((item) => {
-              console.log(item);
-              const _genre_ids = item?.genre_ids[0];
-              return (
+           return (
                 <SwiperSlide key={item.id}>
                   <Poster
                     src={`${IMAGE_PATH}${item.poster_path}`}
                     alt={item?.title}
                     title={item?.title}
-                    genre_ids={_genre_ids}
+                    genre_ids={item?.genre_ids}
                     item_id={item?.id}
                   />
                 </SwiperSlide>

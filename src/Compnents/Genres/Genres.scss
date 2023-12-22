@@ -1,1 +1,24 @@
-@import "../../css-config/Mixins.scss";
+@import '../../css-config/Mixins.scss';
+
+.genres {
+  @include flex();
+  flex-wrap: wrap;
+  row-gap: 5px;
+  li {
+    &:last-child {
+      &:after {
+        content: unset;
+      }
+    }
+    color: #fff;
+    &:after {
+      content: ',';
+      padding: 0 4px;
+    }
+    a {
+      color: currentColor;
+      opacity: 0.6;
+      text-transform: lowercase;
+    }
+  }
+}
