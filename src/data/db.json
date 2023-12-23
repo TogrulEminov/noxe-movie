@@ -1,0 +1,28 @@
+{
+  "users": [
+    {
+      "name": "Ezra England",
+      "email": "fezuq@mailinator.com",
+      "surname": "Holland",
+      "password": "Pa$$w0rd!",
+      "confirmPassword": "Pa$$w0rd!",
+      "id": 1
+    },
+    {
+      "name": "Damian Hoover",
+      "email": "jugeqedy@mailinator.com",
+      "surname": "Mcfarland",
+      "password": "Pa$$w0rd!",
+      "confirmPassword": "Pa$$w0rd!",
+      "id": 2
+    },
+    {
+      "name": "Charde King",
+      "email": "coxenary@mailinator.com",
+      "surname": "Andrews",
+      "password": "Pa$$w0rd!",
+      "confirmPassword": "Pa$$w0rd!",
+      "id": 3
+    }
+  ]
+}
