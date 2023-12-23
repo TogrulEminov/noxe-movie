@@ -17,6 +17,7 @@ import {
 import MobileSideBar from './MobileSideBar/MobileSideBar';
 import { useCallback, useEffect, useState } from 'react';
 import { useWindowSize } from '@uidotdev/usehooks';
+import ListSideBar from './ListSideBar/ListSideBar';
 const Header = () => {
   const dispatch = useDispatch();
   const { width } = useWindowSize();
@@ -24,7 +25,7 @@ const Header = () => {
     dispatch(openSearch());
   };
   const [userDrop, setUserDrop] = useState(false);
-
+  const [sideBarCart, setSideBarCart] = useState(false);
   const location = useLocation();
   const [scrolled, setScrolled] = useState(false);
   useEffect(() => {
@@ -46,6 +47,9 @@ const Header = () => {
   useEffect(() => {
     if (width > 992) {
       dispatch(closeMenu());
+    } else if (width < 992) {
+      setSideBarCart(false);
+      document.body.classList.remove('no-scroll')
     }
     return;
   }, [dispatch, width]);
@@ -66,7 +70,11 @@ const Header = () => {
       window.scrollTo(0, 0);
     }
   }, [location.pathname, resetStateOnPathChange]);
-
+  const handleSidebarActive = () => {
+    setSideBarCart(true);
+    document.body.classList.add('no-scroll');
+    setUserDrop(false);
+  };
   return (
     <header
       className={`header ${scrolled ? 'sticky-header' : ''} ${
@@ -137,7 +145,7 @@ const Header = () => {
               </ul>
               <ul className="header_addition_list">
                 <li>
-                  <button className="shopping">
+                  <button className="shopping" onClick={handleSidebarActive}>
                     <ShoppingCartIcon />
                     <p>0</p>
                   </button>
@@ -169,6 +177,7 @@ const Header = () => {
           </div>
         </div>
       </Container>
+      <ListSideBar sideBarCart={sideBarCart} setSideBarCart={setSideBarCart} />
       <MobileSideBar />
     </header>
   );

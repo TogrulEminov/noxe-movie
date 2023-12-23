@@ -7,7 +7,7 @@ const Poster = ({ src, title, alt, genre_ids, item_id }) => {
 
   return (
     <div className="poster_card">
-      <LazyLoadImg src={src} alt={alt} />
+      <LazyLoadImg src={src} alt={alt}  />
       <div className="poster_details">
         <h5 className="poster-title">
           <Link to={`/movie/${movie_id}`}>{title}</Link>

@@ -4,10 +4,22 @@ import { ROUTES } from './Routes/Routes';
 import { fetchDataFromApi } from './Api/api';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
-import { getGenres } from './Redux/Control/ApiSlice';
+import { getApiConfiguration, getGenres } from './Redux/Control/ApiSlice';
 
 function App() {
   const dispatch = useDispatch();
+  const fetchApiConfig = () => {
+    fetchDataFromApi('/configuration').then((res) => {
+      const url = {
+        backdrop: res?.images.secure_base_url + 'original',
+        poster: res?.images.secure_base_url + 'original',
+        profile: res?.images.secure_base_url + 'original',
+      };
+
+      dispatch(getApiConfiguration(url));
+    });
+  };
+
   const genresCall = async () => {
     let promises = [];
     let endPoint = ['tv', 'movie'];
@@ -23,6 +35,7 @@ function App() {
     dispatch(getGenres(allGneres));
   };
   useEffect(() => {
+    fetchApiConfig();
     genresCall();
   }, []);
   const router = createBrowserRouter(ROUTES);

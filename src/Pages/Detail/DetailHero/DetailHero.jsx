@@ -5,28 +5,28 @@ import useFetch from '../../../hooks/useFetch';
 import dayjs from 'dayjs';
 import Genres from '../../../Compnents/Genres/Genres';
 import WatchTrailer from '../../../Compnents/WatchTrailer/WatchTrailer';
+import { useSelector } from 'react-redux';
 const DetailHero = () => {
   const { mediaType, movie_id } = useParams();
   console.log('movie_id', movie_id);
   const { data } = useFetch(`/${mediaType}/${movie_id}`);
-  const IMAGE_PATH = 'https://image.tmdb.org/t/p/w500/';
   const toHoursAndMinutes = (totalMinutes) => {
     const hours = Math.floor(totalMinutes / 60);
     const minutes = totalMinutes % 60;
     return `${hours}h${minutes > 0 ? ` ${minutes}m` : ''}`;
   };
   const _genres = data?.genres.map((g) => g.id);
-
+  const { url } = useSelector((state) => state.api);
   return (
     <div
       id="detail-hero"
-      style={{ backgroundImage: `url(${IMAGE_PATH}${data?.backdrop_path})` }}>
+      style={{ backgroundImage: `url(${url.backdrop}${data?.backdrop_path})` }}>
       <Container>
         <Row>
           <Col lg={4} xl={4} md={12} sm={12} xs={12}>
             <figure className="detail_img">
               <img
-                src={`${IMAGE_PATH}${data?.poster_path}`}
+                src={`${url.poster}${data?.poster_path}`}
                 alt={data?.original_title}
               />
             </figure>

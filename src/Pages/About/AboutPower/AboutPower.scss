@@ -31,29 +31,8 @@
       }
     }
 
-    .counts {
-      display: flex;
-      justify-content: space-between;
-      @media only screen and (max-width: 576px) {
-        flex-direction: column;
-        row-gap: 50px;
-      }
-      .count {
-        text-align: center;
-        span {
-          font-size: 4.375rem;
-          line-height: 1;
-          font-weight: 200;
-          margin-bottom: 5px;
-          @media only screen and (max-width: 576px) {
-            font-size: 3rem;
-          }
-        }
-        h6 {
-          font-size: 1rem;
-          font-weight: 500;
-        }
-      }
+    .row {
+      row-gap: 20px;
     }
     .img-side {
       display: flex;

@@ -1,8 +1,10 @@
+import LazyLoadImg from '../LazyLoadImg/LazyLoadImg';
+import "./ReviewsCard.scss"
 const ReviewsCard = ({ title, desc, img }) => {
   return (
     <div className="reviews_card">
       <figure className="reviews_image">
-        <img src={img} alt={title} />
+        <LazyLoadImg src={img} alt={title} width="150px" height="150px" />
       </figure>
       <article className="reviews_heading">
         <h3>{title}</h3>

@@ -10,13 +10,14 @@ import { useRef } from 'react';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import useFetch from '../../../hooks/useFetch';
+import { useSelector } from 'react-redux';
 SwiperCore.use([Navigation]);
 
 const Latest = () => {
   const prevButtonRef = useRef(null);
   const nextButtonRef = useRef(null);
   const { data } = useFetch(`/movie/popular`);
-  const IMAGE_PATH = 'https://image.tmdb.org/t/p/w500/';
+  const { url } = useSelector((state) => state.api);
   return (
     <section id="our_latest">
       <SectionTitle
@@ -67,13 +68,12 @@ const Latest = () => {
           }}
           className="slide_carousel">
           {data?.results?.slice(0, 10).map((slide) => {
-          
             return (
               <SwiperSlide key={slide.id}>
                 <SliderCard
                   id={slide.id}
                   title={slide?.original_title}
-                  src={`${IMAGE_PATH}${slide?.poster_path}`}
+                  src={`${url.poster}${slide?.poster_path}`}
                   genre_ids={slide?.genre_ids}
                 />
               </SwiperSlide>

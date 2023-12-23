@@ -1,7 +1,12 @@
-import "./AboutPower.scss";
-import Container from "react-bootstrap/Container";
-import img from "../../../Assets/Images/michler.webp";
+import './AboutPower.scss';
+import Container from 'react-bootstrap/Container';
+import img from '../../../Assets/Images/michler.webp';
+import { Col, Row } from 'react-bootstrap';
+import Countup from '../../../Compnents/CountUp/Countup';
+import useFetch from '../../../hooks/useFetch';
 const AboutPower = () => {
+  const { data } = useFetch('/trending/all/day?language=en-US');
+  console.log(data);
   return (
     <section id="power">
       <Container>
@@ -13,8 +18,20 @@ const AboutPower = () => {
               performances and profound storytelling.
             </h5>
           </div>
-          <div className="counts">
-            <div className="count">
+          <Row>
+            {data?.results.slice(0, 4).map((item) => {
+              const uniqueMovieTypes = [];
+              if (!uniqueMovieTypes.includes(item?.media_type)) {
+                uniqueMovieTypes.push(item?.media_type);
+              }
+              return (
+                <Col xs={12} xl={3} lg={3} md={6} sm={6} key={item?.id}>
+                  <Countup count={item?.vote_count} type={uniqueMovieTypes} />
+                </Col>
+              );
+            })}
+
+            {/* <div className="count">
               <span>569</span>
               <h6>Movies</h6>
             </div>
@@ -29,8 +46,8 @@ const AboutPower = () => {
             <div className="count">
               <span>569</span>
               <h6>Movies</h6>
-            </div>
-          </div>
+            </div> */}
+          </Row>
           <div>
             <p>
               Welcome to the official website of Michelle Fischer, a versatile
