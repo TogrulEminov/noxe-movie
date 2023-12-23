@@ -2,8 +2,7 @@ import Latest from './Latest/Latest';
 import WeDo from './WeDo/WeDo';
 import Reviews from './Reviews/Reviews';
 import Referances from './Referances/Referances';
-import Team from './Team/Team';
-import Blog from './Blog/Blog';
+// import Blog from './Blog/Blog';
 import HeroSlider from './HeroSlider/HeroSlider';
 const Home = () => {
   return (
@@ -12,9 +11,9 @@ const Home = () => {
       <Latest />
       <WeDo />
       <Reviews />
-      <Team />
+      {/* <Team /> */}
       <Referances />
-      <Blog />
+      {/* <Blog /> */}
     </main>
   );
 };

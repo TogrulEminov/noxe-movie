@@ -14,12 +14,13 @@ import ArrowForwardIos from '@mui/icons-material/ArrowForwardIos';
 import { Col, Container, Row } from 'react-bootstrap';
 import Genres from '../../../Compnents/Genres/Genres';
 import dayjs from 'dayjs';
+import { useSelector } from 'react-redux';
 SwiperCore.use([Autoplay, Navigation, Pagination, EffectFade]);
 const HeroSlider = () => {
   const prevButtonRef = useRef(null);
   const nextButtonRef = useRef(null);
   const { data } = useFetch('/discover/movie');
-  const IMAGE_PATH = 'https://image.tmdb.org/t/p/w500/';
+  const { url } = useSelector((state) => state.api); 
   return (
     <section id="hero_slider">
       <>
@@ -54,7 +55,7 @@ const HeroSlider = () => {
                 key={index}
                 className="swiper_card"
                 style={{
-                  backgroundImage: `url(${IMAGE_PATH}${item?.backdrop_path})`,
+                  backgroundImage: `url(${ url.backdrop}${item?.backdrop_path})`,
                 }}>
                 <Container>
                   <Row>

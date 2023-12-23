@@ -1,15 +1,12 @@
-import React from 'react';
 import './Team.scss';
 import SectionTitle from '../../../Compnents/SectionTitle/SectionTitle';
 import { Container, Row } from 'react-bootstrap';
 import TeamCard from './TeamCard';
-import Elisa from '../../../Assets/Images/awards.webp';
-import Kevin from '../../../Assets/Images/team-3.webp';
-import James from '../../../Assets/Images/team-4.webp';
 import useFetch from '../../../hooks/useFetch';
+import { useSelector } from 'react-redux';
 const Team = () => {
-  const { data, loading } = useFetch(`/person/popular`);
-  const IMAGE_PATH = 'https://image.tmdb.org/t/p/w500/';
+  const { data } = useFetch(`/person/popular`);
+  const { url } = useSelector((state) => state.api);
   return (
     <section id="team_section">
       <SectionTitle
@@ -20,12 +17,12 @@ const Team = () => {
       <section className="team_cards">
         <Container>
           <Row>
-            {data?.results?.slice(0,3).map((item) => {
-                const known_for=item?.known_for.map((g)=>g.overview)
+            {data?.results?.slice(0, 3).map((item) => {
+              const known_for = item?.known_for.map((g) => g.overview);
               return (
                 <TeamCard
                   key={item?.id}
-                  img={`${IMAGE_PATH}${item?.profile_path}`}
+                  img={`${url.profile}${item?.profile_path}`}
                   title={item?.name}
                   work={item?.known_for_department}
                   desc={known_for[0]}

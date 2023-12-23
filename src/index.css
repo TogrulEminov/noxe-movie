@@ -4,20 +4,28 @@ body {
     font-weight: normal;
     font-family: 'Poppins', sans-serif;
     letter-spacing: normal;
-   
+
 }
-body.bg-dark{
-     background-color: #000 !important;
+
+body.bg-dark {
+    background-color: #000 !important;
 }
-#main{
+
+body.no-scroll {
+    overflow: hidden;
+}
+
+#main {
     padding-top: 70px;
 }
-@media screen and (min-width:992px){
-    #main{
+
+@media screen and (min-width:992px) {
+    #main {
         padding-top: 90px;
-    } 
+    }
 }
-.row{
+
+.row {
     flex-basis: 100%;
     row-gap: 10px;
 }
