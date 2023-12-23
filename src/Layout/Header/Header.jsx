@@ -49,7 +49,7 @@ const Header = () => {
       dispatch(closeMenu());
     } else if (width < 992) {
       setSideBarCart(false);
-      document.body.classList.remove('no-scroll')
+      document.body.classList.remove('no-scroll');
     }
     return;
   }, [dispatch, width]);
@@ -129,10 +129,10 @@ const Header = () => {
                   </ul>
                 </li>
                 <li>
-                  <NavLink to="">Movies</NavLink>
+                  <NavLink to="/movies">Movies</NavLink>
                 </li>
                 <li>
-                  <NavLink to="">Tv Shows</NavLink>
+                  <NavLink to="/tv-shows">Tv Shows</NavLink>
                 </li>
                 <li>
                   <NavLink to="">Celebs</NavLink>

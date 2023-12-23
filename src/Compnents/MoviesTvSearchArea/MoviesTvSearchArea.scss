@@ -1,0 +1,33 @@
+@import '../../css-config/Mixins.scss';
+.search_movies_tv_shows {
+  padding: 45px 0;
+  background: #fcfcfc;
+  overflow: hidden;
+  form {
+    width: 100%;
+    .row {
+      align-items: center;
+      .dropdown_area {
+        @include flex();
+        justify-content: center;
+        flex-wrap: wrap;
+        div {
+          width: 50%;
+          .css-1iqhc3f-MuiFormControl-root {
+            min-width: 100% !important;
+            width: 100% !important;
+          }
+        }
+      }
+      .css-sghohy-MuiButtonBase-root-MuiButton-root {
+        min-width: 100%;
+        min-height: 50px;
+        @include flex();
+        justify-content: center;
+        background-color: #000;
+        color: #fff;
+        border-radius: 0;
+      }
+    }
+  }
+}

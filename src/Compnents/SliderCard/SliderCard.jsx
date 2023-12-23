@@ -2,9 +2,9 @@ import { Link } from 'react-router-dom';
 import './SliderCard.scss';
 import LazyLoadImg from '../LazyLoadImg/LazyLoadImg';
 import Genres from '../Genres/Genres';
-const SliderCard = ({ title, src, genre_ids, id }) => {
+const SliderCard = ({ title, src, genre_ids, id, className }) => {
   return (
-    <div className="slider_film_card">
+    <div className={`slider_film_card ${className ? className : ''}`}>
       <figure className="slider_film_image">
         <LazyLoadImg src={src} alt={title} />
       </figure>
