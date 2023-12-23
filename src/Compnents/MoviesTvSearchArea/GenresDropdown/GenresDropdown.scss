@@ -1,0 +1,11 @@
+@import '../../../css-config/Mixins.scss';
+.css-1iqhc3f-MuiFormControl-root {
+  min-width: 100% !important;
+  margin: 0 !important;
+  #demo-controlled-open-select-label{
+    color: #000;
+  }
+  .css-1yk1gt9-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root.Mui-focused .MuiOutlinedInput-notchedOutline{
+    border-color: #000;
+  }
+}

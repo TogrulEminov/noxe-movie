@@ -48,10 +48,16 @@ const MobileSideBar = () => {
                     openSub == 1 ? 'active_submenu' : ''
                   }`}>
                   <li>
-                    <NavLink>History</NavLink>
+                    <NavLink to="/about">About</NavLink>
                   </li>
                   <li>
-                    <NavLink>TimeLine</NavLink>
+                    <NavLink to="/film">Film Portfolio</NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/movies">Movies</NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/tv-shows">Tv Shows</NavLink>
                   </li>
                   <li>
                     <NavLink>Shop</NavLink>
@@ -65,25 +71,17 @@ const MobileSideBar = () => {
                   <li>
                     <NavLink>Checkout</NavLink>
                   </li>
-                  <li>
-                    <NavLink>Team</NavLink>
-                  </li>
+
                   <li>
                     <NavLink>Awards</NavLink>
                   </li>
                   <li>
-                    <NavLink>Contact</NavLink>
+                    <NavLink to="/contact">Contact</NavLink>
                   </li>
                 </ul>
               </li>
               <li>
-                <NavLink to="">Movies</NavLink>
-              </li>
-              <li>
-                <NavLink to="">Tv Shows</NavLink>
-              </li>
-              <li>
-                <NavLink to="">Celebs</NavLink>
+                <NavLink to="/celebs">Celebs</NavLink>
               </li>
               <li className="mobile_navbar_item">
                 <span onClick={() => handleOpen(2)}>
