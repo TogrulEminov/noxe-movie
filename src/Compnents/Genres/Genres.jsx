@@ -2,14 +2,15 @@ import { useSelector } from 'react-redux';
 import './Genres.scss';
 const Genres = ({ data }) => {
   const { genres } = useSelector((state) => state.api);
+  const theme  = useSelector((state) => state.mode.theme);
   return (
-    <ul className="genres">
+    <div className="genres" >
       {data?.map((g) => {
         const name = genres[g]?.name;
         if (!name) return;
-        return <li key={g}>{name}</li>;
+        return <span data-theme={theme} key={g}>{name}</span>;
       })}
-    </ul>
+    </div>
   );
 };
 

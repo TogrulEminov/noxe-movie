@@ -65,7 +65,6 @@ const HeroSlider = () => {
                           {item?.original_title}
                         </h1>
                         <p>{item?.overview}</p>
-
                         <div className="addition_hero_slider">
                           <ul className="watch_trailer_list">
                             <li>

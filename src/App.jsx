@@ -2,12 +2,20 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import './App.css';
 import { ROUTES } from './Routes/Routes';
 import { fetchDataFromApi } from './Api/api';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { getApiConfiguration, getGenres } from './Redux/Control/ApiSlice';
 
 function App() {
   const dispatch = useDispatch();
+  const theme = useSelector((state) => state.mode.theme);
+  useEffect(() => {
+    document.body.classList.remove('body-dark');
+    if (theme === 'light') {
+      document.body.classList.add('body-dark');
+    }
+  }, [theme]);
+
   const fetchApiConfig = () => {
     fetchDataFromApi('/configuration').then((res) => {
       const url = {

@@ -16,13 +16,14 @@
   }
   .slider_film_content {
     padding: 20px 0;
+    color: var(--slide-card);
     h4 {
       a {
         font-size: 22px;
         font-weight: bold;
         text-align: start;
         letter-spacing: -1px;
-        color: #fff;
+        color: currentColor;
         margin-bottom: 10px;
         display: -webkit-box;
         -webkit-line-clamp: 1;

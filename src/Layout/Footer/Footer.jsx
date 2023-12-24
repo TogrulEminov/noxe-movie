@@ -7,14 +7,16 @@ import { FaInstagram } from 'react-icons/fa';
 import { FaSpotify } from 'react-icons/fa';
 import { FaFacebookF } from 'react-icons/fa';
 import { FaLinkedin } from 'react-icons/fa';
+import { useSelector } from 'react-redux';
 const Footer = () => {
+  const theme = useSelector((state) => state.mode.theme);
   return (
-    <footer id="footer">
+    <footer id="footer" data-theme={theme}>
       <Container>
         <Row className="row">
           <Col xl={3} lg={3} md={6} sm={6} xs={12}>
             <div className="footer_content">
-              <div className="footer_articles">
+              <div className="footer_articles" data-theme={theme}>
                 <h3>Pages</h3>
                 <ul className="footer_list">
                   <li>
@@ -35,7 +37,7 @@ const Footer = () => {
           </Col>
           <Col xl={3} lg={3} sm={6} md={6} xs={12}>
             <div className="footer_content">
-              <div className="footer_articles">
+              <div className="footer_articles" data-theme={theme}>
                 <h3>Our Studio</h3>
                 <ul>
                   <li>
@@ -46,14 +48,14 @@ const Footer = () => {
                   </li>
                   <li>
                     <Link to="/celebs">Celebs</Link>
-                  </li> 
+                  </li>
                 </ul>
               </div>
             </div>
           </Col>
           <Col xl={3} lg={3} md={6} sm={6} xs={12}>
             <div className="footer_content">
-              <div className="footer_articles">
+              <div className="footer_articles" data-theme={theme}>
                 <h3>Noxe Studio</h3>
                 <ul>
                   <li>
@@ -71,7 +73,7 @@ const Footer = () => {
           </Col>
           <Col xl={3} lg={3} md={6} sm={6} xs={12}>
             <div className="footer_content">
-              <div className="footer_articles">
+              <div className="footer_articles" data-theme={theme}>
                 <h3>Social</h3>
                 <ul className="icons">
                   <li>

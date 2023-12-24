@@ -2,9 +2,13 @@ import { Link } from 'react-router-dom';
 import './SliderCard.scss';
 import LazyLoadImg from '../LazyLoadImg/LazyLoadImg';
 import Genres from '../Genres/Genres';
+import { useSelector } from 'react-redux';
 const SliderCard = ({ title, src, genre_ids, id, className }) => {
+  const theme = useSelector((state) => state.mode.theme);
   return (
-    <div className={`slider_film_card ${className ? className : ''}`}>
+    <div
+      className={`slider_film_card ${className ? className : ''}`}
+      data-theme={theme}>
       <figure className="slider_film_image">
         <LazyLoadImg src={src} alt={title} />
       </figure>

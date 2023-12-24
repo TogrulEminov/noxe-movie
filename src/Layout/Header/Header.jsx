@@ -1,14 +1,15 @@
 import Container from 'react-bootstrap/Container';
+import { FaCloudSun, FaCloudMoon } from 'react-icons/fa';
 import './Header.scss';
 import Logo from '../../Compnents/Logo/Logo';
-import MenuIcon from '@mui/icons-material/Menu';
+import { IoMenu } from 'react-icons/io5';
 import { NavLink, useLocation } from 'react-router-dom';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import PersonIcon from '@mui/icons-material/Person';
 import SearchIcon from '@mui/icons-material/Search';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import SearchHeader from './SearchHeader/SearchHeader';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import {
   closeMenu,
   openMenu,
@@ -18,6 +19,7 @@ import MobileSideBar from './MobileSideBar/MobileSideBar';
 import { useCallback, useEffect, useState } from 'react';
 import { useWindowSize } from '@uidotdev/usehooks';
 import ListSideBar from './ListSideBar/ListSideBar';
+import { toggleTheme } from '../../Redux/Control/ModeSlice';
 const Header = () => {
   const dispatch = useDispatch();
   const { width } = useWindowSize();
@@ -49,7 +51,6 @@ const Header = () => {
       dispatch(closeMenu());
     } else if (width < 992) {
       setSideBarCart(false);
-      document.body.classList.remove('no-scroll');
     }
     return;
   }, [dispatch, width]);
@@ -75,6 +76,12 @@ const Header = () => {
     document.body.classList.add('no-scroll');
     setUserDrop(false);
   };
+
+  const handleOpenMenu = () => {
+    document.body.classList.add('no-scroll');
+    dispatch(openMenu());
+  };
+  const theme = useSelector((state) => state.mode.theme);
   return (
     <header
       className={`header ${scrolled ? 'sticky-header' : ''} ${
@@ -83,8 +90,8 @@ const Header = () => {
       <Container>
         <div className="header_wrapper">
           <div className="left_header_content">
-            <button className="hamburger" onClick={() => dispatch(openMenu())}>
-              <MenuIcon />
+            <button className="hamburger" onClick={handleOpenMenu}>
+              <IoMenu />
             </button>
             <Logo scrolled={scrolled} />
           </div>
@@ -171,6 +178,15 @@ const Header = () => {
                     <SearchIcon />
                   </button>
                   <SearchHeader />
+                </li>
+                <li className="dark_light_mode">
+                  <button onClick={() => dispatch(toggleTheme())}>
+                    {theme === 'light' ? (
+                      <FaCloudSun className="sun" />
+                    ) : (
+                      <FaCloudMoon className="moon" />
+                    )}
+                  </button>
                 </li>
               </ul>
             </nav>

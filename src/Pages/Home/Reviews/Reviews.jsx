@@ -9,10 +9,10 @@ import useFetch from '../../../hooks/useFetch';
 SwiperCore.use([Pagination]);
 const Reviews = () => {
   const { url } = useSelector((state) => state.api);
-  const { data, loading } = useFetch(`/person/popular`);
-
+  const { data } = useFetch(`/person/popular`);
+  const theme = useSelector((state) => state.mode.theme);
   return (
-    <section id="reviews">
+    <section id="reviews" data-theme={theme}>
       <Container>
         <Swiper
           slidesPerView={1}
@@ -48,7 +48,7 @@ const Reviews = () => {
             );
           })}
           <div className="swiper-controls">
-            <div id="containerForBulletsReviews"></div>
+            <div id="containerForBulletsReviews" data-theme={theme}></div>
           </div>
         </Swiper>
       </Container>
