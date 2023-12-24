@@ -4,21 +4,25 @@
   @include flex();
   flex-wrap: wrap;
   row-gap: 5px;
-  li {
+  color: var(--genres) !important;
+
+  span {
+    display: block;
+    color: currentColor;
     &:last-child {
       &:after {
         content: unset;
       }
     }
-    color: #fff;
+    // color: #fff;
     &:after {
       content: ',';
       padding: 0 4px;
     }
-    a {
-      color: currentColor;
-      opacity: 0.6;
-      text-transform: lowercase;
-    }
+    // a {
+    //   color: currentColor;
+    //   opacity: 0.6;
+    //   text-transform: lowercase;
+    // }
   }
 }

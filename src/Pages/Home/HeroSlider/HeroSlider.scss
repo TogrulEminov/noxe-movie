@@ -116,6 +116,11 @@
                 align-items: center;
                 color: #fff;
                 font-weight: bold;
+                .genres{
+                  span{
+                    color: #fff !important;
+                  }
+                }
                 &:not(&:last-child) {
                   &:after {
                     width: 3px;

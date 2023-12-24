@@ -1,2 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600&display=swap');
 
-  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600&display=swap');
+
+:root {
+  --text: #111517;
+  --white-mode: #000;
+  --black: #000;
+  --section-h6-p: #666;
+  --section-h3: #000;
+  --dark: #fff;
+  --genres: #000;
+  --slide-card: #000;
+  --swiper-controls-border: rgba(0, 0, 0, 0.12);
+  --swiper-controls-bullet: #0000007c;
+  --advantages: brightness(0) invert(0);
+  --reviews-bg: #f9f9f9;
+  --referance: invert(1) brightness(1);
+  --referance-hover: #121213;
+  --footer-bg: #fcfcfc;
+  --sidebar: #fff;
+}
+
+[data-theme='dark'] {
+  --sidebar: #000;
+  --black: #fff;
+  --text: #fff;
+  --white-mode: #fff;
+  --section-h6-p: #fff;
+  --section-h3: #fff;
+  --dark: #000;
+  --genres: #fff;
+  --swiper-controls-border: rgba(255, 254, 254, 0.12);
+  --slide-card: #fff;
+  --advantages: invert(1) brightness(1);
+  --referance: invert(0) brightness(0);
+  --swiper-controls-bullet: #ffffff7c;
+  --reviews-bg: transparent;
+  --referance-hover: #dbdbe2;
+  --footer-bg: #000;
+
+}

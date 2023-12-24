@@ -18,6 +18,7 @@ const Latest = () => {
   const nextButtonRef = useRef(null);
   const { data } = useFetch(`/movie/popular`);
   const { url } = useSelector((state) => state.api);
+  const theme = useSelector((state) => state.mode.theme);
   return (
     <section id="our_latest">
       <SectionTitle
@@ -80,7 +81,7 @@ const Latest = () => {
             );
           })}
 
-          <div className="swiper-controls">
+          <div className="swiper-controls" data-theme={theme}>
             <button ref={prevButtonRef}>
               <ArrowBackIcon />
             </button>

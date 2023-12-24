@@ -1,40 +1,39 @@
 @import '../../../css-config/Mixins.scss';
 #reviews {
-  background: transparent;
+  background: var(--reviews-bg);
   padding: 60px 0;
   .reviews_slider {
-    max-width:100%;
+    max-width: 100%;
     padding: 40px 0 60px;
-    @include lg{
-        max-width: 800px;
+    @include lg {
+      max-width: 800px;
     }
-    .swiper-controls{
+    .swiper-controls {
       @include flex();
       width: 100%;
       justify-content: center;
-    #containerForBulletsReviews {
-      width: 100%;
-      @include flex();
-      position: absolute;
-      gap: 10px;
-      bottom: 0;
-      justify-content: center;
-      span {
-        display: block;
-        background: #fff;
-        width: 7px;
-        height: 7px;
-        border-radius: 50%;
-        opacity: 0.2;
-        &.swiper-custom-bullet-active {
-          width: 25px;
-          opacity: 1;
-          border-radius: 3px;
-          background: #fff;
+      #containerForBulletsReviews {
+        width: 100%;
+        @include flex();
+        position: absolute;
+        gap: 10px;
+        bottom: 0;
+        justify-content: center;
+        span {
+          display: block;
+          background: var(--swiper-controls-bullet);
+          width: 7px;
+          height: 7px;
+          border-radius: 50%;
+          opacity: 0.2;
+          &.swiper-custom-bullet-active {
+            width: 25px;
+            opacity: 1;
+            border-radius: 3px;
+            background: var(--swiper-controls-bullet);
+          }
         }
       }
     }
-  }
-  
   }
 }

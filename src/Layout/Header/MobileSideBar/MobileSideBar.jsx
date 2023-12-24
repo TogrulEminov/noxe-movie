@@ -1,32 +1,39 @@
 import { Container } from 'react-bootstrap';
-import CloseIcon from '@mui/icons-material/Close';
+import { IoClose } from 'react-icons/io5';
 import './MobileSideBar.scss';
 import { NavLink } from 'react-router-dom';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import Logo from '../../../Compnents/Logo/Logo';
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import { IoIosArrowDown } from 'react-icons/io';
+import { IoIosArrowUp } from 'react-icons/io';
 import { useDispatch, useSelector } from 'react-redux';
 import { closeMenu } from '../../../Redux/Control/HeaderSlice';
-import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
+
 import { useState } from 'react';
 const MobileSideBar = () => {
   const { menu } = useSelector((state) => state.header);
+  const theme = useSelector((state) => state.mode.theme);
   const dispatch = useDispatch();
   const [openSub, setOpenSub] = useState(-1);
 
   const handleOpen = (index) => {
     setOpenSub((prevState) => (prevState === index ? -1 : index));
   };
+
+  const handleCloseMenu=()=>{
+    dispatch(closeMenu())
+    document.body.classList.remove('no-scroll');
+  }
   return (
-    <div className={`mobile_sideBar ${menu ? 'mobile_sidebar_active' : ''}`}>
+    <div className={`mobile_sideBar ${menu ? 'mobile_sidebar_active' : ''}`} data-theme={theme}>
       <Container>
         <div className="mobile_wrapper">
           <div className="mobile_header">
             <Logo />
             <button
               className="close_mobile_btn"
-              onClick={() => dispatch(closeMenu())}>
-              <CloseIcon />
+              onClick={handleCloseMenu }>
+              <IoClose />
             </button>
           </div>
           <div className="mobile_navbar">
@@ -36,12 +43,7 @@ const MobileSideBar = () => {
               </li>
               <li className="mobile_navbar_item">
                 <span onClick={() => handleOpen(1)}>
-                  Pages{' '}
-                  {openSub === 1 ? (
-                    <KeyboardArrowUpIcon />
-                  ) : (
-                    <KeyboardArrowDownIcon />
-                  )}
+                  Pages {openSub === 1 ? <IoIosArrowUp /> : <IoIosArrowDown />}
                 </span>
                 <ul
                   className={`mobile_submenu_desktop ${
@@ -85,12 +87,7 @@ const MobileSideBar = () => {
               </li>
               <li className="mobile_navbar_item">
                 <span onClick={() => handleOpen(2)}>
-                  Blog{' '}
-                  {openSub === 2 ? (
-                    <KeyboardArrowUpIcon />
-                  ) : (
-                    <KeyboardArrowDownIcon />
-                  )}
+                  Blog {openSub === 2 ? <IoIosArrowUp /> : <IoIosArrowDown />}
                 </span>
                 <ul
                   className={`mobile_submenu_desktop ${

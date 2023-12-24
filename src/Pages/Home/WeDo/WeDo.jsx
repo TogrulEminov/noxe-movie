@@ -5,7 +5,38 @@ import production from '../../../Assets/Images/production.svg';
 import studio from '../../../Assets/Images/studio.svg';
 import awards from '../../../Assets/Images/awards.svg';
 import './WeDo.scss';
+import AdvantagesCard from '../../../Compnents/AdvantagesCard/AdvantagesCard';
 const WeDo = () => {
+  const advantages = [
+    {
+      id: 1,
+      src: directors,
+      title: 'Directors',
+      description:
+        'Our visionary directors bring stories to life with their passion, creativity, and expertise. Join us.',
+    },
+    {
+      id: 2,
+      src: production,
+      title: 'Production',
+      description:
+        'Noxe delivers high-quality production services for film and TV projects of all genres and sizes.',
+    },
+    {
+      id: 3,
+      src: studio,
+      title: 'Studio',
+      description:
+        ' Noxe, a movie studio that brings your imagination to life  with captivating stories and stunning visuals.',
+    },
+    {
+      id: 4,
+      src: awards,
+      title: 'Awards',
+      description:
+        "Recognitions received by Noxe for excellence in filmmaking.Celebrating our team's hard work and creativity.",
+    },
+  ];
   return (
     <section id="what_we_do">
       <SectionTitle
@@ -24,60 +55,17 @@ const WeDo = () => {
       <Container>
         <section className="service_boxes">
           <Row>
-            <Col className="col-12" lg={3} md={6}>
-              <div className="service_item">
-                <figure>
-                  <img src={directors} alt="" />
-                </figure>
-                <article>
-                  <h3>Directors</h3>
-                  <p>
-                    Our visionary directors bring stories to life with their
-                    passion, creativity, and expertise. Join us.
-                  </p>
-                </article>
-              </div>
-            </Col>
-            <Col className="col-12" lg={3} md={6}>
-              <div className="service_item">
-                <figure>
-                  <img src={production} alt="" />
-                </figure>
-                <article>
-                  <h3>Production</h3>
-                  <p>
-                  Noxe delivers high-quality production services for film and TV projects of all genres and sizes.   </p>
-                </article>
-              </div>
-            </Col>
-            <Col className="col-12" lg={3} md={6}>
-              <div className="service_item">
-                <figure>
-                  <img src={studio} alt="" />
-                </figure>
-                <article>
-                  <h3>Studio</h3>
-                  <p>
-                    Noxe, a movie studio that brings your imagination to life
-                    with captivating stories and stunning visuals.{' '}
-                  </p>
-                </article>
-              </div>
-            </Col>
-            <Col className="col-12" lg={3} md={6}>
-              <div className="service_item">
-                <figure>
-                  <img src={awards} alt="" />
-                </figure>
-                <article>
-                  <h3>Awards</h3>
-                  <p>
-                    Recognitions received by Noxe for excellence in filmmaking.
-                    Celebrating our team's hard work and creativity.{' '}
-                  </p>
-                </article>
-              </div>
-            </Col>
+            {advantages?.map((item) => {
+              return (
+                <Col className="col-12" lg={3} md={6} key={item.id}>
+                  <AdvantagesCard
+                    src={item?.src}
+                    title={item?.title}
+                    description={item?.description}
+                  />
+                </Col>
+              );
+            })}
           </Row>
         </section>
       </Container>

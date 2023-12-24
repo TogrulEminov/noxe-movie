@@ -4,13 +4,15 @@ body {
     font-weight: normal;
     font-family: 'Poppins', sans-serif;
     letter-spacing: normal;
-
+    background-color: #000;
 }
 
-body.bg-dark {
+body.body-dark {
+    background-color: var(--dark) !important;
+}
+.bg-dark{
     background-color: #000 !important;
 }
-
 body.no-scroll {
     overflow: hidden;
 }
