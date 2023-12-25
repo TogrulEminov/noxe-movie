@@ -1,12 +1,15 @@
 @import '../../../css-config/Mixins.scss';
 .type_count {
+  color: var(--black);
   h3 {
-    font-size:16px;
+    font-size: 16px;
+    color: currentColor;
     font-weight: 500;
     margin-bottom: 4px;
   }
   h6 {
     font-size: 12px;
+    color: currentColor;
     opacity: 0.6;
   }
 }

@@ -1,0 +1,26 @@
+@import '../../../css-config/Mixins.scss';
+#search_tv_mode_banner {
+  height: 100vh;
+  padding: 40px 0;
+  @include flex();
+  position: relative;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: cover  !important;
+  &:before {
+    background: rgba(0, 0, 0, 0.6);
+    content: '';
+    inset: 0;
+    position: absolute;
+  }
+  justify-content: center;
+  .section_title {
+    font-size: 28px;
+    position: relative;
+    color: #fff;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    text-transform: capitalize;
+  }
+}

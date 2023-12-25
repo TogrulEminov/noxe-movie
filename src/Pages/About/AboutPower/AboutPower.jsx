@@ -4,11 +4,12 @@ import img from '../../../Assets/Images/michler.webp';
 import { Col, Row } from 'react-bootstrap';
 import Countup from '../../../Compnents/CountUp/Countup';
 import useFetch from '../../../hooks/useFetch';
+import { useSelector } from 'react-redux';
 const AboutPower = () => {
   const { data } = useFetch('/trending/all/day?language=en-US');
-  console.log(data);
+  const theme = useSelector((state) => state.mode.theme);
   return (
-    <section id="power">
+    <section id="power" data-theme={theme}>
       <Container>
         <div className="power">
           <div className="power-top">
@@ -30,25 +31,8 @@ const AboutPower = () => {
                 </Col>
               );
             })}
-
-            {/* <div className="count">
-              <span>569</span>
-              <h6>Movies</h6>
-            </div>
-            <div className="count">
-              <span>569</span>
-              <h6>Movies</h6>
-            </div>
-            <div className="count">
-              <span>569</span>
-              <h6>Movies</h6>
-            </div>
-            <div className="count">
-              <span>569</span>
-              <h6>Movies</h6>
-            </div> */}
           </Row>
-          <div>
+          <div className="content_bottom">
             <p>
               Welcome to the official website of Michelle Fischer, a versatile
               and captivating performer known for her authentic portrayals and
@@ -61,7 +45,7 @@ const AboutPower = () => {
               dedication, and unwavering commitment to the craft of acting.
             </p>
             <div className="img-side">
-              <img src={img} alt="" />
+              <img src={img} alt="" data-theme={theme} />
             </div>
           </div>
         </div>

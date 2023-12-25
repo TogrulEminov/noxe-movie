@@ -1,0 +1,9 @@
+@import "../../../css-config/Mixins.scss";
+.search_result_movie_tv{
+    padding: 40px 0;
+    background: transparent;
+    .row{
+        row-gap: 20px;
+        
+    }
+}

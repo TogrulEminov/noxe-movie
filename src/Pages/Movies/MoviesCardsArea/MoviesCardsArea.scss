@@ -1,25 +1,25 @@
-@import "../../../css-config/Mixins.scss";
-.movies_card_section{
-    padding: 30px 0;
-    background-color: #fff;
-   
-    .row{
-        justify-content: flex-start;
-        row-gap: 20px;
-        .movies_tv{
-            .slider_film_content{
-            h4{
-               a{
-                color: #000 !important;
-               }
-            }
-            .slider_film_genres{
-                li{
-                    color: #000;
-                }
-            }
-        }
+@import '../../../css-config/Mixins.scss';
+.movies_card_section {
+  padding: 30px 0;
+  //   background-color: var(--black);
 
+  .row {
+    justify-content: flex-start;
+    row-gap: 20px;
+    .movies_tv {
+      .slider_film_content {
+        color: var(--black);
+        h4 {
+          a {
+            color: currentColor !important;
+          }
         }
+        .slider_film_genres {
+          li {
+            color: currentColor;
+          }
+        }
+      }
     }
+  }
 }

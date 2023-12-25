@@ -1,8 +1,8 @@
-import Container from 'react-bootstrap/Container';
-import { FaCloudSun, FaCloudMoon } from 'react-icons/fa';
+import Container from 'react-bootstrap/Container'; 
 import './Header.scss';
 import Logo from '../../Compnents/Logo/Logo';
 import { IoMenu } from 'react-icons/io5';
+import { FiSun,FiMoon }  from "react-icons/fi";
 import { NavLink, useLocation } from 'react-router-dom';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import PersonIcon from '@mui/icons-material/Person';
@@ -182,9 +182,9 @@ const Header = () => {
                 <li className="dark_light_mode">
                   <button onClick={() => dispatch(toggleTheme())}>
                     {theme === 'light' ? (
-                      <FaCloudSun className="sun" />
+                      <FiSun className="sun" />
                     ) : (
-                      <FaCloudMoon className="moon" />
+                      <FiMoon  className="moon" />
                     )}
                   </button>
                 </li>
