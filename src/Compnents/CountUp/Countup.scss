@@ -1,16 +1,19 @@
 @import '../../css-config/Mixins.scss';
 .count_up {
   text-align: center;
+  color: var(--black);
   h3 {
     font-size: 4.375rem;
     line-height: 1;
     font-weight: bold;
     margin-bottom: 5px;
+    color: currentColor;
     @media only screen and (max-width: 576px) {
       font-size: 3rem;
     }
   }
   h6 {
+    color: currentColor;
     font-size: 1rem;
     text-transform: uppercase;
     font-weight: 500;

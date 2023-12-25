@@ -1,3 +1,4 @@
+import { Search } from '@mui/icons-material';
 import About from '../Pages/About/About';
 import Detail from '../Pages/Detail/Detail';
 import Home from '../Pages/Home/Home';
@@ -6,6 +7,7 @@ import FilmPortfolio from '../Pages/Portfolio/FilmPortfolio';
 import Login from '../Pages/Registration/Login/Login';
 import SignUp from '../Pages/Registration/SignUp/SignUp';
 import MainRoot from '../Router/MainRoot';
+import SearchTvMovie from '../Pages/SearchTvMovie/SearchTvMovie';
 
 export const ROUTES = [
   {
@@ -25,20 +27,24 @@ export const ROUTES = [
         element: <FilmPortfolio />,
       },
       {
-        path: '/:mediaType/:movie_id',
+        path: ':mediaType/:movie_id',
         element: <Detail />,
       },
       {
-        path: '/signup',
+        path: 'signup',
         element: <SignUp />,
       },
       {
-        path: '/login',
+        path: 'login',
         element: <Login />,
       },
       {
-        path: '/movies',
+        path: 'movies',
         element: <Movies />,
+      },
+      {
+        path: 'search/:mediaType',
+        element: <SearchTvMovie />,
       },
     ],
   },

@@ -18,6 +18,8 @@
   --referance-hover: #121213;
   --footer-bg: #fcfcfc;
   --sidebar: #fff;
+  --border:#ddd;
+  --movies-search-area:#fcfcfc;
 }
 
 [data-theme='dark'] {
@@ -37,5 +39,8 @@
   --reviews-bg: transparent;
   --referance-hover: #dbdbe2;
   --footer-bg: #000;
+  --movies-search-area:#070707;
+  --border:#1d1d1d;
+
 
 }
