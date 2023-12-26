@@ -1,5 +1,5 @@
 import Latest from "./Latest/Latest";
-import WeDo from "./WeDo/WeDo";
+// import WeDo from "./WeDo/WeDo";
 // import Reviews from './Reviews/Reviews';
 // import Referances from './Referances/Referances';
 // import Blog from './Blog/Blog';
@@ -10,7 +10,7 @@ const Home = () => {
     <main>
       <HeroSlider />
       <Latest />
-      <WeDo />
+      {/* <WeDo /> */}
       <PremiumMovies />
       {/* <Reviews /> */}
       {/* <Team /> */}

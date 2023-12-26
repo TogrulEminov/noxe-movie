@@ -1,16 +1,15 @@
-import { Container } from 'react-bootstrap';
-import SectionTitle from '../../../Compnents/SectionTitle/SectionTitle';
-import './Latest.scss';
-import SliderCard from '../../../Compnents/SliderCard/SliderCard';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import SwiperCore, { Navigation } from 'swiper';
-import 'swiper/swiper-bundle.css';
+import { Container } from "react-bootstrap";
+import SectionTitle from "../../../Compnents/SectionTitle/SectionTitle";
+import "./Latest.scss";
+import SliderCard from "../../../Compnents/SliderCard/SliderCard";
+import { Swiper, SwiperSlide } from "swiper/react";
+import SwiperCore, { Navigation } from "swiper";
+import "swiper/swiper-bundle.css";
 
-import { useRef } from 'react';
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import useFetch from '../../../hooks/useFetch';
-import { useSelector } from 'react-redux';
+import { useRef } from "react";
+
+import useFetch from "../../../hooks/useFetch";
+import { useSelector } from "react-redux";
 SwiperCore.use([Navigation]);
 
 const Latest = () => {
@@ -18,7 +17,6 @@ const Latest = () => {
   const nextButtonRef = useRef(null);
   const { data } = useFetch(`/movie/popular`);
   const { url } = useSelector((state) => state.api);
-  const theme = useSelector((state) => state.mode.theme);
   return (
     <section id="our_latest">
       <SectionTitle
@@ -35,10 +33,10 @@ const Latest = () => {
             nextEl: nextButtonRef.current,
           }}
           pagination={{
-            el: '#containerForBullets',
-            type: 'bullets',
-            bulletClass: 'swiper-custom-bullet',
-            bulletActiveClass: 'swiper-custom-bullet-active',
+            el: "#containerForBullets",
+            type: "bullets",
+            bulletClass: "swiper-custom-bullet",
+            bulletActiveClass: "swiper-custom-bullet-active",
             clickable: true,
           }}
           loop={true}
@@ -67,7 +65,8 @@ const Latest = () => {
               slidesPerView: 4,
             },
           }}
-          className="slide_carousel">
+          className="slide_carousel"
+        >
           {data?.results?.slice(0, 10).map((slide) => {
             return (
               <SwiperSlide key={slide.id}>
@@ -80,16 +79,6 @@ const Latest = () => {
               </SwiperSlide>
             );
           })}
-
-          <div className="swiper-controls" data-theme={theme}>
-            <button ref={prevButtonRef}>
-              <ArrowBackIcon />
-            </button>
-            <div id="containerForBullets"></div>
-            <button ref={nextButtonRef}>
-              <ArrowForwardIcon />
-            </button>
-          </div>
         </Swiper>
       </Container>
     </section>

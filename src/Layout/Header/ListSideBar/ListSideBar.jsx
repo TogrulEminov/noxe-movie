@@ -19,10 +19,10 @@ const ListSideBar = ({ sideBarCart, setSideBarCart }) => {
         <div className="sidebar_header_body">
           <BasketCard />
           {/* bunu true false mentiqi ile yaz yeni card bos olduqda bu gorunsun dolu olduqda ise cardin ozu */}
-          <figure className="bg_market_image">
+          {/* <figure className="bg_market_image">
             <figcaption>Basket is empty</figcaption>
             <img src={marketSvg} alt={marketSvg} />
-          </figure>
+          </figure> */}
           {/* bunu true false mentiqi ile yaz yeni card bos olduqda bu gorunsun dolu olduqda ise cardin ozu */}
         </div>
         <div className="sidebar_header_footer">
