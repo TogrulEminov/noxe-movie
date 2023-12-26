@@ -1,25 +1,25 @@
-import Container from "react-bootstrap/Container";
-import "./Header.scss";
-import Logo from "../../Compnents/Logo/Logo";
-import { IoMenu } from "react-icons/io5";
-import { FiSun, FiMoon } from "react-icons/fi";
-import { NavLink, useLocation } from "react-router-dom";
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import PersonIcon from "@mui/icons-material/Person";
-import SearchIcon from "@mui/icons-material/Search";
-import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-import SearchHeader from "./SearchHeader/SearchHeader";
-import { useDispatch, useSelector } from "react-redux";
+import Container from 'react-bootstrap/Container';
+import './Header.scss';
+import Logo from '../../Compnents/Logo/Logo';
+import { IoMenu } from 'react-icons/io5';
+import { FiSun, FiMoon } from 'react-icons/fi';
+import { NavLink, useLocation } from 'react-router-dom';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import PersonIcon from '@mui/icons-material/Person';
+import SearchIcon from '@mui/icons-material/Search';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import SearchHeader from './SearchHeader/SearchHeader';
+import { useDispatch, useSelector } from 'react-redux';
 import {
   closeMenu,
   openMenu,
   openSearch,
-} from "../../Redux/Control/HeaderSlice";
-import MobileSideBar from "./MobileSideBar/MobileSideBar";
-import { useCallback, useEffect, useState } from "react";
-import { useWindowSize } from "@uidotdev/usehooks";
-import ListSideBar from "./ListSideBar/ListSideBar";
-import { toggleTheme } from "../../Redux/Control/ModeSlice";
+} from '../../Redux/Control/HeaderSlice';
+import MobileSideBar from './MobileSideBar/MobileSideBar';
+import { useCallback, useEffect, useState } from 'react';
+import { useWindowSize } from '@uidotdev/usehooks';
+import ListSideBar from './ListSideBar/ListSideBar';
+import { toggleTheme } from '../../Redux/Control/ModeSlice';
 const Header = () => {
   const dispatch = useDispatch();
   const { width } = useWindowSize();
@@ -32,10 +32,10 @@ const Header = () => {
   const location = useLocation();
   const [scrolled, setScrolled] = useState(false);
   useEffect(() => {
-    if (location.pathname === "/film" || location.pathname === "/") {
-      document.body.classList.add("bg-dark");
+    if (location.pathname === '/film' || location.pathname === '/') {
+      document.body.classList.add('bg-dark');
     } else {
-      document.body.classList.remove("bg-dark");
+      document.body.classList.remove('bg-dark');
     }
   });
   const handleScroll = useCallback(() => {
@@ -56,9 +56,9 @@ const Header = () => {
     return;
   }, [dispatch, width]);
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener('scroll', handleScroll);
     };
   }, [handleScroll]);
 
@@ -74,27 +74,26 @@ const Header = () => {
   }, [location.pathname, resetStateOnPathChange]);
   const handleSidebarActive = () => {
     setSideBarCart(true);
-    document.body.classList.add("no-scroll");
+    document.body.classList.add('no-scroll');
     setUserDrop(false);
   };
 
   const handleOpenMenu = () => {
-    document.body.classList.add("no-scroll");
+    document.body.classList.add('no-scroll');
     dispatch(openMenu());
   };
   const theme = useSelector((state) => state.mode.theme);
-  const profile = JSON.parse(localStorage.getItem("user"));
+  const profile = JSON.parse(localStorage.getItem('user'));
   const [log, setLog] = useState(false);
   const logOut = useCallback(() => {
-    localStorage.removeItem("user");
+    localStorage.removeItem('user');
     setLog((log) => !log);
   }, [setLog]);
   return (
     <header
-      className={`header ${scrolled ? "sticky-header" : ""} ${
-        location.pathname === "/" ? "main_header" : ""
-      }`}
-    >
+      className={`header ${scrolled ? 'sticky-header' : ''} ${
+        location.pathname === '/' ? 'main_header' : ''
+      }`}>
       <Container>
         <div className="header_wrapper">
           <div className="left_header_content">
@@ -135,12 +134,6 @@ const Header = () => {
                     <li>
                       <NavLink>Team</NavLink>
                     </li>
-                    <li>
-                      <NavLink to="/signup">Sign Up</NavLink>
-                    </li>
-                    <li>
-                      <NavLink to="/login">Login</NavLink>
-                    </li>
                   </ul>
                 </li>
                 <li>
@@ -168,28 +161,32 @@ const Header = () => {
                 <li className="user_profile">
                   <button
                     className="user_icon"
-                    onClick={() => setUserDrop(!userDrop)}
-                  >
+                    onClick={() => setUserDrop(!userDrop)}>
                     <PersonIcon />
                   </button>
                   <div
-                    className={`user_profile ${userDrop ? "active_user" : ""}`}
-                  >
-                    <ul className="profile">
-                      <h5 className="head">Profile Info:</h5>
-                      {profile ? (
+                    className={`user_profile ${userDrop ? 'active_user' : ''}`}>
+                    {profile ? (
+                      <ul className="profile">
+                        <h5 className="head">Profile Info:</h5>
                         <div className="info">
-                          <li>{profile?.name}</li>
-                          <li>{profile?.surname}</li>
+                          <h6>{profile?.name}</h6>
+                          <h6>{profile?.surname}</h6>
                         </div>
-                      ) : (
-                        <h6>User not exitst</h6>
-                      )}
-
-                      <li>
-                        <button onClick={() => logOut()}>Logout</button>
-                      </li>
-                    </ul>
+                        <li>
+                          <button onClick={() => logOut()}>Logout</button>
+                        </li>
+                      </ul>
+                    ) : (
+                      <ul className="login_signup_link">
+                        <li>
+                          <NavLink to="/signup">Sign Up</NavLink>
+                        </li>
+                        <li>
+                          <NavLink to="/login">Login</NavLink>
+                        </li>
+                      </ul>
+                    )}
                   </div>
                 </li>
                 <li>
@@ -200,7 +197,7 @@ const Header = () => {
                 </li>
                 <li className="dark_light_mode">
                   <button onClick={() => dispatch(toggleTheme())}>
-                    {theme === "light" ? (
+                    {theme === 'light' ? (
                       <FiSun className="sun" />
                     ) : (
                       <FiMoon className="moon" />

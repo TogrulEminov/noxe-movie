@@ -113,7 +113,7 @@
       "trailer": "https://www.youtube.com/embed/Hgeu5rhoxxY",
       "genres": "Comedy ",
       "section": "Must-Have",
-      "id": 30,
+      "id": 52,
       "img": "../images/orange.jpeg",
       "price": 3
     },
@@ -181,7 +181,7 @@
       "genres": "Tv-Shows",
       "section": "trailer",
       "season": "4",
-      "id": 38,
+      "id": 51,
       "time": "1h 20m",
       "img": "../images/trek.jpeg",
       "price": 6.43
@@ -403,6 +403,203 @@
         "userId": 7
       },
       "id": 5
+    },
+    {
+      "undefined": {
+        "id": 19,
+        "movieName": "Sonic the Hedgehog 3",
+        "imbd": 7.4,
+        "title": "After years of being sheltered from the human world, the Turtle brothers set out to win the hearts of New Yorkers and be accepted as normal teenagers",
+        "releaseDate": "December 20, 2024",
+        "trailer": "https://www.youtube.com/embed/IHvzw4Ibuho",
+        "genres": "Action ",
+        "img": "../images/sonic.jpeg",
+        "section": "upcoming",
+        "time": "1h 36m",
+        "price": 0.9
+      },
+      "id": 6
+    },
+    {
+      "undefined": {
+        "id": 19,
+        "movieName": "Sonic the Hedgehog 3",
+        "imbd": 7.4,
+        "title": "After years of being sheltered from the human world, the Turtle brothers set out to win the hearts of New Yorkers and be accepted as normal teenagers",
+        "releaseDate": "December 20, 2024",
+        "trailer": "https://www.youtube.com/embed/IHvzw4Ibuho",
+        "genres": "Action ",
+        "img": "../images/sonic.jpeg",
+        "section": "upcoming",
+        "time": "1h 36m",
+        "price": 0.9
+      },
+      "id": 7
+    },
+    {
+      "undefined": {
+        "id": 19,
+        "movieName": "Sonic the Hedgehog 3",
+        "imbd": 7.4,
+        "title": "After years of being sheltered from the human world, the Turtle brothers set out to win the hearts of New Yorkers and be accepted as normal teenagers",
+        "releaseDate": "December 20, 2024",
+        "trailer": "https://www.youtube.com/embed/IHvzw4Ibuho",
+        "genres": "Action ",
+        "img": "../images/sonic.jpeg",
+        "section": "upcoming",
+        "time": "1h 36m",
+        "price": 0.9
+      },
+      "id": 8
+    },
+    {
+      "undefined": {
+        "id": 19,
+        "movieName": "Sonic the Hedgehog 3",
+        "imbd": 7.4,
+        "title": "After years of being sheltered from the human world, the Turtle brothers set out to win the hearts of New Yorkers and be accepted as normal teenagers",
+        "releaseDate": "December 20, 2024",
+        "trailer": "https://www.youtube.com/embed/IHvzw4Ibuho",
+        "genres": "Action ",
+        "img": "../images/sonic.jpeg",
+        "section": "upcoming",
+        "time": "1h 36m",
+        "price": 0.9
+      },
+      "id": 9
+    },
+    {
+      "undefined": {
+        "id": 19,
+        "movieName": "Sonic the Hedgehog 3",
+        "imbd": 7.4,
+        "title": "After years of being sheltered from the human world, the Turtle brothers set out to win the hearts of New Yorkers and be accepted as normal teenagers",
+        "releaseDate": "December 20, 2024",
+        "trailer": "https://www.youtube.com/embed/IHvzw4Ibuho",
+        "genres": "Action ",
+        "img": "../images/sonic.jpeg",
+        "section": "upcoming",
+        "time": "1h 36m",
+        "price": 0.9
+      },
+      "id": 10
+    },
+    {
+      "undefined": {
+        "movieName": "Avengers: Infinity War",
+        "imbd": "8.4",
+        "title": "The Avengers must stop Thanos, an intergalactic warlord, from getting his hands on all the infinity stones. However, Thanos is prepared to go to any lengths to carry out his insane plan.",
+        "releaseDate": "September 24, 2017",
+        "trailer": "https://www.youtube.com/embed/6ZfuNTqbHE8",
+        "genres": "Tv-Shows",
+        "section": "Hero-Banner",
+        "season": "3",
+        "id": 49,
+        "price": 3,
+        "time": "1h 20m",
+        "img": "../images/war.jpeg"
+      },
+      "id": 11
+    },
+    {
+      "undefined": {
+        "id": 16,
+        "movieName": "Deadpool 3",
+        "imbd": 7.8,
+        "title": "Wolverine is recovering from his injuries when he crosses paths with the loudmouth, Deadpool. They team up to defeat a common enemy.",
+        "releaseDate": "November 8, 2024",
+        "trailer": "https://www.youtube.com/embed/pBk4NYhWNMM",
+        "genres": "Action ",
+        "img": "../images/deadpool3.jpeg",
+        "section": "upcoming",
+        "time": "1h 36m",
+        "price": 2.45
+      },
+      "id": 12
+    },
+    {
+      "undefined": {
+        "id": 18,
+        "movieName": "Teenage Mutant Ninja Turtles",
+        "imbd": 6.3,
+        "title": "After years of being sheltered from the human world, the Turtle brothers set out to win the hearts of New Yorkers and be accepted as normal teenagers",
+        "releaseDate": " August 2, 2023",
+        "trailer": "https://www.youtube.com/embed/IHvzw4Ibuho",
+        "genres": "Action ",
+        "img": "../images/teenageninja.jpeg",
+        "section": "upcoming",
+        "time": "1h 36m",
+        "price": 7.3
+      },
+      "id": 13
+    },
+    {
+      "undefined": {
+        "id": 18,
+        "movieName": "Teenage Mutant Ninja Turtles",
+        "imbd": 6.3,
+        "title": "After years of being sheltered from the human world, the Turtle brothers set out to win the hearts of New Yorkers and be accepted as normal teenagers",
+        "releaseDate": " August 2, 2023",
+        "trailer": "https://www.youtube.com/embed/IHvzw4Ibuho",
+        "genres": "Action ",
+        "img": "../images/teenageninja.jpeg",
+        "section": "upcoming",
+        "time": "1h 36m",
+        "price": 7.3
+      },
+      "id": 14
+    },
+    {
+      "undefined": {
+        "id": 18,
+        "movieName": "Teenage Mutant Ninja Turtles",
+        "imbd": 6.3,
+        "title": "After years of being sheltered from the human world, the Turtle brothers set out to win the hearts of New Yorkers and be accepted as normal teenagers",
+        "releaseDate": " August 2, 2023",
+        "trailer": "https://www.youtube.com/embed/IHvzw4Ibuho",
+        "genres": "Action ",
+        "img": "../images/teenageninja.jpeg",
+        "section": "upcoming",
+        "time": "1h 36m",
+        "price": 7.3
+      },
+      "id": 15
+    },
+    {
+      "undefined": {
+        "id": 18,
+        "movieName": "Teenage Mutant Ninja Turtles",
+        "imbd": 6.3,
+        "title": "After years of being sheltered from the human world, the Turtle brothers set out to win the hearts of New Yorkers and be accepted as normal teenagers",
+        "releaseDate": " August 2, 2023",
+        "trailer": "https://www.youtube.com/embed/IHvzw4Ibuho",
+        "genres": "Action ",
+        "img": "../images/teenageninja.jpeg",
+        "section": "upcoming",
+        "time": "1h 36m",
+        "price": 7.3
+      },
+      "id": 16
+    },
+    {
+      "undefined": {
+        "id": 18,
+        "movieName": "Teenage Mutant Ninja Turtles",
+        "imbd": 6.3,
+        "title": "After years of being sheltered from the human world, the Turtle brothers set out to win the hearts of New Yorkers and be accepted as normal teenagers",
+        "releaseDate": " August 2, 2023",
+        "trailer": "https://www.youtube.com/embed/IHvzw4Ibuho",
+        "genres": "Action ",
+        "img": "../images/teenageninja.jpeg",
+        "section": "upcoming",
+        "time": "1h 36m",
+        "price": 7.3
+      },
+      "id": 17
+    },
+    {
+      "undefined": {},
+      "id": 18
     }
   ]
 }

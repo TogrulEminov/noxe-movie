@@ -1,0 +1,19 @@
+@import '../../css-config/Mixins.scss';
+.home_section {
+  margin-bottom: 30px;
+  .home_section_title {
+    @include flex();
+    justify-content: flex-start;
+    flex-direction: column;
+    row-gap: 20px;
+    @include sm {
+      justify-content: space-between;
+      flex-direction: unset;
+    }
+    h3 {
+      font-size: 22px;
+      font-weight: bold;
+      color: var(--black);
+    }
+  }
+}

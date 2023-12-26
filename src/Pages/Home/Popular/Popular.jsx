@@ -1,23 +1,28 @@
-import { Container } from 'react-bootstrap';
-import SectionTitle from '../../../Compnents/SectionTitle/SectionTitle';
-import './Latest.scss';
-import SliderCard from '../../../Compnents/SliderCard/SliderCard';
+import { useState } from 'react';
+import HomeSection from '../../../Compnents/HomeSection/HomeSection';
+import './Popular.scss';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Navigation } from 'swiper';
-import 'swiper/swiper-bundle.css';
-import useFetch from '../../../hooks/useFetch';
 import { useSelector } from 'react-redux';
-SwiperCore.use([Navigation]);
+import useFetch from '../../../hooks/useFetch';
+import { Container } from 'react-bootstrap';
+import SliderCard from '../../../Compnents/SliderCard/SliderCard';
 
-const Latest = () => {
-  const { data } = useFetch(`/movie/popular`);
+SwiperCore.use([Navigation]);
+const Popular = () => {
+  const [endPoint, setEndpoint] = useState('movie');
   const { url } = useSelector((state) => state.api);
+  const { data } = useFetch(`/${endPoint}/popular`);
+  const onTabChange = (tab) => {
+    setEndpoint(tab === 'Movies' ? 'movie' : 'tv');
+  };
+
   return (
-    <section id="our_latest">
-      <SectionTitle
-        headingTop="NEWEST ENTERTAINMENT PICKS"
-        headingCenter="Our Latest Movies & TV Shows"
-        pharagraph="Discover the latest in entertainment with our top picks of movies and TV shows! From thrilling blockbusters to captivating dramas, indulge in a world of endless possibilities. Stay up-to-date with our constantly updated collection and immerse yourself in the ultimate viewing experience. Don't miss out!"
+    <section id="popular">
+      <HomeSection
+        data={['Movies', 'TV Shows']}
+        onTabChange={onTabChange}
+        title="What's Popular"
       />
       <Container>
         <Swiper
@@ -59,4 +64,4 @@ const Latest = () => {
   );
 };
 
-export default Latest;
+export default Popular;

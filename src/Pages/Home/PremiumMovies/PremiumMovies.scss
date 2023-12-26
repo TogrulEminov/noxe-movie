@@ -1,8 +1,15 @@
 @import '../../../css-config/Mixins.scss';
 #premium {
+  padding: 40px 0;
+  h5 {
+    color: var(--black);
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 30px;
+  }
   .slide_carousel {
     .swiper-controls {
-      border-top: 1px solid var( --swiper-controls-border);
+      border-top: 1px solid var(--swiper-controls-border);
       padding: 37px 0;
       margin-top: 60px;
       display: flex;

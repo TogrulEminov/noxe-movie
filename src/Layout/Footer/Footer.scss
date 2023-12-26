@@ -1,6 +1,7 @@
 @import '../../css-config/Mixins.scss';
 #footer {
-  background-color: var(--footer-bg);
+  // background-color: var(--footer-bg);
+  background: url('../../Assets/Images/footer-bg.jpg') center/cover no-repeat;
   display: flex;
   align-items: center;
   padding: 40px 0;
@@ -19,7 +20,8 @@
         justify-content: center;
       }
       .footer_articles {
-        color: var(--white-mode);
+        // color: var(--white-mode);
+        color: #fff;
         h3 {
           color: currentColor;
           opacity: 0.5;
@@ -36,10 +38,12 @@
             color: currentColor;
             transition: 0.3s ease-in-out;
             &:hover {
-              opacity: 0.5;
+              // opacity: 0.5;
+              color: rgb(145, 13, 13);
             }
             a {
               color: currentColor;
+              font-weight: bold;
               font-size: 16px;
             }
           }
