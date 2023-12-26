@@ -1,12 +1,7 @@
 import { useRef } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import './HeroSlider.scss';
-import SwiperCore, {
-  Navigation,
-  Pagination,
-  Autoplay,
-  EffectFade,
-} from 'swiper';
+import SwiperCore, { Navigation, Autoplay, EffectFade } from 'swiper';
 import useFetch from '../../../hooks/useFetch';
 
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
@@ -15,12 +10,12 @@ import { Col, Container, Row } from 'react-bootstrap';
 import Genres from '../../../Compnents/Genres/Genres';
 import dayjs from 'dayjs';
 import { useSelector } from 'react-redux';
-SwiperCore.use([Autoplay, Navigation, Pagination, EffectFade]);
+SwiperCore.use([Autoplay, Navigation, EffectFade]);
 const HeroSlider = () => {
   const prevButtonRef = useRef(null);
   const nextButtonRef = useRef(null);
   const { data } = useFetch('/discover/movie');
-  const { url } = useSelector((state) => state.api); 
+  const { url } = useSelector((state) => state.api);
   return (
     <section id="hero_slider">
       <>
@@ -44,10 +39,7 @@ const HeroSlider = () => {
               swiper.navigation.update();
             });
           }}
-          pagination={{
-            clickable: true,
-          }}
-          modules={[Autoplay, Pagination, Navigation]}
+          modules={[Autoplay, Navigation]}
           className="hero_slider_images">
           {data?.results?.slice(10, 15).map((item, index) => {
             return (
@@ -55,7 +47,7 @@ const HeroSlider = () => {
                 key={index}
                 className="swiper_card"
                 style={{
-                  backgroundImage: `url(${ url.backdrop}${item?.backdrop_path})`,
+                  backgroundImage: `url(${url.backdrop}${item?.backdrop_path})`,
                 }}>
                 <Container>
                   <Row>
@@ -87,7 +79,7 @@ const HeroSlider = () => {
             <button ref={prevButtonRef}>
               <ArrowBackIosNewIcon />
             </button>
-            <div id="containerForBullets"></div>
+            {/* <div id="containerForBullets"></div> */}
             <button ref={nextButtonRef}>
               <ArrowForwardIos />
             </button>

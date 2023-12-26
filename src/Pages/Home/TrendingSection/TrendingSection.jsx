@@ -1,23 +1,27 @@
-import { Container } from 'react-bootstrap';
-import SectionTitle from '../../../Compnents/SectionTitle/SectionTitle';
-import './Latest.scss';
-import SliderCard from '../../../Compnents/SliderCard/SliderCard';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Navigation } from 'swiper';
+import './TrendingSection.scss';
 import 'swiper/swiper-bundle.css';
 import useFetch from '../../../hooks/useFetch';
 import { useSelector } from 'react-redux';
+import SliderCard from '../../../Compnents/SliderCard/SliderCard';
+import { Container } from 'react-bootstrap';
+import { useState } from 'react';
+import HomeSection from '../../../Compnents/HomeSection/HomeSection';
 SwiperCore.use([Navigation]);
-
-const Latest = () => {
-  const { data } = useFetch(`/movie/popular`);
+const TrendingSection = () => {
+  const [endPoint, setEndPoint] = useState('day');
   const { url } = useSelector((state) => state.api);
+  const { data } = useFetch(`/trending/all/${endPoint}`);
+  const onTabChange = (tab) => {
+    setEndPoint(tab === 'Day' ? 'day' : 'week');
+  };
   return (
     <section id="our_latest">
-      <SectionTitle
-        headingTop="NEWEST ENTERTAINMENT PICKS"
-        headingCenter="Our Latest Movies & TV Shows"
-        pharagraph="Discover the latest in entertainment with our top picks of movies and TV shows! From thrilling blockbusters to captivating dramas, indulge in a world of endless possibilities. Stay up-to-date with our constantly updated collection and immerse yourself in the ultimate viewing experience. Don't miss out!"
+      <HomeSection
+        data={['Day', 'Week']}
+        onTabChange={onTabChange}
+        title="Trending"
       />
       <Container>
         <Swiper
@@ -59,4 +63,4 @@ const Latest = () => {
   );
 };
 
-export default Latest;
+export default TrendingSection;

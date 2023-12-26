@@ -1,8 +1,8 @@
-import Container from 'react-bootstrap/Container'; 
+import Container from 'react-bootstrap/Container';
 import './Header.scss';
 import Logo from '../../Compnents/Logo/Logo';
 import { IoMenu } from 'react-icons/io5';
-import { FiSun,FiMoon }  from "react-icons/fi";
+import { FiSun, FiMoon } from 'react-icons/fi';
 import { NavLink, useLocation } from 'react-router-dom';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import PersonIcon from '@mui/icons-material/Person';
@@ -26,6 +26,7 @@ const Header = () => {
   const handleOpenSearch = () => {
     dispatch(openSearch());
   };
+
   const [userDrop, setUserDrop] = useState(false);
   const [sideBarCart, setSideBarCart] = useState(false);
   const location = useLocation();
@@ -82,6 +83,12 @@ const Header = () => {
     dispatch(openMenu());
   };
   const theme = useSelector((state) => state.mode.theme);
+  const profile = JSON.parse(localStorage.getItem('user'));
+  const [log, setLog] = useState(false);
+  const logOut = useCallback(() => {
+    localStorage.removeItem('user');
+    setLog((log) => !log);
+  }, [setLog]);
   return (
     <header
       className={`header ${scrolled ? 'sticky-header' : ''} ${
@@ -127,12 +134,6 @@ const Header = () => {
                     <li>
                       <NavLink>Team</NavLink>
                     </li>
-                    <li>
-                      <NavLink to="/signup">Sign Up</NavLink>
-                    </li>
-                    <li>
-                      <NavLink to="/login">Login</NavLink>
-                    </li>
                   </ul>
                 </li>
                 <li>
@@ -165,12 +166,27 @@ const Header = () => {
                   </button>
                   <div
                     className={`user_profile ${userDrop ? 'active_user' : ''}`}>
-                    <ul>
-                      <li>Profile</li>
-                      <li>
-                        <button>Logout</button>
-                      </li>
-                    </ul>
+                    {profile ? (
+                      <ul className="profile">
+                        <h5 className="head">Profile Info:</h5>
+                        <div className="info">
+                          <h6>{profile?.name}</h6>
+                          <h6>{profile?.surname}</h6>
+                        </div>
+                        <li>
+                          <button onClick={() => logOut()}>Logout</button>
+                        </li>
+                      </ul>
+                    ) : (
+                      <ul className="login_signup_link">
+                        <li>
+                          <NavLink to="/signup">Sign Up</NavLink>
+                        </li>
+                        <li>
+                          <NavLink to="/login">Login</NavLink>
+                        </li>
+                      </ul>
+                    )}
                   </div>
                 </li>
                 <li>
@@ -184,7 +200,7 @@ const Header = () => {
                     {theme === 'light' ? (
                       <FiSun className="sun" />
                     ) : (
-                      <FiMoon  className="moon" />
+                      <FiMoon className="moon" />
                     )}
                   </button>
                 </li>
