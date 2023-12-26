@@ -366,6 +366,15 @@
       "img": "../images/queen.jpeg"
     }
   ],
-  "users": [],
+  "users": [
+    {
+      "name": "Gareth Jensen",
+      "email": "navohaguno@mailinator.com",
+      "surname": "Knowles",
+      "password": "Pa$$w0rd!",
+      "confirmPassword": "Pa$$w0rd!",
+      "id": 1
+    }
+  ],
   "basket": []
 }

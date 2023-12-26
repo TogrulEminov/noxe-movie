@@ -5,13 +5,11 @@ import { useFormik } from "formik";
 import axios from "axios";
 // import { IoIosArrowRoundBack } from "react-icons/io";
 import "./Login.scss";
-const USERS_URL = "http://localhost:3000/users";
+const USERS_URL = "http://localhost:3031/users";
 
 const Login = () => {
   const navigate = useNavigate();
   const onSubmit = async (values, actions) => {
-    console.log(values);
-    console.log(actions);
     await new Promise((resolve) => {
       setTimeout(resolve, 1000);
     });

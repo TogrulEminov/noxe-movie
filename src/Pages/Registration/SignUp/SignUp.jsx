@@ -4,7 +4,7 @@ import "./SignUp.scss";
 import { basicSchema } from "../../../schemas";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-const USERS_URL = "http://localhost:3000/users";
+const USERS_URL = "http://localhost:3031/users";
 const Login = () => {
   const navigate = useNavigate();
   const onSubmit = async (values, actions) => {
@@ -30,7 +30,7 @@ const Login = () => {
       validationSchema: basicSchema,
       onSubmit,
     });
-  // console.log(values);
+  console.log(values);
   return (
     <section id="signup">
       <form onSubmit={handleSubmit}>

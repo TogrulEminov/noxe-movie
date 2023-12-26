@@ -1,9 +1,11 @@
-
-
+import { Container } from "react-bootstrap";
 const PremiumMovies = () => {
+  
   return (
-    <div>PremiumMovies</div>
-  )
-}
+    <section id="premium">
+      <Container>jj</Container>
+    </section>
+  );
+};
 
-export default PremiumMovies
+export default PremiumMovies;
