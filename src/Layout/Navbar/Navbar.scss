@@ -1,0 +1,246 @@
+@import '../../css-config/Mixins.scss';
+.first_header {
+  height: 75px;
+  @include flex();
+  padding: 10px 0;
+  position: absolute;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.007);
+  backdrop-filter: blur(1px);
+  transition: all 0.3s ease;
+  &.sticky-header {
+    position: fixed;
+    animation: slideDown 0.6s ease-in-out forwards;
+    box-shadow: 0 1px 30px rgba(0, 0, 0, 0.05);
+    padding: 5px 0; 
+  }
+  .header_wrapper {
+    @include flex();
+    justify-content: space-between;
+    .header_left {
+      @include flex();
+      gap: 10px;
+      .hamburger {
+        width: 40px;
+        height: 40px;
+        display: block;
+        font-size: 25px;
+        border: none;
+        background: transparent;
+        color: #ffffff;
+        @include lg {
+          display: none;
+        }
+      }
+    }
+    .header_right {
+      @include flex();
+      justify-content: flex-end;
+      .main_nav_link {
+        padding: 0;
+        display: none;
+        @include lg {
+          display: block;
+        }
+        .main_nav_link_list {
+          @include flex();
+          li {
+            color: #fff;
+            padding: 13px 15px;
+            line-height: 40px;
+
+            a,
+            h4 {
+              cursor: pointer;
+              transition: 0.3s ease-in-out;
+              color: currentColor;
+              font-weight: bold;
+              font-size: 16px;
+              letter-spacing: -0.5px;
+            }
+            h4 {
+              @include flex();
+              gap: 10px;
+              svg {
+                transform: rotate(0);
+                transition: 0.3s ease-in;
+              }
+            }
+            &.nav_items {
+              position: relative;
+              transition: 0.3s ease-in-out;
+              &:hover {
+                h4 {
+                  svg {
+                    transition: 0.3s ease-out;
+                    transform: rotate(180deg);
+                  }
+                }
+                .submenu_list {
+                  padding: 10px;
+                  opacity: 1;
+                  visibility: visible;
+                  max-height: 400px;
+                  overflow: visible;
+                }
+              }
+              .submenu_list {
+                position: absolute;
+                color: var(--dark);
+                background-color: var(--black);
+                width: 150px;
+                padding: 0 10px;
+                border-radius: 5px;
+                top: 50px;
+                right: -20px;
+                max-height: 0;
+                transition: 0.3s ease-in-out;
+                opacity: 0;
+                box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+                overflow: hidden;
+                visibility: hidden;
+
+                li {
+                  padding: 8px 0;
+                  line-height: 20px;
+                  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+                  font-size: 16px;
+                }
+              }
+            }
+          }
+        }
+      }
+      .addition_list {
+        @include flex();
+        li {
+          padding: 13px 6px;
+          @include lg{
+            padding: 13px 15px;
+          }
+          &.cart_icon {
+            color: var(--dark);
+            display: none;
+            @include lg{
+                display: block;
+            }
+            button {
+              position: relative;
+              width: 100%;
+              background-color: transparent;
+              color: currentColor;
+              border: none;
+              font-size: 18px;
+              span {
+                position: absolute;
+                top: -15px;
+                width: 20px;
+                height: 20px;
+                @include flex();
+                justify-content: center;
+                background-color: #fff;
+                color: var(--black);
+                border-radius: 50%;
+                font-size: 12px;
+                left: 15px;
+              }
+            }
+          }
+          &.user_icon {
+            position: relative;
+            button {
+              color: var(--dark);
+              background-color: transparent;
+              font-size: 18px;
+              border: none;
+              cursor: pointer;
+              &.active {
+                color: red;
+              }
+            }
+            .user_link_info {
+              padding: 10px;
+              position: absolute;
+              top: 60px;
+              right: -50px;
+              width: 180px;
+              opacity: 0;
+              visibility: hidden;
+              max-height: 0;
+              overflow: hidden;
+              transition: 0.6s ease-in-out;
+              border-radius: 6px;
+              box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+              background-color: var(--black);
+              color: var(--dark);
+              &.active_user_sub {
+                overflow: visible;
+                visibility: visible;
+                opacity: 1;
+                max-height: 450px;
+              }
+              li {
+                color: currentColor;
+                a {
+                  color: currentColor;
+                }
+              }
+              span {
+                h6 {
+                  font-weight: bold;
+                  opacity: 0.7;
+                  padding: 0 15px;
+                  font-size: 20px;
+                  margin-bottom: 10px;
+                }
+                li {
+                  padding: 5px 15px;
+                  button {
+                    font-size: 16px !important ;
+                  }
+                }
+              }
+            }
+          }
+          &.search_icon {
+            button {
+              background-color: transparent;
+              color: #fff;
+              border: none;
+              font-size: 20px;
+            }
+          }
+          &.dark_light_mode {
+            button {
+              background-color: transparent;
+              border: none;
+              cursor: pointer;
+              font-size: 20px;
+              svg {
+                &.sun {
+                  color: white;
+                }
+                &.moon {
+                  color: white;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: matrix(1, 0, 0, 1, 0, -280);
+    background-color: #fff;
+  }
+  to {
+    transform: matrix(1, 0, 0, 1, 0, 0);
+    background-color: #111;
+  }
+}

@@ -4,7 +4,7 @@ body {
     font-weight: normal;
     font-family: 'Poppins', sans-serif;
     letter-spacing: normal;
-    background-color: #000;
+    background-color: #000; 
 }
 
 body.body-dark {

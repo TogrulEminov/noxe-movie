@@ -82,6 +82,9 @@
         @include flex();
         flex-wrap: wrap;
         row-gap: 10px;
+        .genres{
+          color: #fff !important;
+        }
         li {
           display: flex;
           align-items: center;

@@ -60,19 +60,16 @@ const PremiumMovies = () => {
           }}
           className="slide_carousel">
           {movies.map((movie) => {
-            console.log(movie?.id);
             return (
-              <>
-                <SwiperSlide key={movie.id}>
-                  <SliderCard
-                    id={movie.id}
-                    title={movie.title}
-                    src={`${movie.img}`}
-                  />
-                  <h6>price:{movie.price}$</h6>
-                  <button onClick={() => addBasket(movie?.id)}>Add Card</button>
-                </SwiperSlide>
-              </>
+              <SwiperSlide key={movie.id}>
+                <SliderCard
+                  id={movie.id}
+                  title={movie.title}
+                  src={`${movie.img}`}
+                />
+                <h6>price:{movie.price}$</h6>
+                <button onClick={() => addBasket(movie?.id)}>Add Card</button>
+              </SwiperSlide>
             );
           })}
         </Swiper>

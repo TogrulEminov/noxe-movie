@@ -91,6 +91,7 @@ const Header = () => {
   }, [setLog]);
   return (
     <header
+  
       className={`header ${scrolled ? 'sticky-header' : ''} ${
         location.pathname === '/' ? 'main_header' : ''
       }`}>

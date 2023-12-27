@@ -1,4 +1,3 @@
-import { Search } from '@mui/icons-material';
 import About from '../Pages/About/About';
 import Detail from '../Pages/Detail/Detail';
 import Home from '../Pages/Home/Home';
