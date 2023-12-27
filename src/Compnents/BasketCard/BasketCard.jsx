@@ -9,7 +9,7 @@ const BasketCard = () => {
 
   useEffect(() => {
     axios.get(BASKET_URL).then((res) => setBasket(res.data));
-  }, [basket]);
+  }, []);
 
   
   const profile = JSON.parse(localStorage.getItem("user"));
