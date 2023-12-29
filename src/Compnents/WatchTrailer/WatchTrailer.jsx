@@ -1,7 +1,7 @@
 import './WatchTrailer.scss';
-const WatchTrailer = () => {
+const WatchTrailer = ({ onClick }) => {
   return (
-    <div className="watch_trailler">
+    <div className="watch_trailler" onClick={onClick}>
       <button className="watch_btn">
         <svg
           version="1.1"

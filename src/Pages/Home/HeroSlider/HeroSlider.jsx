@@ -10,12 +10,14 @@ import { Col, Container, Row } from 'react-bootstrap';
 import Genres from '../../../Compnents/Genres/Genres';
 import dayjs from 'dayjs';
 import { useSelector } from 'react-redux';
+import WatchTrailer from '../../../Compnents/WatchTrailer/WatchTrailer';
 SwiperCore.use([Autoplay, Navigation, EffectFade]);
 const HeroSlider = () => {
   const prevButtonRef = useRef(null);
   const nextButtonRef = useRef(null);
   const { data } = useFetch('/discover/movie');
   const { url } = useSelector((state) => state.api);
+
   return (
     <section id="hero_slider">
       <>
