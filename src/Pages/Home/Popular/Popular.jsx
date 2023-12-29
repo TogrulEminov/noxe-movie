@@ -51,6 +51,7 @@ const Popular = () => {
               <SwiperSlide key={slide.id}>
                 <SliderCard
                   id={slide.id}
+                  name={slide?.name}
                   title={slide?.title}
                   src={`${url.poster}${slide?.poster_path}`}
                   genre_ids={slide?.genre_ids.slice(0, 3)}

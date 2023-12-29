@@ -16,6 +16,8 @@ const TrendingSection = () => {
   const onTabChange = (tab) => {
     setEndPoint(tab === 'Day' ? 'day' : 'week');
   };
+
+  console.log(data);
   return (
     <section id="our_latest">
       <HomeSection
@@ -50,6 +52,7 @@ const TrendingSection = () => {
               <SwiperSlide key={slide.id}>
                 <SliderCard
                   id={slide.id}
+                  name={slide?.name}
                   title={slide?.title}
                   src={`${url.poster}${slide?.poster_path}`}
                   genre_ids={slide?.genre_ids.slice(0, 3)}

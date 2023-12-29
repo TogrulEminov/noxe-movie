@@ -51,6 +51,7 @@ const TopRated = () => {
                 <SliderCard
                   id={slide.id}
                   title={slide?.title}
+                  name={slide?.name}
                   src={`${url.poster}${slide?.poster_path}`}
                   genre_ids={slide?.genre_ids.slice(0, 3)}
                 />

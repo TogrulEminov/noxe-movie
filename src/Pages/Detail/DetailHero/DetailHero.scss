@@ -10,6 +10,7 @@
   display: flex;
   align-items: center;
   background-color: #0e0e0e !important;
+
   &::before {
     content: '';
     display: block;
@@ -22,6 +23,10 @@
   }
   .row {
     align-items: center;
+    justify-content: center;
+    @include lg {
+      justify-content: flex-start;
+    }
     row-gap: 20px;
     .detail_img {
       position: relative;
@@ -82,7 +87,7 @@
         @include flex();
         flex-wrap: wrap;
         row-gap: 10px;
-        .genres{
+        .genres {
           color: #fff !important;
         }
         li {

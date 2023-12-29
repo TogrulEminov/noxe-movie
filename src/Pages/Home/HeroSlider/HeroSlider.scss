@@ -33,11 +33,8 @@
         transition: background-color 0.2s ease-in-out 0s,
           color 0.2s ease-in-out 0s;
         color: rgba(255, 255, 255, 0.7);
-        background-color: rgba(0, 0, 0, 0.8);
-
-        &.swiper-button-disabled {
-          background-color: rgba(0, 0, 0, 0.4);
-        }
+        background: transparent;
+        border: none;
         svg {
           fill: #ffff;
         }
@@ -139,8 +136,4 @@
       }
     }
   }
-}
-#hero_slider .hero_slider_images .hero_swiper-controls button{
-  background-color: transparent !important;
-  border: none;
 }

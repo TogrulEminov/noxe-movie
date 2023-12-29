@@ -1,9 +1,10 @@
 import { Container, Row, Col } from 'react-bootstrap';
 import SliderCard from '../../../Compnents/SliderCard/SliderCard';
+import noImage from '../../../Assets/Images/no-poster.png';
 import { useSelector } from 'react-redux';
 import './SearchImageCard.scss';
 const SearchImageCards = ({ data }) => {
-  const{ url} = useSelector((state) => state.api);
+  const { url } = useSelector((state) => state.api);
   return (
     <div className="search_result_movie_tv">
       <Container>
@@ -15,8 +16,12 @@ const SearchImageCards = ({ data }) => {
                   <SliderCard
                     className="movies_tv"
                     title={item?.original_title}
-                    src={`${url.poster}${item?.poster_path}`}
-                    genre_ids={item?.genre_ids}
+                    src={`${
+                      item?.poster_path
+                        ? ` ${url.poster}/${item?.poster_path}`
+                        : noImage
+                    }`}
+                    genre_ids={item?.genre_ids.slice(0,3)}
                     id={item?.id}
                   />
                 </Col>
