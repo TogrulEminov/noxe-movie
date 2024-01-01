@@ -68,7 +68,7 @@ const PremiumMovies = () => {
                   src={`${movie.img}`}
                 />
                 <h6>price:{movie.price}$</h6>
-                <button onClick={() => addBasket(movie?.id)}>Add Card</button>
+                <button onClick={() => addBasket(movie)}>Add Card</button>
               </SwiperSlide>
             );
           })}
