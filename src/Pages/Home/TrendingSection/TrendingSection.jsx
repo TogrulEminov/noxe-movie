@@ -16,8 +16,6 @@ const TrendingSection = () => {
   const onTabChange = (tab) => {
     setEndPoint(tab === 'Day' ? 'day' : 'week');
   };
-
-  console.log(data);
   return (
     <section id="our_latest">
       <HomeSection

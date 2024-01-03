@@ -1,6 +1,5 @@
 import { Container } from 'react-bootstrap';
 import './PremiumMovies.scss';
-import SliderCard from '../../../Compnents/SliderCard/SliderCard';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Navigation } from 'swiper';
 import 'swiper/swiper-bundle.css';
@@ -9,6 +8,8 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import axios from 'axios';
 import { useSelector } from 'react-redux';
+import PremiumCard from '../../../Compnents/PremiumCard/PremiumCard';
+import PremiumMovieTrailer from '../../../Compnents/PremiumMovieTrailer/PremiumMovieTrailer';
 SwiperCore.use([Navigation]);
 //
 const PREMIUM_MOVIES = 'http://localhost:3031/allMovies';
@@ -17,6 +18,7 @@ const PremiumMovies = () => {
   const theme = useSelector((state) => state.mode.theme);
   const [movies, setMovies] = useState([]);
   // const [check, setCheck] = useState(false);
+  const [selectedMovieId, setSelectedMovieId] = useState(null);
   const fetchMovies = async () => {
     const resp = await axios.get(PREMIUM_MOVIES);
     const data = resp.data;
@@ -34,6 +36,13 @@ const PremiumMovies = () => {
     // setCheck((check) => !check);
   };
 
+  const [show, setShow] = useState(false);
+  const handleCardClick = (movieId) => {
+    setSelectedMovieId(movieId);
+    console.log(movieId);
+    setShow(true);
+  };
+  console.log(setSelectedMovieId);
   return (
     <section id="premium" data-theme={theme}>
       <Container>
@@ -43,7 +52,7 @@ const PremiumMovies = () => {
           spaceBetween={30}
           loop={true}
           modules={[Navigation]}
-          autoplay={true}
+          autoplay={false}
           breakpoints={{
             0: {
               slidesPerView: 1,
@@ -62,17 +71,26 @@ const PremiumMovies = () => {
           {movies.map((movie) => {
             return (
               <SwiperSlide key={movie.id}>
-                <SliderCard
+                <PremiumCard
+                  setShow={setShow}
                   id={movie.id}
                   title={movie.title}
-                  src={`${movie.img}`}
+                  src={movie.img}
+                  price={movie.price}
+                  genres={movie.genres}
+                  movieName={movie?.movieName}
+                  addBasket={addBasket}
+                  cardClick={() => handleCardClick(movie.id)}
                 />
-                <h6>price:{movie.price}$</h6>
-                <button onClick={() => addBasket(movie?.id)}>Add Card</button>
               </SwiperSlide>
             );
           })}
         </Swiper>
+        <PremiumMovieTrailer
+          show={show}
+          url={movies.find((movie) => movie.id === selectedMovieId)?.trailer}
+          setShow={setShow}
+        />
       </Container>
     </section>
   );
