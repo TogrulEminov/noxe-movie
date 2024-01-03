@@ -17,9 +17,9 @@
   --referance-hover: #121213;
   --footer-bg: #fcfcfc;
   --sidebar: #fff;
+  --film-content: rgba(150, 150, 150, 0.8);
   --border: #ddd;
   --movies-search-area: #fcfcfc;
-  font-family: 'Source Serif 4', serif;
 }
 
 [data-theme="dark"] {
@@ -30,6 +30,7 @@
   --section-h6-p: #fff;
   --section-h3: #fff;
   --dark: #000;
+  --film-content: rgba(20, 18, 18, 0.8);
   --genres: #fff;
   --swiper-controls-border: rgba(255, 254, 254, 0.12);
   --slide-card: #fff;

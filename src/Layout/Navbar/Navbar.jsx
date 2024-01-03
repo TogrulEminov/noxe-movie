@@ -1,10 +1,10 @@
-import { Container, NavLink } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 import { FaAngleDown } from 'react-icons/fa6';
 import { FaUser } from 'react-icons/fa';
 import Logo from '../../Compnents/Logo/Logo';
 import { FaCartShopping } from 'react-icons/fa6';
 import './Navbar.scss';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate, Link } from 'react-router-dom';
 import { useCallback, useEffect, useState } from 'react';
 import { FiSun, FiMoon } from 'react-icons/fi';
 import { IoMenu, IoSearchSharp } from 'react-icons/io5';
@@ -101,22 +101,22 @@ const Navbar = () => {
               <nav className="main_nav_link">
                 <ul className="main_nav_link_list">
                   <li>
-                    <NavLink to="/">Home</NavLink>
+                    <Link to="/">Home</Link>
                   </li>
                   <li>
-                    <NavLink to="/about">About</NavLink>
+                    <Link to="/about">About</Link>
                   </li>
                   <li>
-                    <NavLink to="/movie">Movies</NavLink>
+                    <Link to="/movies">Movies</Link>
                   </li>
                   <li>
-                    <NavLink to="/tv-shows">Tv shows</NavLink>
+                    <Link to="/tv-shows">Tv shows</Link>
                   </li>
                   <li>
-                    <NavLink to="/celebs">Celebs</NavLink>
+                    <Link to="/celebs">Celebs</Link>
                   </li>
                   <li>
-                    <NavLink to="/blogs">Blogs</NavLink>
+                    <Link to="/blogs">Blogs</Link>
                   </li>
                   <li className="nav_items">
                     <h4>
@@ -124,13 +124,13 @@ const Navbar = () => {
                     </h4>
                     <ul className="submenu_list">
                       <li>
-                        <NavLink to="/film">Film Portfolio</NavLink>
+                        <Link to="/film">Film Portfolio</Link>
                       </li>
                       <li>
-                        <NavLink to="/shop">Shop</NavLink>
+                        <Link to="/shop">Shop</Link>
                       </li>
                       <li>
-                        <NavLink to="/cart">Cart</NavLink>
+                        <Link to="/cart">Cart</Link>
                       </li>
                     </ul>
                   </li>
@@ -197,8 +197,8 @@ const Navbar = () => {
           </div>
         </Container>
       </header>
-      <ListSideBar sideBarCart={sideBarCart} setSideBarCart={setSideBarCart} />
       <MobileSideBar />
+      <ListSideBar sideBarCart={sideBarCart} setSideBarCart={setSideBarCart} />
     </>
   );
 };

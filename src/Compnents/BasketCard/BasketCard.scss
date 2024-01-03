@@ -49,9 +49,15 @@
         }
       }
     }
-    h6{
-        font-size: 15px;
-        color: rgb(139, 0, 0);
+    h6 {
+      font-size: 15px;
+      color: rgb(139, 0, 0);
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      overflow: hidden;
+      height: auto;
+      text-overflow: ellipsis;
+      -webkit-box-orient: vertical;
     }
   }
 }
