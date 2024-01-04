@@ -1,11 +1,12 @@
-import { Link, useNavigate } from "react-router-dom";
-import { FaLock, FaUser } from "react-icons/fa";
-import { basicSchema2 } from "../../../schemas/main";
-import { useFormik } from "formik";
-import axios from "axios";
+import { Link, useNavigate } from 'react-router-dom';
+import { FaLock, FaUser } from 'react-icons/fa';
+import { basicSchema2 } from '../../../schemas/main';
+import { useFormik } from 'formik';
+import axios from 'axios';
 // import { IoIosArrowRoundBack } from "react-icons/io";
-import "./Login.scss";
-const USERS_URL = "http://localhost:3031/users";
+import './Login.scss';
+import { toast } from 'react-toastify';
+const USERS_URL = 'http://localhost:3031/users';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -18,16 +19,17 @@ const Login = () => {
     const data = response.data;
     const find = data.find((user) => user.name == values.name);
     if (find) {
-      navigate("/");
-      localStorage.setItem("user", JSON.stringify(find));
+      navigate('/');
+      localStorage.setItem('user', JSON.stringify(find));
+      toast.success('Login is succesfully');
     } else {
-      console.log("User not found");
+      toast.error('User is not found');
     }
   };
   const { values, errors, handleChange, handleSubmit } = useFormik({
     initialValues: {
-      name: "",
-      password: "",
+      name: '',
+      password: '',
     },
     validationSchema: basicSchema2,
     onSubmit,
@@ -45,7 +47,7 @@ const Login = () => {
               name="name"
               value={values.name}
               onChange={handleChange}
-              className={errors.name ? "input-error" : ""}
+              className={errors.name ? 'input-error' : ''}
             />
             <FaUser className="icon" />
             {errors.name && <p className="error">{errors.name}</p>}
@@ -58,7 +60,7 @@ const Login = () => {
               name="password"
               value={values.password}
               onChange={handleChange}
-              className={errors.password ? "input-error" : ""}
+              className={errors.password ? 'input-error' : ''}
             />
             <FaLock className="icon" />
             {errors.password && <p className="error">{errors.password}</p>}

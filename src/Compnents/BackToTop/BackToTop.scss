@@ -1,0 +1,25 @@
+@import '../../css-config/mixins.scss';
+
+.backtotop {
+  align-items: center;
+  justify-content: center;
+  width: 3.125rem;
+  height: 3.125rem;
+  background-color: var(--black);
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  border: 0;
+  z-index: 999;
+  outline: 0;
+  cursor: pointer;
+  font-size: 20px;
+  color:var(--dark);
+  display: none;
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+  &.visible {
+    display: flex;
+  }
+}

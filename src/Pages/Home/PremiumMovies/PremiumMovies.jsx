@@ -39,10 +39,8 @@ const PremiumMovies = () => {
   const [show, setShow] = useState(false);
   const handleCardClick = (movieId) => {
     setSelectedMovieId(movieId);
-    console.log(movieId);
     setShow(true);
   };
-  console.log(setSelectedMovieId);
   return (
     <section id="premium" data-theme={theme}>
       <Container>

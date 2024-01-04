@@ -1,16 +1,14 @@
-import React from 'react';
 import SearchMT from './SearchMT/SearchMT';
 import './MoviesTvSearchArea.scss';
 import TypeCounShow from './TypeCounShow/TypeCounShow';
 import { Col, Container, Row } from 'react-bootstrap';
 import GenresDropdown from './GenresDropdown/GenresDropdown';
 import { useState } from 'react';
+import { toast } from 'react-toastify';
 import NetWork from './NetWork/NetWork';
-import { SearchOutlined } from '@ant-design/icons';
-import { Button } from 'antd';
 import { useSelector } from 'react-redux';
 import { useLocation, useNavigate } from 'react-router-dom';
-const MoviesSearchArea = ({ data }) => {
+const MoviesSearchArea = ({ data, list, type }) => {
   const [adults, setAdults] = useState('');
   const [region, setRegion] = useState('');
   const [query, setQuery] = useState('');
@@ -20,13 +18,16 @@ const MoviesSearchArea = ({ data }) => {
 
   const handleSearch = (event) => {
     event.preventDefault();
-    if (!adults.key || !region.title || !query) return;
+    if (!adults.key || !region.title || !query) {
+      toast.error('Please enter the fields value');
+      return;
+    }
     const newQueryParams = new URLSearchParams(search);
     newQueryParams.set('query', query);
 
     newQueryParams.set('regions', region.title);
     newQueryParams.set('adults', adults.key);
-    navigate(`/search/movie?${newQueryParams}`);
+    navigate(`/search/${list}?${newQueryParams}`);
   };
   const handleSearchChange = (e) => {
     setQuery(e.target.value);
@@ -37,11 +38,11 @@ const MoviesSearchArea = ({ data }) => {
         <form onSubmit={handleSearch}>
           <Row>
             <Col xs={12} xl={2} lg={2} md={6}>
-              <TypeCounShow type="Movie" total={data?.results?.length} />
+              <TypeCounShow type={type} total={data?.results?.length} />
             </Col>
             <Col xs={12} xl={4} lg={4} md={6}>
               <SearchMT
-                type="movie"
+                type={type}
                 query={query}
                 handleSearchChange={handleSearchChange}
               />

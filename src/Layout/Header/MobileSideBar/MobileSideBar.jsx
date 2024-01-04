@@ -54,7 +54,7 @@ const MobileSideBar = () => {
                 <NavLink to="/about">About</NavLink>
               </li>
               <li>
-                <NavLink to="/movie">Movies</NavLink>
+                <NavLink to="/movies">Movies</NavLink>
               </li>
               <li>
                 <NavLink to="/tv-shows">Tv shows</NavLink>
@@ -65,6 +65,7 @@ const MobileSideBar = () => {
               <li>
                 <NavLink to="/blogs">Blogs</NavLink>
               </li>
+
               <li className="mobile_navbar_item">
                 <span onClick={() => handleOpen(1)}>
                   Pages {openSub === 1 ? <IoIosArrowUp /> : <IoIosArrowDown />}
@@ -77,7 +78,7 @@ const MobileSideBar = () => {
                     <NavLink to="/film">Film Portfolio</NavLink>
                   </li>
                   <li>
-                    <NavLink>Shop</NavLink>
+                    <NavLink to="/wishlist">Wishlist</NavLink>
                   </li>
                   <li>
                     <NavLink>Cart</NavLink>

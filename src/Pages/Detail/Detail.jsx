@@ -1,10 +1,12 @@
+import LoadingTopBar from '../../Compnents/LoadingTopBar/LoadingTopBar';
 import DetailHero from './DetailHero/DetailHero';
 
 const Detail = () => {
   return (
-    <div>
+    <>
+      <LoadingTopBar />
       <DetailHero />
-    </div>
+    </>
   );
 };
 
