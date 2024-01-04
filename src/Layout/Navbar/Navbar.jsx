@@ -84,7 +84,6 @@ const Navbar = () => {
   const logOut = useCallback(() => {
     localStorage.removeItem('user');
     // setLog((log) => !log);
-    navigate('/login');
   }, []);
   return (
     <>
@@ -118,6 +117,7 @@ const Navbar = () => {
                   <li>
                     <Link to="/blogs">Blogs</Link>
                   </li>
+
                   <li className="nav_items">
                     <h4>
                       Pages <FaAngleDown />
@@ -127,7 +127,7 @@ const Navbar = () => {
                         <Link to="/film">Film Portfolio</Link>
                       </li>
                       <li>
-                        <Link to="/shop">Shop</Link>
+                        <Link to="/wishlist">Wishlist</Link>
                       </li>
                       <li>
                         <Link to="/cart">Cart</Link>

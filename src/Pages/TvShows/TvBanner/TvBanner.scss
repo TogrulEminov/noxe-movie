@@ -1,0 +1,26 @@
+@import '../../../css-config/Mixins.scss';
+#tv_banner {
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  height: 80vh;
+  background-size: cover !important;
+  position: relative;
+  @include lg {
+    height: 100vh;
+  }
+  @include flex();
+  justify-content: center;
+  &:after {
+    inset: 0;
+    position: absolute;
+    content: '';
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  h3 {
+    font-size: 40px;
+    font-weight: bold;
+    position: relative;
+    color: #fff;
+    z-index: 2;
+  }
+}

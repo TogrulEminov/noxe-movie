@@ -1,7 +1,7 @@
 import CustomHelmet from '../../Compnents/CustomHelmet/CustomHelmet';
+import LoadingTopBar from '../../Compnents/LoadingTopBar/LoadingTopBar';
 import MoviesSearchArea from '../../Compnents/MoviesTvSearchArea/MoviesTvSearchArea';
-import useFetch from '../../hooks/useFetch';
-import './Movies.scss';
+import useFetch from '../../hooks/useFetch'; 
 import MoviesBanner from './MoviesBanner/MoviesBanner';
 import MoviesCardsArea from './MoviesCardsArea/MoviesCardsArea';
 const Movies = () => {
@@ -9,8 +9,9 @@ const Movies = () => {
   return (
     <>
       <CustomHelmet title="movies" description="movies,popular movies" />
+      <LoadingTopBar/>
       <MoviesBanner />
-      <MoviesSearchArea data={data} />
+      <MoviesSearchArea data={data}  list={'movie'} type={'Movie'}/>
       <MoviesCardsArea data={data}/>
     </>
   );

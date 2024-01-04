@@ -7,6 +7,10 @@ import Login from '../Pages/Registration/Login/Login';
 import SignUp from '../Pages/Registration/SignUp/SignUp';
 import MainRoot from '../Router/MainRoot';
 import SearchTvMovie from '../Pages/SearchTvMovie/SearchTvMovie';
+import TvShows from '../Pages/TvShows/TvShows';
+import NotFound from '../Pages/NotFound/NotFound';
+import NotRoot from '../Router/NotRoot';
+import WishList from '../Pages/WishList/WishList';
 
 export const ROUTES = [
   {
@@ -42,8 +46,26 @@ export const ROUTES = [
         element: <Movies />,
       },
       {
+        path: 'tv-shows',
+        element: <TvShows />,
+      },
+      {
         path: 'search/:mediaType',
         element: <SearchTvMovie />,
+      },
+      {
+        path: 'wishlist',
+        element: <WishList />,
+      },
+    ],
+  },
+  {
+    path: '/',
+    element: <NotRoot />,
+    children: [
+      {
+        path: '*',
+        element: <NotFound />,
       },
     ],
   },

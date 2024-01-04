@@ -5,7 +5,9 @@ import { fetchDataFromApi } from './Api/api';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { getApiConfiguration, getGenres } from './Redux/Control/ApiSlice';
-
+import { ToastContainer } from 'react-toastify';
+import BackToTop from './Compnents/BackToTop/BackToTop';
+import LoadingTopBar from './Compnents/LoadingTopBar/LoadingTopBar';
 function App() {
   const dispatch = useDispatch();
   const theme = useSelector((state) => state.mode.theme);
@@ -49,7 +51,21 @@ function App() {
   const router = createBrowserRouter(ROUTES);
   return (
     <>
+      <LoadingTopBar />
       <RouterProvider router={router} />
+      <BackToTop />
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
     </>
   );
 }
