@@ -1,0 +1,42 @@
+@import '../../../css-config/Mixins.scss';
+.addition_for_detail {
+  padding: 30px 0;
+  .col-lg-3 {
+    @include flex();
+    justify-content: center;
+    padding: 10px 20px;
+    @include md{
+        &:not(:last-child) {
+            border-right: 1px solid var(--swiper-controls-border);
+          }  
+    }
+    @include lg {
+      &:not(:first-child) {
+        border-left: 1px solid rgba(255, 255, 255, 0.12);
+      }
+    }
+  }
+  .addition_side {
+    text-align: center;
+    .average_with_count {
+      font-size: 18px;
+      font-weight: bold;
+      margin-top: 15px;
+      color: var(--black);
+    }
+    h3 {
+      color: var(--black);
+      font-size: 25px;
+      letter-spacing: -1px;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    .description {
+      font-size: 16px;
+      color: var(--black);
+      opacity: 0.6;
+      text-align: center;
+    }
+  }
+}
