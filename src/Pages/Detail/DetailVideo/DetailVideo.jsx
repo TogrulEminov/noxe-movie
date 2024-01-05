@@ -1,22 +1,35 @@
+import { useSelector } from 'react-redux';
+import './DetailVideo.scss';
 import { Container } from 'react-bootstrap';
-import './DetailSimilar.scss';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Navigation } from 'swiper';
 SwiperCore.use([Navigation]);
 import SectionTitle from '../../../Compnents/SectionTitle/SectionTitle';
-import { useSelector } from 'react-redux';
-import SliderCard from '../../../Compnents/SliderCard/SliderCard';
+import Videos from '../../../Compnents/Videos/Videos';
+import VideoPlayer from '../../../Compnents/VideoPlayer/VideoPlayer';
+import { useState } from 'react';
 import useFetch from '../../../hooks/useFetch';
 import noImage from '../../../Assets/Images/no-poster.png';
 import { useParams } from 'react-router-dom';
-const DetailSimilar = () => {
+const DetailVideo = () => {
   const { url } = useSelector((state) => state.api);
+  const [show, setShow] = useState(false);
+  const [videoId, setVideoId] = useState(null);
   const { mediaType, movie_id } = useParams();
-  const { data: similar } = useFetch(`/${mediaType}/${movie_id}/similar`);
+  const { data: video } = useFetch(`/${mediaType}/${movie_id}/videos`);
+  const { data: images } = useFetch(`/${mediaType}/${movie_id}/images`);
+
+  const combinedData = [...(video?.results || []), ...(images?.posters || [])];
+  const handleOpen = (videoKey) => {
+    document.body.classList.add('no-scroll');
+    setShow(true);
+    setVideoId(videoKey);
+  };
+
   return (
-    <section id="detail_similar">
+    <section id="video_section">
       <Container>
-        <SectionTitle headingCenter="Similar movies" />
+        <SectionTitle headingCenter="Videos & Trailers" />
         <Swiper
           slidesPerView={1}
           spaceBetween={30}
@@ -42,27 +55,30 @@ const DetailSimilar = () => {
             },
           }}
           className="slide_carousel">
-          {similar?.results?.map((item) => {
-            let image = item?.poster_path
-              ? `${url.poster}/${item?.poster_path}`
+          {combinedData?.slice(0, 20).map((item, index) => {
+            const image = item?.file_path
+              ? `${url.poster}/${item?.file_path}`
               : noImage;
-
             return (
-              <SwiperSlide key={item?.id}>
-                <SliderCard
-                  id={item.id}
-                  title={item?.title}
-                  name={item?.name}
+              <SwiperSlide key={item?.id || index}>
+                <Videos
+                  title={item?.name}
                   src={image}
-                  genre_ids={item?.genre_ids.slice(0, 3)}
+                  onClick={() => handleOpen(item?.key)}
                 />
               </SwiperSlide>
             );
           })}
         </Swiper>
+        <VideoPlayer
+          show={show}
+          setShow={setShow}
+          videoId={videoId}
+          setVideoId={setVideoId}
+        />
       </Container>
     </section>
   );
 };
 
-export default DetailSimilar;
+export default DetailVideo;

@@ -7,8 +7,8 @@ import SwiperCore, { Navigation } from 'swiper';
 import 'swiper/swiper-bundle.css';
 import useFetch from '../../../hooks/useFetch';
 import { useSelector } from 'react-redux';
+import noImage from '../../../Assets/Images/no-poster.png';
 SwiperCore.use([Navigation]);
-
 const Latest = () => {
   const { data } = useFetch(`/movie/popular`);
   const { url } = useSelector((state) => state.api);
@@ -42,12 +42,15 @@ const Latest = () => {
           }}
           className="slide_carousel">
           {data?.results?.slice(0, 10).map((slide) => {
+            let image = slide?.poster_path
+              ? `${url.poster}/${slide?.poster_path}`
+              : noImage;
             return (
               <SwiperSlide key={slide.id}>
                 <SliderCard
                   id={slide.id}
                   title={slide?.title}
-                  src={`${url.poster}${slide?.poster_path}`}
+                  src={image}
                   genre_ids={slide?.genre_ids.slice(0, 3)}
                 />
               </SwiperSlide>

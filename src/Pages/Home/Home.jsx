@@ -1,7 +1,5 @@
 import Latest from './Latest/Latest';
-// import WeDo from "./WeDo/WeDo";
-// import Reviews from './Reviews/Reviews';
-// import Blog from './Blog/Blog';
+
 import HeroSlider from './HeroSlider/HeroSlider';
 import PremiumMovies from './PremiumMovies/PremiumMovies';
 import TrendingSection from './TrendingSection/TrendingSection';
@@ -16,10 +14,6 @@ const Home = () => {
       <TrendingSection />
       <Popular />
       <TopRated />
-      {/* <Reviews /> */}
-      {/* <Team /> */}
-
-      {/* <Blog /> */}
     </main>
   );
 };

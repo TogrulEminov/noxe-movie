@@ -14,54 +14,60 @@ const Photos = () => {
   const { data: images } = useFetch(`/${mediaType}/${movie_id}/images`);
   const { url } = useSelector((state) => state.api);
   return (
-    <div id="PhotosSection">
-      <Container>
-        <SectionTitle headingCenter="Photos" />
-        <Fancybox
-          options={{
-            Carousel: {
-              infinite: false,
-            },
-          }}>
-          <Swiper
-            slidesPerView={1}
-            spaceBetween={10}
-            loop={true}
-            modules={[Navigation]}
-            autoplay={false}
-            breakpoints={{
-              0: {
-                slidesPerView: 1.5,
-              },
-              345: {
-                slidesPerView: 1.5,
-              },
+    <>
+      {images?.posters?.length > 0 ? (
+        <div id="PhotosSection">
+          <Container>
+            <SectionTitle headingCenter="Photos" />
+            <Fancybox
+              options={{
+                Carousel: {
+                  infinite: false,
+                },
+              }}>
+              <Swiper
+                slidesPerView={1}
+                spaceBetween={10}
+                loop={true}
+                modules={[Navigation]}
+                autoplay={false}
+                breakpoints={{
+                  0: {
+                    slidesPerView: 1.5,
+                  },
+                  345: {
+                    slidesPerView: 1.5,
+                  },
 
-              500: {
-                slidesPerView: 2,
-              },
-              768: {
-                slidesPerView: 3,
-              },
-              1024: {
-                slidesPerView: 4.5,
-              },
-            }}
-            className="slide_carousel">
-            {images?.posters?.slice(0, 10).map((item, index) => {
-              return (
-                <SwiperSlide key={item.id || index}>
-                  <Photo
-                    src={`${url.poster}/${item?.file_path}`}
-                    to={`${url.poster}${item?.file_path}`}
-                  />
-                </SwiperSlide>
-              );
-            })}
-          </Swiper>
-        </Fancybox>
-      </Container>
-    </div>
+                  500: {
+                    slidesPerView: 2,
+                  },
+                  768: {
+                    slidesPerView: 3,
+                  },
+                  1024: {
+                    slidesPerView: 4.5,
+                  },
+                }}
+                className="slide_carousel">
+                {images?.posters?.slice(0, 10).map((item, index) => {
+                  return (
+                    <SwiperSlide key={item.id || index}>
+                      <Photo
+                        src={`${url.poster}/${item?.file_path}`}
+                        to={`${url.poster}${item?.file_path}`}
+                      />
+                    </SwiperSlide>
+                  );
+                })}
+              </Swiper>
+            </Fancybox>
+          </Container>
+        </div>
+      ) : (
+        <></>
+      )}
+    </>
   );
 };
 
