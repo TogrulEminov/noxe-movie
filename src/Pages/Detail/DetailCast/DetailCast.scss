@@ -1,0 +1,11 @@
+@import "../../../css-config/Mixins.scss";
+#detail_cast{
+    padding: 30px 0;
+    #section_title{ 
+        padding-top: 0;
+        .section_content{
+            text-align: start;
+        }
+    
+    }
+}

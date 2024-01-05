@@ -1,0 +1,13 @@
+@import '../../css-config/Mixins.scss';
+.starRating {
+  @include flex();
+  margin-bottom: 5px;
+    font-size: 14px;
+    .star-icon {
+      color: #b0d12b;
+    }
+    .reviews{
+        color: var(--black);
+        margin-left: 5px;
+    }
+}

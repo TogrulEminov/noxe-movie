@@ -1,0 +1,11 @@
+@import '../../../css-config/Mixins.scss';
+#PhotosSection {
+  padding: 40px 0;
+
+  #section_title {
+    padding-top: 0;
+    .section_content {
+      text-align: start;
+    }
+  }
+}

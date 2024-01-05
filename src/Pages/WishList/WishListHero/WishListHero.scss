@@ -26,9 +26,8 @@
       font-weight: 700;
       line-height: 1;
       -webkit-text-fill-color: transparent;
-      @include sm{
-      font-size: 3.75rem;
-
+      @include sm {
+        font-size: 3.75rem;
       }
     }
   }
