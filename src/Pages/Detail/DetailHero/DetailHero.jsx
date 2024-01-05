@@ -10,12 +10,13 @@ import { useSelector } from 'react-redux';
 import { useState } from 'react';
 import VideoPlayer from '../../../Compnents/VideoPlayer/VideoPlayer';
 import LazyLoadImg from '../../../Compnents/LazyLoadImg/LazyLoadImg';
+import bgNo from '../../../Assets/Images/footer-bg.jpg';
 const DetailHero = () => {
   const [show, setShow] = useState(false);
   const [videoId, setVideoId] = useState(null);
   const { mediaType, movie_id } = useParams();
   const { data } = useFetch(`/${mediaType}/${movie_id}`);
-  const { data: video } = useFetch(`/movie/${movie_id}/videos`);
+  const { data: video } = useFetch(`/${mediaType}/${movie_id}/videos`);
   const videoKey = video?.results.map((g) => g.key);
   const toHoursAndMinutes = (totalMinutes) => {
     const hours = Math.floor(totalMinutes / 60);
@@ -37,7 +38,7 @@ const DetailHero = () => {
         style={{
           backgroundImage: data?.backdrop_path
             ? `url(${url.backdrop}${data.backdrop_path})`
-            : `url(../../../../../Assets/Images/footer-bg.jpg)`,
+            : `url(${bgNo})`,
         }}>
         <Container>
           <Row>

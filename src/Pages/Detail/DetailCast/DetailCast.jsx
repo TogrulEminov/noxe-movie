@@ -25,7 +25,7 @@ const DetailCast = () => {
           spaceBetween={30}
           loop={true}
           modules={[Navigation]}
-          autoplay={true}
+          autoplay={false}
           breakpoints={{
             0: {
               slidesPerView: 1.5,
@@ -45,12 +45,12 @@ const DetailCast = () => {
             },
           }}
           className="slide_carousel">
-          {credits?.cast.map((item) => {
+          {credits?.cast.map((item, index) => {
             let itemImage = item?.profile_path
               ? url.profile + item?.profile_path
               : profile;
             return (
-              <SwiperSlide key={item?.id}>
+              <SwiperSlide key={index || item?.id}>
                 <Cast
                   creditsLoading={creditsLoading}
                   src={itemImage}

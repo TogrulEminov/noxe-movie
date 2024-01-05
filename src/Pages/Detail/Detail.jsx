@@ -2,6 +2,8 @@ import LoadingTopBar from '../../Compnents/LoadingTopBar/LoadingTopBar';
 import DetailAddition from './DetailAddition/DetailAddition';
 import DetailCast from './DetailCast/DetailCast';
 import DetailHero from './DetailHero/DetailHero';
+import DetailSimilar from './DetailSimilar/DetailSimilar';
+import DetailVideo from './DetailVideo/DetailVideo';
 import Photos from './Photos/Photos';
 
 const Detail = () => {
@@ -11,7 +13,9 @@ const Detail = () => {
       <DetailHero />
       <DetailAddition />
       <DetailCast />
-      <Photos/>
+      <DetailSimilar />
+      <DetailVideo />
+      <Photos />
     </>
   );
 };

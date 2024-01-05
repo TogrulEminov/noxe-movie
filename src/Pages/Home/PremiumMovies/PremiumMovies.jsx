@@ -67,6 +67,7 @@ const PremiumMovies = () => {
           }}
           className="slide_carousel">
           {movies.map((movie) => {
+            
             return (
               <SwiperSlide key={movie.id}>
                 <PremiumCard

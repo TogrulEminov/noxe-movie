@@ -1,10 +1,10 @@
 @import '../../../css-config/Mixins.scss';
-#detail_similar {
+#video_section {
   padding: 40px 0;
   #section_title {
     padding-top: 0;
-    .section_content {
-      text-align: start;
+    .section_content{
+        text-align: start;
     }
   }
 }

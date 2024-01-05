@@ -7,6 +7,7 @@ import { useSelector } from 'react-redux';
 import useFetch from '../../../hooks/useFetch';
 import { Container } from 'react-bootstrap';
 import SliderCard from '../../../Compnents/SliderCard/SliderCard';
+import noImage from '../../../Assets/Images/no-poster.png';
 
 SwiperCore.use([Navigation]);
 const Popular = () => {
@@ -47,13 +48,16 @@ const Popular = () => {
           }}
           className="slide_carousel">
           {data?.results?.slice(0, 10).map((slide) => {
+            let image = slide?.poster_path
+              ? `${url.poster}/${slide?.poster_path}`
+              : noImage;
             return (
               <SwiperSlide key={slide.id}>
                 <SliderCard
                   id={slide.id}
                   name={slide?.name}
                   title={slide?.title}
-                  src={`${url.poster}${slide?.poster_path}`}
+                  src={image}
                   genre_ids={slide?.genre_ids.slice(0, 3)}
                 />
               </SwiperSlide>

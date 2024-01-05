@@ -24,14 +24,17 @@ const DetailAddition = () => {
               </h4>
             </div>
           </Col>
-          <Col xs={12} sm={6} md={4} lg={3}>
-            <div className="addition_side">
-              <h3>Languages</h3>
-              <p className="description">
-                {average?.spoken_languages[1].english_name}
-              </p>
-            </div>
-          </Col>
+        
+            <Col xs={12} sm={6} md={4} lg={3}>
+              <div className="addition_side">
+                <h3>Languages</h3>
+                <p className="description">
+                {average?.spoken_languages[1]  ?   average?.spoken_languages[1]?.english_name : 'No language'}
+                </p>
+              </div>
+            </Col>
+         
+
           <Col xs={12} sm={6} md={4} lg={3}>
             <div className="addition_side">
               <h3>Popularity</h3>
