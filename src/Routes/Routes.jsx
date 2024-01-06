@@ -11,6 +11,7 @@ import TvShows from '../Pages/TvShows/TvShows';
 import NotFound from '../Pages/NotFound/NotFound';
 import NotRoot from '../Router/NotRoot';
 import WishList from '../Pages/WishList/WishList';
+import Blogs from '../Pages/Blogs/Blogs';
 
 export const ROUTES = [
   {
@@ -48,6 +49,10 @@ export const ROUTES = [
       {
         path: 'tv-shows',
         element: <TvShows />,
+      },
+      {
+        path: 'blogs',
+        element: <Blogs />,
       },
       {
         path: 'search/:mediaType',

@@ -20,7 +20,7 @@ const DetailAddition = () => {
                 reviews={reviews?.results.length}
               />
               <h4 className="average_with_count">
-                {average?.vote_average.toFixed(1)} / 10
+                {average?.vote_average?.toFixed(1)} / 10
               </h4>
             </div>
           </Col>

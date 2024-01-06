@@ -22,7 +22,6 @@ import { useWindowSize } from '@uidotdev/usehooks';
 const Navbar = () => {
   const theme = useSelector((state) => state.mode.theme);
   const dispatch = useDispatch();
-  const navigate = useNavigate();
   const location = useLocation();
   const { width } = useWindowSize();
   const [userDrop, setUserDrop] = useState(false);
@@ -73,6 +72,7 @@ const Navbar = () => {
     if (location.pathname) {
       resetStateOnPathChange();
       window.scrollTo(0, 0);
+      document.body.classList.remove('no-scroll');
     }
   }, [location.pathname]);
 
