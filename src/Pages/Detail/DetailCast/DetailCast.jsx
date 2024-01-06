@@ -16,53 +16,61 @@ const DetailCast = () => {
   const { data: credits, loading: creditsLoading } = useFetch(
     `/${mediaType}/${movie_id}/credits`
   );
-  return (
-    <section id="detail_cast" data-theme={theme}>
-      <Container>
-        <SectionTitle headingCenter="Top Cast" />
-        <Swiper
-          slidesPerView={1}
-          spaceBetween={30}
-          loop={true}
-          modules={[Navigation]}
-          autoplay={false}
-          breakpoints={{
-            0: {
-              slidesPerView: 1.5,
-            },
-            345: {
-              slidesPerView: 1.5,
-            },
 
-            500: {
-              slidesPerView: 2,
-            },
-            768: {
-              slidesPerView: 3,
-            },
-            1024: {
-              slidesPerView: 4.5,
-            },
-          }}
-          className="slide_carousel">
-          {credits?.cast.map((item, index) => {
-            let itemImage = item?.profile_path
-              ? url.profile + item?.profile_path
-              : profile;
-            return (
-              <SwiperSlide key={index || item?.id}>
-                <Cast
-                  creditsLoading={creditsLoading}
-                  src={itemImage}
-                  name={item.name}
-                  character={item.character}
-                />
-              </SwiperSlide>
-            );
-          })}
-        </Swiper>
-      </Container>
-    </section>
+  console.log(credits);
+  return (
+    <>
+      {credits?.cast?.length > 0 ? (
+        <section id="detail_cast" data-theme={theme}>
+          <Container>
+            <SectionTitle headingCenter="Top Cast" />
+            <Swiper
+              slidesPerView={1}
+              spaceBetween={30}
+              loop={true}
+              modules={[Navigation]}
+              autoplay={false}
+              breakpoints={{
+                0: {
+                  slidesPerView: 1.5,
+                },
+                345: {
+                  slidesPerView: 1.5,
+                },
+
+                500: {
+                  slidesPerView: 2,
+                },
+                768: {
+                  slidesPerView: 3,
+                },
+                1024: {
+                  slidesPerView: 4.5,
+                },
+              }}
+              className="slide_carousel">
+              {credits?.cast?.map((item, index) => {
+                let itemImage = item?.profile_path
+                  ? url.profile + item?.profile_path
+                  : profile;
+                return (
+                  <SwiperSlide key={index || item?.id}>
+                    <Cast
+                      creditsLoading={creditsLoading}
+                      src={itemImage}
+                      name={item.name}
+                      character={item.character}
+                    />
+                  </SwiperSlide>
+                );
+              })}
+            </Swiper>
+          </Container>
+        </section>
+      ) : (
+        <></>
+      )}
+    </>
   );
 };
 

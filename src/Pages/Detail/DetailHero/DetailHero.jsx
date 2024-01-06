@@ -46,7 +46,7 @@ const DetailHero = () => {
               <figure className="detail_img">
                 {data?.poster_path ? (
                   <LazyLoadImg
-                    src={`${url.poster}${data?.poster_path}`}
+                    src={`${url.poster}/${data?.poster_path}`}
                     alt={data?.original_title}
                   />
                 ) : (
