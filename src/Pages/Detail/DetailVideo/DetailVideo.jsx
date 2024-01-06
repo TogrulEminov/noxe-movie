@@ -27,57 +27,63 @@ const DetailVideo = () => {
   };
 
   return (
-    <section id="video_section">
-      <Container>
-        <SectionTitle headingCenter="Videos & Trailers" />
-        <Swiper
-          slidesPerView={1}
-          spaceBetween={30}
-          loop={true}
-          modules={[Navigation]}
-          autoplay={false}
-          breakpoints={{
-            0: {
-              slidesPerView: 1.5,
-            },
-            345: {
-              slidesPerView: 1.5,
-            },
+    <>
+      {combinedData?.length > 0 ? (
+        <section id="video_section">
+          <Container>
+            <SectionTitle headingCenter="Videos & Trailers" />
+            <Swiper
+              slidesPerView={1}
+              spaceBetween={30}
+              loop={true}
+              modules={[Navigation]}
+              autoplay={false}
+              breakpoints={{
+                0: {
+                  slidesPerView: 1.5,
+                },
+                345: {
+                  slidesPerView: 1.5,
+                },
 
-            500: {
-              slidesPerView: 2,
-            },
-            768: {
-              slidesPerView: 3,
-            },
-            1024: {
-              slidesPerView: 4.5,
-            },
-          }}
-          className="slide_carousel">
-          {combinedData?.slice(0, 20).map((item, index) => {
-            const image = item?.file_path
-              ? `${url.poster}/${item?.file_path}`
-              : noImage;
-            return (
-              <SwiperSlide key={item?.id || index}>
-                <Videos
-                  title={item?.name}
-                  src={image}
-                  onClick={() => handleOpen(item?.key)}
-                />
-              </SwiperSlide>
-            );
-          })}
-        </Swiper>
-        <VideoPlayer
-          show={show}
-          setShow={setShow}
-          videoId={videoId}
-          setVideoId={setVideoId}
-        />
-      </Container>
-    </section>
+                500: {
+                  slidesPerView: 2,
+                },
+                768: {
+                  slidesPerView: 3,
+                },
+                1024: {
+                  slidesPerView: 4.5,
+                },
+              }}
+              className="slide_carousel">
+              {combinedData?.slice(0, 20).map((item, index) => {
+                const image = item?.file_path
+                  ? `${url.poster}/${item?.file_path}`
+                  : noImage;
+                return (
+                  <SwiperSlide key={item?.id || index}>
+                    <Videos
+                      title={item?.name}
+                      src={image}
+                      onClick={() => handleOpen(item?.key)}
+                    />
+                  </SwiperSlide>
+                );
+              })}
+            </Swiper>
+            <VideoPlayer
+              show={show}
+              setShow={setShow}
+              videoId={videoId}
+              setVideoId={setVideoId}
+            />
+          </Container>
+        </section>
+      ) : (
+        <></>
+      )}
+    </>
   );
 };
 
