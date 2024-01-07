@@ -57,7 +57,7 @@ const DetailVideo = () => {
                 },
               }}
               className="slide_carousel">
-              {combinedData?.slice(0, 20).map((item, index) => {
+              {combinedData?.slice(0, 20)?.map((item, index) => {
                 const image = item?.file_path
                   ? `${url.poster}/${item?.file_path}`
                   : noImage;

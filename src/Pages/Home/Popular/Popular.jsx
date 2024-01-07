@@ -47,16 +47,17 @@ const Popular = () => {
             },
           }}
           className="slide_carousel">
-          {data?.results?.slice(0, 10).map((slide) => {
+          {data?.results?.slice(0, 10)?.map((slide) => {
             let image = slide?.poster_path
               ? `${url.poster}/${slide?.poster_path}`
               : noImage;
             return (
-              <SwiperSlide key={slide.id}>
+              <SwiperSlide key={slide?.id}>
                 <SliderCard
-                  id={slide.id}
+                  id={slide?.id}
                   name={slide?.name}
                   title={slide?.title}
+                  type={endPoint}
                   src={image}
                   genre_ids={slide?.genre_ids.slice(0, 3)}
                 />

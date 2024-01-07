@@ -3,7 +3,7 @@ import './SliderCard.scss';
 import LazyLoadImg from '../LazyLoadImg/LazyLoadImg';
 import Genres from '../Genres/Genres';
 import { useSelector } from 'react-redux';
-const SliderCard = ({ title, src, genre_ids, id, className, name }) => {
+const SliderCard = ({ title, src, genre_ids, id, className, name ,type}) => {
   const theme = useSelector((state) => state.mode.theme);
   return (
     <div
@@ -14,7 +14,7 @@ const SliderCard = ({ title, src, genre_ids, id, className, name }) => {
       </figure>
       <article className="slider_film_content">
         <h4 title={`${title || name}`}>
-          <Link to={`/movie/${id}`}>{title || name}</Link>
+          <Link to={`/${type}/${id}`}>{title || name}</Link>
         </h4>
         <ul className="slider_film_genres">
           <Genres data={genre_ids} />

@@ -17,7 +17,7 @@ const DetailAddition = () => {
             <div className="addition_side">
               <StarRating
                 stars={average?.vote_average}
-                reviews={reviews?.results.length}
+                reviews={reviews?.results?.length}
               />
               <h4 className="average_with_count">
                 {average?.vote_average?.toFixed(1)} / 10
@@ -38,7 +38,7 @@ const DetailAddition = () => {
           <Col xs={12} sm={6} md={4} lg={3}>
             <div className="addition_side">
               <h3>Popularity</h3>
-              <p className="description">{average?.popularity.toFixed(2)}</p>
+              <p className="description">{average?.popularity?.toFixed(2)}</p>
             </div>
           </Col>
           <Col xs={12} sm={6} md={4} lg={3}>

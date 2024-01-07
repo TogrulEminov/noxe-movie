@@ -4,7 +4,7 @@ import { FaUser } from 'react-icons/fa';
 import Logo from '../../Compnents/Logo/Logo';
 import { FaCartShopping } from 'react-icons/fa6';
 import './Navbar.scss';
-import { useLocation, useNavigate, Link } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import { useCallback, useEffect, useState } from 'react';
 import { FiSun, FiMoon } from 'react-icons/fi';
 import { IoMenu, IoSearchSharp } from 'react-icons/io5';
@@ -71,8 +71,12 @@ const Navbar = () => {
   useEffect(() => {
     if (location.pathname) {
       resetStateOnPathChange();
-      window.scrollTo(0, 0);
       document.body.classList.remove('no-scroll');
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'smooth',
+      });
     }
   }, [location.pathname]);
 
@@ -167,7 +171,7 @@ const Navbar = () => {
                     ) : (
                       <>
                         <li>
-                          <Link to="/sign-up">Sign up</Link>
+                          <Link to="/signup">Sign up</Link>
                         </li>
                         <li>
                           <Link to="/login">Login</Link>

@@ -611,6 +611,76 @@
         "userId": 1
       },
       "id": 34
+    },
+    {
+      "undefined": {
+        "movieName": "Sisu",
+        "imbd": "5.7",
+        "title": "After being assaulted by a senior co-worker, a young woman's dream job becomes a living nightmare. She tries to keep her career together while being tormented in her dreams by a mysterious tree monster.",
+        "releaseDate": "September 24, 2017",
+        "trailer": "https://www.youtube.com/embed/d2k4QAItiSA",
+        "genres": "Action",
+        "section": "Premium",
+        "season": "3",
+        "id": 43,
+        "price": 3,
+        "time": "1h 20m",
+        "img": "../images/sisu.jpeg"
+      },
+      "id": 35
+    },
+    {
+      "undefined": {
+        "movieName": "Sisu",
+        "imbd": "5.7",
+        "title": "After being assaulted by a senior co-worker, a young woman's dream job becomes a living nightmare. She tries to keep her career together while being tormented in her dreams by a mysterious tree monster.",
+        "releaseDate": "September 24, 2017",
+        "trailer": "https://www.youtube.com/embed/d2k4QAItiSA",
+        "genres": "Action",
+        "section": "Premium",
+        "season": "3",
+        "id": 43,
+        "price": 3,
+        "time": "1h 20m",
+        "img": "../images/sisu.jpeg"
+      },
+      "id": 36
+    },
+    {
+      "2": {
+        "movieName": "Sherlock Holmes",
+        "imbd": "5.7",
+        "title": "Sherlock Holmes is a fictional detective created by British author Arthur Conan Doyle. Referring to himself as a consulting detective in the stories, Holmes is known for his proficiency with observation,.",
+        "releaseDate": "September 24, 2017",
+        "trailer": "https://www.youtube.com/embed/IrBKwzL3K7s",
+        "genres": "Tv-Shows",
+        "section": "Hero-Banner",
+        "season": "3",
+        "id": 48,
+        "price": 3,
+        "time": "1h 20m",
+        "img": "../images/sherloc.jpeg",
+        "userId": 2
+      },
+      "id": 37
+    },
+    {
+      "2": {
+        "movieName": " Queen Charlotte",
+        "imbd": "7.4",
+        "title": "During the Regency era in England, eight close-knit siblings of the powerful Bridgerton family attempt to find love.",
+        "releaseDate": "September 24, 2017",
+        "trailer": "https://www.youtube.com/embed/joZm18gIhqY",
+        "genres": "Tv-Shows",
+        "section": "Hero-Banner",
+        "season": "3",
+        "id": 50,
+        "price": 3,
+        "time": "1h 20m",
+        "img": "../images/queen.jpeg",
+        "userId": 2
+      },
+      "id": 38
     }
   ]
 }

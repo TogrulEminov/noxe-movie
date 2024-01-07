@@ -66,7 +66,7 @@ const PremiumMovies = () => {
             },
           }}
           className="slide_carousel">
-          {movies.map((movie) => {
+          {movies?.map((movie) => {
             
             return (
               <SwiperSlide key={movie.id}>
@@ -78,7 +78,7 @@ const PremiumMovies = () => {
                   price={movie.price}
                   genres={movie.genres}
                   movieName={movie?.movieName}
-                  addBasket={addBasket}
+                  addBasket={()=>addBasket(movie)}
                   cardClick={() => handleCardClick(movie.id)}
                 />
               </SwiperSlide>
