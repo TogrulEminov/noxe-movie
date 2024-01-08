@@ -17,13 +17,13 @@ const DetailHero = () => {
   const { mediaType, movie_id } = useParams();
   const { data } = useFetch(`/${mediaType}/${movie_id}`);
   const { data: video } = useFetch(`/${mediaType}/${movie_id}/videos`);
-  const videoKey = video?.results.map((g) => g.key);
+  const videoKey = video?.results?.map((g) => g.key);
   const toHoursAndMinutes = (totalMinutes) => {
     const hours = Math.floor(totalMinutes / 60);
     const minutes = totalMinutes % 60;
     return `${hours}h${minutes > 0 ? ` ${minutes}m` : ''}`;
   };
-  const _genres = data?.genres.map((g) => g.id);
+  const _genres = data?.genres?.map((g) => g.id);
   const { url } = useSelector((state) => state.api);
 
   const handleOpenVideo = () => {
@@ -37,7 +37,7 @@ const DetailHero = () => {
         id="detail-hero"
         style={{
           backgroundImage: data?.backdrop_path
-            ? `url(${url.backdrop}${data.backdrop_path})`
+            ? `url(${url.backdrop}/${data.backdrop_path})`
             : `url(${bgNo})`,
         }}>
         <Container>

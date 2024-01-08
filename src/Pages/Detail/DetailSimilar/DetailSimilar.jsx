@@ -13,7 +13,6 @@ const DetailSimilar = () => {
   const { url } = useSelector((state) => state.api);
   const { mediaType, movie_id } = useParams();
   const { data: similar } = useFetch(`/${mediaType}/${movie_id}/similar`);
-  console.log(similar);
   return (
     <>
       {similar?.results?.length > 0 ? (
@@ -53,11 +52,12 @@ const DetailSimilar = () => {
                 return (
                   <SwiperSlide key={item?.id}>
                     <SliderCard
-                      id={item.id}
+                      id={item?.id}
                       title={item?.title}
                       name={item?.name}
                       src={image}
-                      genre_ids={item?.genre_ids.slice(0, 3)}
+                      type={mediaType}
+                      genre_ids={item?.genre_ids?.slice(0, 3)}
                     />
                   </SwiperSlide>
                 );

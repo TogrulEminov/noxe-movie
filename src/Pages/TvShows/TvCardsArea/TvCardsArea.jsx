@@ -14,6 +14,7 @@ const TvCardsArea = ({ data }) => {
               <Col xs={12} sm={6} md={6} lg={4} xl={3} key={item.id}>
                 <SliderCard
                   className="movies_tv"
+                  type="tv"
                   title={item?.original_title}
                   name={item?.name}
                   src={`${url.poster}/${item?.poster_path}`}

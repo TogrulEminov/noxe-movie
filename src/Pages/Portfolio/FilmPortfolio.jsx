@@ -2,42 +2,43 @@ import './FilmPortfolio.scss';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import { Link } from 'react-router-dom';
 import useFetch from '../../hooks/useFetch';
+import { useSelector } from 'react-redux';
+import Poster from '../../Compnents/Poster/Poster';
+import FilmPortfolioHero from './FilmPortfolioHero/FilmPortfolioHero';
+import { useEffect, useState } from 'react';
 const FilmPortfolio = () => {
-  const IMAGE_PATH = 'https://image.tmdb.org/t/p/w500/';
-
+  const { url } = useSelector((state) => state.api);
   const { data } = useFetch('/discover/movie');
+  const [background, setBackground] = useState('');
+  useEffect(() => {
+    const bg =
+      url.backdrop +
+      data?.results?.[Math.floor(Math.random() * 20)]?.backdrop_path;
+    setBackground(bg);
+  }, [data, url.backdrop]);
   return (
     <>
-      <section style={{ height: '200px' }}></section>
-      {/* <section id="portfolio">
+      <FilmPortfolioHero background={background} />
+      <section id="portfolio">
         <Container>
           <Row>
-            {data.results?.map((item) => {
-              console.log(item.backdrop_path);
+            {data?.results?.map((item) => {
               return (
-                <Col key={item?.id} className="col" xs={12} md={6}>
-                  <div className="portfolio_card">
-                    <img
-                      src={`${IMAGE_PATH}${item.poster_path}`}
-                      alt={item?.title}
-                    />
-                    <div className="text">
-                      <div className="content">
-                        <h1>{item?.Title}</h1>
-                      </div>
-                    </div>
-                    <div className="watch_trailler">
-                      <Link to="">Watch the Trailer</Link>
-                    </div>
-                  </div>
+                <Col key={item?.id} className="col" xs={12} md={6} lg={6}>
+                  <Poster
+                    src={`${url.poster}/${item?.poster_path}`}
+                    alt={item?.title}
+                    title={item?.title}
+                    genre_ids={item?.genre_ids}
+                    item_id={item?.id}
+                  />
                 </Col>
               );
             })}
           </Row>
         </Container>
-      </section> */}
+      </section>
     </>
   );
 };

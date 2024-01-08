@@ -9,8 +9,7 @@ import ArrowForwardIos from '@mui/icons-material/ArrowForwardIos';
 import { Col, Container, Row } from 'react-bootstrap';
 import Genres from '../../../Compnents/Genres/Genres';
 import dayjs from 'dayjs';
-import { useSelector } from 'react-redux';
-import WatchTrailer from '../../../Compnents/WatchTrailer/WatchTrailer';
+import { useSelector } from 'react-redux'; 
 SwiperCore.use([Autoplay, Navigation, EffectFade]);
 const HeroSlider = () => {
   const prevButtonRef = useRef(null);
@@ -43,13 +42,13 @@ const HeroSlider = () => {
           }}
           modules={[Autoplay, Navigation]}
           className="hero_slider_images">
-          {data?.results?.slice(10, 15).map((item, index) => {
+          {data?.results?.slice(10, 15)?.map((item, index) => {
             return (
               <SwiperSlide
                 key={index}
                 className="swiper_card"
                 style={{
-                  backgroundImage: `url(${url.backdrop}${item?.backdrop_path})`,
+                  backgroundImage: `url(${url.backdrop}/${item?.backdrop_path})`,
                 }}>
                 <Container>
                   <Row>

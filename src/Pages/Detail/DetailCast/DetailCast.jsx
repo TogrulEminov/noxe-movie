@@ -45,7 +45,7 @@ const DetailCast = () => {
             },
           }}
           className="slide_carousel">
-          {credits?.cast.map((item, index) => {
+          {credits?.cast?.map((item, index) => {
             let itemImage = item?.profile_path
               ? url.profile + item?.profile_path
               : profile;
@@ -54,8 +54,8 @@ const DetailCast = () => {
                 <Cast
                   creditsLoading={creditsLoading}
                   src={itemImage}
-                  name={item.name}
-                  character={item.character}
+                  name={item?.name}
+                  character={item?.character}
                 />
               </SwiperSlide>
             );

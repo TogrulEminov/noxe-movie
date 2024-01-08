@@ -10,12 +10,12 @@ const SearchImageCards = ({ data, page, loading, fetchNextData }) => {
   return (
     <div className="search_result_movie_tv">
       <Container>
-        {data?.results.length ? (
+        {data?.results?.length ? (
           <InfiniteScroll
             className="row"
-            dataLength={data.results.length || []}
+            dataLength={data?.results?.length || []}
             next={fetchNextData}
-            hasMore={page <= data.total_pages}
+            hasMore={page <= data?.total_pages}
             loader={<Spinner />}>
             {data?.results?.map((item) => {
               if (item.media_type === 'person') return;

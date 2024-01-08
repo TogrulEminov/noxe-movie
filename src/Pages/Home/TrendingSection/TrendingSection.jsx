@@ -46,14 +46,15 @@ const TrendingSection = () => {
             },
           }}
           className="slide_carousel">
-          {data?.results?.slice(0, 10).map((slide) => {
-              let image = slide?.poster_path
+          {data?.results?.slice(0, 10)?.map((slide) => {
+            let image = slide?.poster_path
               ? `${url.poster}/${slide?.poster_path}`
               : noImage;
             return (
-              <SwiperSlide key={slide.id}>
+              <SwiperSlide key={slide?.id}>
                 <SliderCard
-                  id={slide.id}
+                  id={slide?.id}
+                  type="movie"
                   name={slide?.name}
                   title={slide?.title}
                   src={image}

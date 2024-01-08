@@ -11,7 +11,7 @@ const AboutTrailer = () => {
     <>
       <section id="about-trailler">
         <Row className="about-trailler">
-          {data?.results?.slice(10,13).map((item) => {
+          {data?.results?.slice(10,13)?.map((item) => {
             return (
               <Col className="col" xs={12} md={6} key={item?.id}>
                 <Poster

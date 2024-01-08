@@ -50,7 +50,7 @@ const Photos = () => {
                   },
                 }}
                 className="slide_carousel">
-                {images?.posters?.slice(0, 10).map((item, index) => {
+                {images?.posters?.slice(0, 10)?.map((item, index) => {
                   return (
                     <SwiperSlide key={item.id || index}>
                       <Photo

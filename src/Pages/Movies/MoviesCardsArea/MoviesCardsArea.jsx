@@ -12,8 +12,9 @@ const MoviesCardsArea = ({ data }) => {
         <Row>
           {data?.results?.map((item) => {
             return (
-              <Col xs={12} sm={6} md={6} lg={4} xl={3} key={item.id}>
+              <Col xs={12} sm={6} md={6} lg={4} xl={3} key={item?.id}>
                 <SliderCard
+                type="movie"
                   className="movies_tv"
                   title={item?.original_title}
                   src={`${url.poster}/${item?.poster_path}`}

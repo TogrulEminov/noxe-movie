@@ -20,7 +20,7 @@ const AboutPower = () => {
             </h5>
           </div>
           <Row>
-            {data?.results.slice(0, 4).map((item) => {
+            {data?.results?.slice(0, 4)?.map((item) => {
               const uniqueMovieTypes = [];
               if (!uniqueMovieTypes.includes(item?.media_type)) {
                 uniqueMovieTypes.push(item?.media_type);

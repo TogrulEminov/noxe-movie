@@ -4,10 +4,10 @@ import Poster from '../../../Compnents/Poster/Poster';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.css';
 import useFetch from '../../../hooks/useFetch';
+import { useSelector } from 'react-redux';
 const HeroPageBanner = () => {
   const { data } = useFetch('/discover/movie');
-  const IMAGE_PATH = 'https://image.tmdb.org/t/p/w500/';
-
+  const { url } = useSelector((state) => state.api);
   return (
     <section id="hero_banner">
       <Container>
@@ -32,10 +32,10 @@ const HeroPageBanner = () => {
           className="hero_banner_wrapper">
           <div className="swiper-wrapper">
             {data?.results?.map((item) => {
-           return (
+              return (
                 <SwiperSlide key={item.id}>
                   <Poster
-                    src={`${IMAGE_PATH}${item.poster_path}`}
+                    src={`${url.poster}/${item?.poster_path}`}
                     alt={item?.title}
                     title={item?.title}
                     genre_ids={item?.genre_ids}

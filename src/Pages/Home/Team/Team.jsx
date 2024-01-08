@@ -17,8 +17,8 @@ const Team = () => {
       <section className="team_cards">
         <Container>
           <Row>
-            {data?.results?.slice(0, 3).map((item) => {
-              const known_for = item?.known_for.map((g) => g.overview);
+            {data?.results?.slice(0, 3)?.map((item) => {
+              const known_for = item?.known_for?.map((g) => g.overview);
               return (
                 <TeamCard
                   key={item?.id}

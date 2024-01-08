@@ -9,7 +9,7 @@ const MoviesBanner = () => {
   useEffect(() => {
     const bg =
       url.backdrop +
-      upcoming?.results?.[Math.floor(Math.random() * 20)].backdrop_path;
+      upcoming?.results?.[Math.floor(Math.random() * 20)]?.backdrop_path;
     setBackground(bg);
   }, [upcoming, url.backdrop]);
   return (
