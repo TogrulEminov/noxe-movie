@@ -67,12 +67,12 @@ const PremiumMovies = () => {
           }}
           className="slide_carousel">
           {movies?.map((movie) => {
-            
             return (
               <SwiperSlide key={movie.id}>
                 <PremiumCard
                   setShow={setShow}
                   id={movie.id}
+                  movie={movie}
                   title={movie.title}
                   src={movie.img}
                   price={movie.price}
