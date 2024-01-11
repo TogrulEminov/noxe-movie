@@ -14,6 +14,7 @@ const PremiumCard = ({
   id,
   genres,
   cardClick,
+  movie
 }) => {
   return (
     <>
